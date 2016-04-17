@@ -11,7 +11,7 @@ public class BoardManager : MonoBehaviour {
 	public int outerRows = 50;
 	public int pathWaysColumns = 12;
 	public int pathWaysRows = 4;
-	public GameObject [] pathTiles;
+	public GameObject pathTiles;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
 	public GameObject [] innerWalls;
@@ -58,18 +58,19 @@ public class BoardManager : MonoBehaviour {
 		}*/
 	}
 
-		
 
- public class Count
-	{
-		public int minimum;
-		public int maximum;
-		public Count (int min, int max)
+
+	public class Count
 		{
-			minimum=min;
-			maximum=max;
+			public int minimum;
+			public int maximum;
+			public Count (int min, int max)
+			{
+				minimum=min;
+				maximum=max;
+			}
 		}
-	}
+
 
 	Vector3 RandomPosition ()
 	{
@@ -90,12 +91,20 @@ public class BoardManager : MonoBehaviour {
 			}
 	}
 
+	void InitialiseList ()
+	{
+		gridPositions.Clear();
+		for(int x = 1; x<outerColumns-1; x++)
+		{for (int y = 1; y < outerRows - 1; y++)
+				gridPositions.Add (new Vector3 (x, y, 0f));
+		}
+	}
+			
 
 	public void SetupScene (int level)
 	{
 		BoardSetup ();
-		//InitialiseList ();
-		//Instantiate (path, new Vector3 (columns -1, rows -1. 0f), Quaternion.identity);
+		InitialiseList ();
 	}
 }
 
