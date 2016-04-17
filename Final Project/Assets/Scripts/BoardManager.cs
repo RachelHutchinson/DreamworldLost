@@ -5,8 +5,8 @@ using Random = UnityEngine.Random;
 
 public class BoardManager : MonoBehaviour {
 
-	public int innerColumns = 8;
-	public int innerRows = 8;
+	public int innerColumns = 9;
+	public int innerRows = 9;
 	public int outerColumns = 24;
 	public int outerRows = 24;
 	public GameObject path;
@@ -16,6 +16,7 @@ public class BoardManager : MonoBehaviour {
 	public GameObject [] outerWalls;
 
 	private Transform boardHolder;
+	private Transform roomHolder;
 	private List <Vector3> gridPositions = new List <Vector3> ();
 
 
@@ -31,8 +32,24 @@ public class BoardManager : MonoBehaviour {
 					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
 				instance.transform.SetParent (boardHolder);
 			}
+	}
+	}
+
+	void RoomSetup()
+	{
+		roomHolder = new GameObject ("Room").transform;
+		for (int x = innerColumns; x < innerColumns+ 6; x++) {
+			for (int y = innerRows; y < innerRows + 6; y++) {
+				GameObject toInstantiate = innerTiles [Random.Range (0, innerTiles.Length)];
+				if (x == innerColumns || x == innerColumns + 5 || y == innerRows || y == innerRows + 5)
+					toInstantiate = innerWalls [Random.Range (0, innerWalls.Length)];
+				GameObject instance =
+					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
+				instance.transform.SetParent (roomHolder);
+			}
 		}
 	}
+		
 
  public class Count
 	{
@@ -63,12 +80,13 @@ public class BoardManager : MonoBehaviour {
 				Instantiate(tileChoice, randomPosition, Quaternion.identity);
 			}
 	}
-}
 
 
-	/*public void SetupScene (int level)
+	public void SetupScene (int level)
 	{
-		BoardSetpup ();
-		InitialiseList ();
-	}*/
+		BoardSetup ();
+		//InitialiseList ();
+		//Instantiate (path, new Vector3 (columns -1, rows -1. 0f), Quaternion.identity);
+	}
+}
 
