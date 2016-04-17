@@ -9,7 +9,9 @@ public class BoardManager : MonoBehaviour {
 	public int innerRows = 10;
 	public int outerColumns = 60;
 	public int outerRows = 50;
-	public GameObject path;
+	public int pathWaysColumns = 12;
+	public int pathWaysRows = 4;
+	public GameObject [] pathTiles;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
 	public GameObject [] innerWalls;
@@ -22,25 +24,38 @@ public class BoardManager : MonoBehaviour {
 	void BoardSetup()
 	{
 		boardHolder = new GameObject ("Board").transform;
-		for (int x = -1; x < innerColumns+1; x++) {
-			for (int y = -1; y < innerRows+1; y++) {
+		//Room 1
+		for (int x = -1; x < innerColumns + 1; x++) {
+			for (int y = -1; y < innerRows + 1; y++) {
 				GameObject toInstantiate = innerTiles [Random.Range (0, innerTiles.Length)];
-				if (x == -1 || x == innerColumns || y == -1|| y == innerRows)
+				if (x == -1 || x == innerColumns || y == -1 || y == innerRows)
 					toInstantiate = innerWalls [Random.Range (0, innerWalls.Length)];
 				GameObject instance =
 					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
 			}
 		}
+		//Room 2
 		for (int x = 9; x < outerColumns + 1; x++) {
 			for (int y = -20; y < outerRows + 1; y++) {
 				GameObject toInstantiate = outerTiles [Random.Range (0, outerTiles.Length)];
-				if (x == 9|| x == outerColumns || y == -20 || y == outerRows)
+				if (x == 9 || x == outerColumns || y == -20 || y == outerRows)
 					toInstantiate = outerWalls [Random.Range (0, outerWalls.Length)];
 				GameObject instance =
 					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
 				instance.transform.SetParent (boardHolder);
 			}
 		}
+		/*//path
+		for (int x = 8; x < pathWaysColumns + 1; x++) {
+			for (int y = 0; y < pathWaysRows + 1 ; y++) {
+				GameObject toInstantiate = pathTiles [Random.Range (0, pathTiles.Length)];
+				if (x == 8 || x == outerColumns || y == 0 || y == outerRows)
+					toInstantiate = pathTiles [Random.Range (0, pathTiles.Length)];
+				GameObject instance =
+					Instantiate (toInstantiate, new Vector3 (0, 0, 0f), Quaternion.identity) as GameObject;
+				instance.transform.SetParent (boardHolder);
+			}
+		}*/
 	}
 
 		
