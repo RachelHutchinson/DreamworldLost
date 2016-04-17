@@ -22,8 +22,8 @@ public class BoardManager : MonoBehaviour {
 	void BoardSetup()
 	{
 		boardHolder = new GameObject ("Board").transform;
-		for (int x = -1; x < innerColumns; x++) {
-			for (int y = -1; y < innerRows; y++) {
+		for (int x = -1; x < innerColumns+1; x++) {
+			for (int y = -1; y < innerRows+1; y++) {
 				GameObject toInstantiate = innerTiles [Random.Range (0, innerTiles.Length)];
 				if (x == -1 || x == innerColumns || y == -1|| y == innerRows)
 					toInstantiate = innerWalls [Random.Range (0, innerWalls.Length)];
@@ -31,10 +31,10 @@ public class BoardManager : MonoBehaviour {
 					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
 			}
 		}
-		for (int x = 8; x < outerColumns + 1; x++) {
+		for (int x = 9; x < outerColumns + 1; x++) {
 			for (int y = -20; y < outerRows + 1; y++) {
 				GameObject toInstantiate = outerTiles [Random.Range (0, outerTiles.Length)];
-				if (x == 8|| x == outerColumns || y == -20 || y == outerRows)
+				if (x == 9|| x == outerColumns || y == -20 || y == outerRows)
 					toInstantiate = outerWalls [Random.Range (0, outerWalls.Length)];
 				GameObject instance =
 					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
