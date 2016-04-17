@@ -1,0 +1,13 @@
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/UnityEngine.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/UnityEditor.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Mono.Cecil.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Unity.DataContract.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Mono.Cecil.Mdb.dll
