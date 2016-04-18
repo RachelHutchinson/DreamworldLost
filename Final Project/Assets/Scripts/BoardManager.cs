@@ -10,6 +10,7 @@ public class BoardManager : MonoBehaviour {
 	public int outerColumns = 60;
 	public int outerRows = 50;
 	public GameObject player;
+	public GameObject nurse;
 	public GameObject path;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
@@ -44,16 +45,13 @@ public class BoardManager : MonoBehaviour {
 				instance.transform.SetParent (boardHolder);
 			}
 		}
-
-	}
-
-	void playerNPC()
-	{
 		//Player
 		GameObject playerI =
 			Instantiate (player, new Vector3 (0, 0, 0f), Quaternion.identity) as GameObject;
+		//Nurse
+		GameObject nurseI =
+			Instantiate (nurse, new Vector3 (12, 5, 0f), Quaternion.identity) as GameObject;
 	}
-
 
 
 	public class Count

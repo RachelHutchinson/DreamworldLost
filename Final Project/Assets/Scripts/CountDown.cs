@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI; 
 
 public class CountDown : MonoBehaviour {
-	float timeRemaining = 60;
+	float timeRemaining = 300;
 	public Text countDownText;
 	public Text loseText;
 
@@ -24,12 +24,12 @@ public class CountDown : MonoBehaviour {
 
 		GUI.Label (new Rect (10, 10, 250, 100), niceTime);
 
-		if (timeRemaining > 0) {
-			countDownText.text = "Time Remaining: "+(int)timeRemaining;
+		/*if (timeRemaining > 0) {
+			countDownText.text = " "+(int)timeRemaining;
 		} else {
 			countDownText.text = "Time's up!";
 			loseText.text = "Game Over !";
 			Time.timeScale = 0; 
-		}
+		}*/
 	}
 }
