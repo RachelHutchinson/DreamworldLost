@@ -9,9 +9,9 @@ public class BoardManager : MonoBehaviour {
 	public int innerRows = 10;
 	public int outerColumns = 60;
 	public int outerRows = 50;
-	public int pathWaysColumns = 12;
-	public int pathWaysRows = 4;
-	public GameObject pathTiles;
+	public int pathWaysColumns = 10;
+	public int pathWaysRows = 10;
+	public GameObject [] pathTiles;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
 	public GameObject [] innerWalls;
@@ -46,10 +46,10 @@ public class BoardManager : MonoBehaviour {
 			}
 		}
 		/*//path
-		for (int x = 8; x < pathWaysColumns + 1; x++) {
-			for (int y = 0; y < pathWaysRows + 1 ; y++) {
+		for (int x = -1; x < pathWaysColumns + 1; x++) {
+			for (int y = -1; y < pathWaysRows + 1 ; y++) {
 				GameObject toInstantiate = pathTiles [Random.Range (0, pathTiles.Length)];
-				if (x == 8 || x == outerColumns || y == 0 || y == outerRows)
+				if (x == -1 || x == outerColumns || y == -1 || y == outerRows)
 					toInstantiate = pathTiles [Random.Range (0, pathTiles.Length)];
 				GameObject instance =
 					Instantiate (toInstantiate, new Vector3 (0, 0, 0f), Quaternion.identity) as GameObject;
