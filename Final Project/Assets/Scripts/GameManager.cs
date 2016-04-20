@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-	public BoardManager boardScript;
+	private BoardManager boardScript;
 	public AudioClip roomSound1;
 	public AudioClip fieldSound1;
 

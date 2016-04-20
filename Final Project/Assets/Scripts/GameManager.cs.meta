@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: efbbcad2148ed419fbf53909ede18793
-timeCreated: 1460855172
+timeCreated: 1461173870
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - roomSound1: {fileID: 8300000, guid: 3ed8cef1fb7ea46d4b2d3d9d89fa5987, type: 3}
+  - fieldSound1: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
