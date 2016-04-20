@@ -51,6 +51,15 @@ public class BoardManager : MonoBehaviour {
 		//Nurse
 		GameObject nurseI =
 			Instantiate (nurse, new Vector3 (18, 14, 0f), Quaternion.identity) as GameObject;
+		//Paths
+		GameObject aPath =
+			Instantiate (path, new Vector3 (8, 4, 0f), Quaternion.identity) as GameObject;
+		GameObject bPath = 
+			Instantiate (path, new Vector3 (9, 4, 0f), Quaternion.identity) as GameObject;
+		GameObject cPath =
+			Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
+		GameObject dPath =
+			Instantiate (path, new Vector3 (9, 3, 0f), Quaternion.identity) as GameObject;
 	}
 
 

@@ -4,6 +4,8 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	public BoardManager boardScript;
+	public AudioClip roomSound1;
+	public AudioClip fieldSound1;
 
 	private int level = 1;
 

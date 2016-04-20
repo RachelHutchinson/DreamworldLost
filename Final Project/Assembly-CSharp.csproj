@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\CountDown.cs" />
      <Compile Include="Assets\Scripts\Dialogue.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\SoundManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
