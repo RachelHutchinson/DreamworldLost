@@ -13,6 +13,7 @@ public class BoardManager : MonoBehaviour {
 	public GameObject nurse;
 	public GameObject music;
 	public GameObject path;
+	public GameObject plantA;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
 	public GameObject [] innerWalls;
@@ -64,6 +65,15 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject dPath =
 			Instantiate (path, new Vector3 (9, 3, 0f), Quaternion.identity) as GameObject;
+		//Bush
+		GameObject aPlant =
+			Instantiate (plantA, new Vector3 (10, 20, 0f), Quaternion.identity) as GameObject;
+		GameObject bPlant = 
+			Instantiate (plantA, new Vector3 (22, -15, 0f), Quaternion.identity) as GameObject;
+		GameObject cPlant =
+			Instantiate (plantA, new Vector3 (14, -3, 0f), Quaternion.identity) as GameObject;
+		GameObject dPlant =
+			Instantiate (plantA, new Vector3 (20, 3, 0f), Quaternion.identity) as GameObject;
 	}
 
 
