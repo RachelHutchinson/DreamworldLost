@@ -11,6 +11,7 @@ public class BoardManager : MonoBehaviour {
 	public int outerRows = 50;
 	public GameObject player;
 	public GameObject nurse;
+	public GameObject music;
 	public GameObject path;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
@@ -51,6 +52,9 @@ public class BoardManager : MonoBehaviour {
 		//Nurse
 		GameObject nurseI =
 			Instantiate (nurse, new Vector3 (18, 14, 0f), Quaternion.identity) as GameObject;
+		//Music
+		GameObject musicI =
+			Instantiate (music, new Vector3 (10, -14, 0f), Quaternion.identity) as GameObject;
 		//Paths
 		GameObject aPath =
 			Instantiate (path, new Vector3 (8, 4, 0f), Quaternion.identity) as GameObject;

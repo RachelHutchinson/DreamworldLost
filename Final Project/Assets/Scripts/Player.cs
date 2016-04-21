@@ -24,8 +24,29 @@ public class Player : MovingObject {
 		{
 			vertical = 0;
 		}
-	
+		if (Input.GetKeyDown (KeyCode.UpArrow)) 
+		{
+			animator.SetTrigger("playerB");
+			return;
+		}
+		if (Input.GetKeyDown (KeyCode.DownArrow)) 
+		{
+			animator.SetTrigger("playerF");
+			return;
+		}
+		if (Input.GetKeyDown (KeyCode.RightArrow)) 
+		{
+			animator.SetTrigger("playerR");
+			return;
+		}
+		if (Input.GetKeyDown (KeyCode.LeftArrow)) 
+		{
+			animator.SetTrigger("playerL");
+			return;
+		}
+
 	}
+		
 
 	protected override void AttemptMove <T> (int xDir, int yDir)
 	{
