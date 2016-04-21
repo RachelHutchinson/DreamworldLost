@@ -1,21 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MovingObject {
+public class Player : MovingObject{
 
-
+	public LayerMask tilesLayer;
 	private Animator animator;
 
-	protected override void Start () 
+	//protected override void Start () 
+	protected void Start ()
 	{
 		animator = GetComponent<Animator> ();
 		base.Start ();
 	}
 	
 	// Update is called once per frame
-	private void Update () 
+	private void Update () 	
 	{
-		//if (!GameManager.instance.playersTurn) return;
 		int horizontal = 0;
 		int vertical = 0;
 		horizontal = (int)(Input.GetAxisRaw ("Horizontal"));
@@ -24,22 +24,26 @@ public class Player : MovingObject {
 		{
 			vertical = 0;
 		}
+
+		if (horizontal != 0 || vertical != 0) {
+			AttemptMove <tilesLayer> (horizontal, vertical);
+		}
 		if (Input.GetKeyDown (KeyCode.UpArrow)) 
 		{
 			animator.SetTrigger("playerB");
 			return;
 		}
-		if (Input.GetKeyDown (KeyCode.DownArrow)) 
+		else if (Input.GetKeyDown (KeyCode.DownArrow)) 
 		{
 			animator.SetTrigger("playerF");
 			return;
 		}
-		if (Input.GetKeyDown (KeyCode.RightArrow)) 
+		else if (Input.GetKeyDown (KeyCode.RightArrow)) 
 		{
 			animator.SetTrigger("playerR");
 			return;
 		}
-		if (Input.GetKeyDown (KeyCode.LeftArrow)) 
+		else if (Input.GetKeyDown (KeyCode.LeftArrow)) 
 		{
 			animator.SetTrigger("playerL");
 			return;

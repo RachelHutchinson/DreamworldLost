@@ -47,6 +47,7 @@ public abstract class MovingObject : MonoBehaviour {
 	protected virtual void AttemptMove <T> (int xDir, int yDir)
 		where T : Component
 	{
+		Debug.Log ("Moving?");
 		RaycastHit2D hit;
 		bool canMove = Move (xDir, yDir, out hit);
 		if (hit.transform == null)
