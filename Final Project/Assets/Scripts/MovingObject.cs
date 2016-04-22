@@ -3,7 +3,7 @@ using System.Collections;
 
 public abstract class MovingObject : MonoBehaviour {
 
-	public float moveTime = 0.1f;
+	public float moveTime = 0.2f;
 	public LayerMask blockingLayer;
 	private BoxCollider2D boxCollider;
 	private Rigidbody2D rb2D;
@@ -53,11 +53,11 @@ public abstract class MovingObject : MonoBehaviour {
 		if (hit.transform == null)
 			return;
 		T hitComponent = hit.transform.GetComponent <T> ();
-		/*if (!canMove && hitComponent != null)
-			OnCantMove (hitComponent);*/
+		if (!canMove && hitComponent != null)
+			OnCantMove (hitComponent);
 	}
 
-	/*protected abstract void OnCantMove <T> (T component)
-		where T : Component;*/
+	protected abstract void OnCantMove <T> (T component)
+		where T : Component;
 
 }

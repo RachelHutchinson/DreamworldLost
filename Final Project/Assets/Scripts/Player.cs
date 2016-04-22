@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Player : MovingObject{
 
+	public int wallDamage = 1;
 	public LayerMask tilesLayer;
 	private Animator animator;
 
@@ -26,11 +27,13 @@ public class Player : MovingObject{
 		}
 
 		if (horizontal != 0 || vertical != 0) {
-			AttemptMove <tilesLayer> (horizontal, vertical);
+			AttemptMove <Wall> (horizontal, vertical);
 		}
-		if (Input.GetKeyDown (KeyCode.UpArrow)) 
-		{
-			animator.SetTrigger("playerB");
+		if (Input.GetKeyDown (KeyCode.UpArrow)) {
+			animator.SetTrigger ("playerB");
+			return;
+		} else if (Input.GetKeyUp (KeyCode.UpArrow)) {
+			animator.SetTrigger ("playerI");
 			return;
 		}
 		else if (Input.GetKeyDown (KeyCode.DownArrow)) 
@@ -38,9 +41,17 @@ public class Player : MovingObject{
 			animator.SetTrigger("playerF");
 			return;
 		}
+		else if (Input.GetKeyUp (KeyCode.DownArrow)) {
+			animator.SetTrigger ("playerI");
+			return;
+		}
 		else if (Input.GetKeyDown (KeyCode.RightArrow)) 
 		{
 			animator.SetTrigger("playerR");
+			return;
+		}
+		else if (Input.GetKeyUp (KeyCode.RightArrow)) {
+			animator.SetTrigger ("playerI");
 			return;
 		}
 		else if (Input.GetKeyDown (KeyCode.LeftArrow)) 
@@ -48,6 +59,10 @@ public class Player : MovingObject{
 			animator.SetTrigger("playerL");
 			return;
 		}
+		else if (Input.GetKeyUp (KeyCode.LeftArrow)) {
+			animator.SetTrigger ("playerI");
+			return;
+	}
 
 	}
 		
@@ -61,9 +76,11 @@ public class Player : MovingObject{
 		GameManager.instance.playersTurn = false;*/
 	}
 
-	/*protected override void OnCantMove <T> (T component)
+	protected override void OnCantMove <T> (T component)
 	{
-	}*/
+		Wall hitWall = component as Wall;
+		hitWall.DamageWall (wallDamage);
+	}
 
 	private void Restart ()
 	{
