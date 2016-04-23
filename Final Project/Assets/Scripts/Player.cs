@@ -4,7 +4,6 @@ using System.Collections;
 public class Player : MovingObject{
 
 	public int wallDamage = 1;
-	public LayerMask tilesLayer;
 	private Animator animator;
 
 	//protected override void Start () 

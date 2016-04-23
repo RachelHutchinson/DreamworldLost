@@ -69,6 +69,14 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject dPath =
 			Instantiate (path, new Vector3 (9, 3, 0f), Quaternion.identity) as GameObject;
+		GameObject ePath =
+			Instantiate (path, new Vector3 (7, 4, 0f), Quaternion.identity) as GameObject;
+		GameObject fPath = 
+			Instantiate (path, new Vector3 (10, 4, 0f), Quaternion.identity) as GameObject;
+		GameObject gPath =
+			Instantiate (path, new Vector3 (7, 3, 0f), Quaternion.identity) as GameObject;
+		GameObject hPath =
+			Instantiate (path, new Vector3 (10, 3, 0f), Quaternion.identity) as GameObject;
 		//Bush
 		GameObject aPlant =
 			Instantiate (plantA, new Vector3 (10, 20, 0f), Quaternion.identity) as GameObject;
