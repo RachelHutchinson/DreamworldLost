@@ -53,7 +53,7 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (player, new Vector3 (0, 0, 0f), Quaternion.identity) as GameObject;
 		//Nurse
 		GameObject nurseI =
-			Instantiate (nurse, new Vector3 (18, 14, 0f), Quaternion.identity) as GameObject;
+			Instantiate (nurse, new Vector3 (1, 1, 0f), Quaternion.identity) as GameObject;
 		//Health Game
 		GameObject healthA =
 			Instantiate (health, new Vector3 (19, 14, 0f), Quaternion.identity) as GameObject;
