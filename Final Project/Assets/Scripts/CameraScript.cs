@@ -8,11 +8,12 @@ public class CameraScript : MonoBehaviour {
 
 	void Start ()
 	{
+		player = GameObject.FindGameObjectWithTag ("Player");
 		offset = transform.position - player.transform.position;
 	}
 
 	void LateUpdate ()
-	{
+	{ 
 		transform.position = player.transform.position + offset;
 	}
 		

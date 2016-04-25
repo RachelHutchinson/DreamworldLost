@@ -3,10 +3,11 @@ using System.Collections;
 
 public class Pathways : MonoBehaviour {
 
-	public GameObject player;
+	GameObject player;
 
 	// Use this for initialization
 	void Start () {
+		player = GameObject.FindGameObjectWithTag ("Player");
 	
 	}
 	
@@ -20,7 +21,7 @@ public class Pathways : MonoBehaviour {
 		if (player)
 		{
 			player.transform.position = new Vector3 (17, 14, 0f);
-			Camera.main.transform.position = new Vector3 (17, 14, 0f);
+			Debug.Log ("Transform!");
 		}
 	}
 }

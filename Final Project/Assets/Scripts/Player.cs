@@ -62,7 +62,6 @@ public class Player : MovingObject{
 			animator.SetTrigger ("playerI");
 			return;
 	}
-
 	}
 		
 
