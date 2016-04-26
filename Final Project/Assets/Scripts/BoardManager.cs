@@ -15,6 +15,8 @@ public class BoardManager : MonoBehaviour {
 	public GameObject path;
 	public GameObject health;
 	public GameObject plantA;
+	public GameObject pathT;
+	public GameObject pathF;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
 	public GameObject [] innerWalls;
@@ -61,22 +63,25 @@ public class BoardManager : MonoBehaviour {
 		GameObject musicI =
 			Instantiate (music, new Vector3 (10, -14, 0f), Quaternion.identity) as GameObject;
 		//Paths
-		GameObject aPath =
-			Instantiate (path, new Vector3 (8, 4, 0f), Quaternion.identity) as GameObject;
-		GameObject bPath = 
-			Instantiate (path, new Vector3 (9, 4, 0f), Quaternion.identity) as GameObject;
+		//GameObject aPath =
+			//Instantiate (path, new Vector3 (8, 4, 0f), Quaternion.identity) as GameObject;
+		//GameObject bPath = 
+			//Instantiate (path, new Vector3 (9, 4, 0f), Quaternion.identity) as GameObject;
 		GameObject cPath =
 			Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject dPath =
 			Instantiate (path, new Vector3 (9, 3, 0f), Quaternion.identity) as GameObject;
-		GameObject ePath =
-			Instantiate (path, new Vector3 (7, 4, 0f), Quaternion.identity) as GameObject;
-		GameObject fPath = 
-			Instantiate (path, new Vector3 (10, 4, 0f), Quaternion.identity) as GameObject;
+		//GameObject ePath =
+			//Instantiate (path, new Vector3 (7, 4, 0f), Quaternion.identity) as GameObject;
+		//GameObject fPath = 
+			//Instantiate (path, new Vector3 (10, 4, 0f), Quaternion.identity) as GameObject;
 		GameObject gPath =
 			Instantiate (path, new Vector3 (7, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject hPath =
-			Instantiate (path, new Vector3 (10, 3, 0f), Quaternion.identity) as GameObject;
+			Instantiate (pathF, new Vector3 (10, 3, 0f), Quaternion.identity) as GameObject;
+		GameObject iPath =
+			Instantiate (pathT, new Vector3 (6, 3, 0f), Quaternion.identity) as GameObject;
+
 		//Bush
 		GameObject aPlant =
 			Instantiate (plantA, new Vector3 (10, 20, 0f), Quaternion.identity) as GameObject;
