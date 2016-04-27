@@ -5,14 +5,16 @@ public class Player : MovingObject{
 
 	public int wallDamage = 1;
 	private Animator animator;
+	GameObject player;
 
 	//protected override void Start () 
 	protected void Start ()
 	{
 		animator = GetComponent<Animator> ();
+		player = GameObject.FindGameObjectWithTag ("Player");
 		base.Start ();
 	}
-	
+
 	// Update is called once per frame
 	private void Update () 	
 	{
@@ -60,8 +62,8 @@ public class Player : MovingObject{
 		}
 		else if (Input.GetKeyUp (KeyCode.LeftArrow)) {
 			animator.SetTrigger ("playerI");
-			return;
-	}
+			yield return new WaitForSeconds (1);
+		}
 	}
 		
 
@@ -83,6 +85,16 @@ public class Player : MovingObject{
 	private void Restart ()
 	{
 		Application.LoadLevel (Application.loadedLevel);
+	}
+
+	void OnTriggerEnter(Collider other)
+	{	
+		if (other.gameObject.CompareTag("Entrance"))
+		{
+			Debug.Log ("Teleporting!");
+			player.transform.position = new Vector3 (3f, 0f, 0f);
+		}
+		return;
 	}
 }
 
