@@ -62,7 +62,7 @@ public class Player : MovingObject{
 		}
 		else if (Input.GetKeyUp (KeyCode.LeftArrow)) {
 			animator.SetTrigger ("playerI");
-			yield return new WaitForSeconds (1);
+			return;
 		}
 	}
 		
