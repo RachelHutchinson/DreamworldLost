@@ -92,7 +92,7 @@ public class Player : MovingObject{
 		if (other.gameObject.CompareTag("Entrance"))
 		{
 			Debug.Log ("Teleporting!");
-			player.transform.position = new Vector3 (3f, 0f, 0f);
+			player.transform.position = new Vector3 (10, 3, 0f);
 		}
 		return;
 	}
