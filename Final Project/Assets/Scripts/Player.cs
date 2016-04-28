@@ -7,6 +7,9 @@ public class Player : MovingObject{
 	private Animator animator;
 	GameObject player;
 
+	double coolDownTime = 0.5;
+	double currentCoolDownTime = 0;
+
 	//protected override void Start () 
 	protected void Start ()
 	{
@@ -18,6 +21,12 @@ public class Player : MovingObject{
 	// Update is called once per frame
 	private void Update () 	
 	{
+		if (currentCoolDownTime > 0) 
+		{
+			currentCoolDownTime = currentCoolDownTime - Time.deltaTime;
+			return;
+		}
+
 		int horizontal = 0;
 		int vertical = 0;
 		horizontal = (int)(Input.GetAxisRaw ("Horizontal"));
@@ -29,40 +38,25 @@ public class Player : MovingObject{
 
 		if (horizontal != 0 || vertical != 0) {
 			AttemptMove <Wall> (horizontal, vertical);
+			currentCoolDownTime = coolDownTime;
 		}
-		if (Input.GetKeyDown (KeyCode.UpArrow)) {
+		if (vertical == 1) {
 			animator.SetTrigger ("playerB");
-			return;
-		} else if (Input.GetKeyUp (KeyCode.UpArrow)) {
-			animator.SetTrigger ("playerI");
-			return;
-		}
-		else if (Input.GetKeyDown (KeyCode.DownArrow)) 
+		} 
+		else if (vertical == -1) 
 		{
 			animator.SetTrigger("playerF");
-			return;
 		}
-		else if (Input.GetKeyUp (KeyCode.DownArrow)) {
-			animator.SetTrigger ("playerI");
-			return;
-		}
-		else if (Input.GetKeyDown (KeyCode.RightArrow)) 
+		else if (horizontal == 1) 
 		{
 			animator.SetTrigger("playerR");
-			return;
 		}
-		else if (Input.GetKeyUp (KeyCode.RightArrow)) {
-			animator.SetTrigger ("playerI");
-			return;
-		}
-		else if (Input.GetKeyDown (KeyCode.LeftArrow)) 
+		else if (horizontal == -1) 
 		{
 			animator.SetTrigger("playerL");
-			return;
 		}
-		else if (Input.GetKeyUp (KeyCode.LeftArrow)) {
+		else {
 			animator.SetTrigger ("playerI");
-			return;
 		}
 	}
 		
