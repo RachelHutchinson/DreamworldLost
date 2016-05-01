@@ -10,6 +10,7 @@ public class BoardManager : MonoBehaviour {
 	public int outerColumns = 60;
 	public int outerRows = 50;
 	public GameObject player;
+	public GameObject owl;
 	public GameObject nurse;
 	public GameObject music;
 	public GameObject path;
@@ -56,25 +57,19 @@ public class BoardManager : MonoBehaviour {
 		//Nurse
 		GameObject nurseI =
 			Instantiate (nurse, new Vector3 (1, 1, 0f), Quaternion.identity) as GameObject;
+		//Owl
+		GameObject owlI =
+			Instantiate (owl, new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
 		//Health Game
 		GameObject healthA =
 			Instantiate (health, new Vector3 (19, 14, 0f), Quaternion.identity) as GameObject;
 		//Music
 		GameObject musicI =
-			Instantiate (music, new Vector3 (10, -14, 0f), Quaternion.identity) as GameObject;
-		//Paths
-		//GameObject aPath =
-			//Instantiate (path, new Vector3 (8, 4, 0f), Quaternion.identity) as GameObject;
-		//GameObject bPath = 
-			//Instantiate (path, new Vector3 (9, 4, 0f), Quaternion.identity) as GameObject;
+			Instantiate (music, new Vector3 (5, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject cPath =
 			Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject dPath =
 			Instantiate (path, new Vector3 (9, 3, 0f), Quaternion.identity) as GameObject;
-		//GameObject ePath =
-			//Instantiate (path, new Vector3 (7, 4, 0f), Quaternion.identity) as GameObject;
-		//GameObject fPath = 
-			//Instantiate (path, new Vector3 (10, 4, 0f), Quaternion.identity) as GameObject;
 		GameObject gPath =
 			Instantiate (path, new Vector3 (7, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject hPath =
