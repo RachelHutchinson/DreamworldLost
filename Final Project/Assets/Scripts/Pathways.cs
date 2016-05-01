@@ -11,7 +11,8 @@ public class Pathways : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{	
-		if (other.gameObject.CompareTag("Entrance"))
+		Debug.Log ("Made Contact!");
+		if (other.gameObject.CompareTag("Player"))
 		{
 			Debug.Log ("Teleporting!");
 			player.transform.position = new Vector3 (3f, 0f, 0f);
