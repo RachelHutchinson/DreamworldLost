@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI; 
-using Random = UnityEngine.Random;
 
 public class CountDown : MonoBehaviour {
 
-	float timeRemaining = 10;
+	float timeRemaining = 300;
 	GameObject player;
-	public GameObject[] owl;
-	public GameObject owlGen;
 	public GameObject playerI;
 
 
@@ -20,7 +17,6 @@ public class CountDown : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		player = GameObject.FindGameObjectWithTag ("Player");
-		owlGen = GameObject.FindGameObjectWithTag ("Owl");
 		timeRemaining -= Time.deltaTime;
 	}
 
@@ -34,7 +30,6 @@ public class CountDown : MonoBehaviour {
 			//countDownText.text = " "+(int)timeRemaining;
 		} else {
 			Destroy (player);
-			Destroy (owlGen);
 			Restart();
 			return;
 		}
@@ -43,9 +38,7 @@ public class CountDown : MonoBehaviour {
 	void Restart () {
 		GameObject playerR =
 			Instantiate (playerI, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
-		timeRemaining = 10;
-		GameObject owlR =
-			Instantiate (owl[Random.Range(0,2)], new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
+		timeRemaining = 300;
 		CameraScript.instance.Start ();
 		CameraScript.instance.LateUpdate ();
 		Player.instance.Start ();
