@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MovingObject{
+public class Player : MovingObject {
 
 	public int wallDamage = 1;
 	private Animator animator;
 	GameObject player;
-
+	public static Player instance = null;
 	double coolDownTime = 0.5;
 	double currentCoolDownTime = 0;
 
 	//protected override void Start () 
-	protected void Start ()
+	public void Start ()
 	{
 		animator = GetComponent<Animator> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -19,7 +19,7 @@ public class Player : MovingObject{
 	}
 
 	// Update is called once per frame
-	private void Update () 	
+	public void Update () 	
 	{
 		if (currentCoolDownTime > 0) 
 		{

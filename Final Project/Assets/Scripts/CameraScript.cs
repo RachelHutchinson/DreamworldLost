@@ -5,15 +5,17 @@ public class CameraScript : MonoBehaviour {
 
 	public Vector3 offset;
 	public GameObject player;
+	public static CameraScript instance = null;
 
-	void Start ()
+	public void Start ()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
 		offset = transform.position - player.transform.position;
 	}
 
-	void LateUpdate ()
+	public void LateUpdate ()
 	{ 
+		player = GameObject.FindGameObjectWithTag ("Player");
 		transform.position = player.transform.position + offset;
 	}
 		
