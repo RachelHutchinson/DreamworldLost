@@ -14,14 +14,13 @@ public class Pathways : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
-	void OnTriggerEnter(Collider other)
-	{	
-		if (player)
+	void OnTriggerStay2D (Collider2D other) {
+
+		if (Input.GetKeyDown (KeyCode.RightArrow)) 
 		{
-			Debug.Log ("Teleporting!");
 			Destroy (player);
 			GameObject playerI =
-				Instantiate (nPlayer, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
+				Instantiate (nPlayer, new Vector3 (10, 3, 0f), Quaternion.identity) as GameObject;
 		}
 		return;
 	}

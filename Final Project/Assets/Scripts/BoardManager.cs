@@ -9,6 +9,8 @@ public class BoardManager : MonoBehaviour {
 	public int innerRows = 10;
 	public int outerColumns = 60;
 	public int outerRows = 50;
+	public int bossColumns = 2;
+	public int bossRows = 5;
 	public GameObject player;
 	public GameObject owl;
 	public GameObject nurse;
@@ -17,11 +19,15 @@ public class BoardManager : MonoBehaviour {
 	public GameObject health;
 	public GameObject plantA;
 	public GameObject pathT;
-	public GameObject pathF;
+	public GameObject librarian;
+	public GameObject girlTwin;
+	public GameObject boyTwin;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
 	public GameObject [] innerWalls;
 	public GameObject [] outerWalls;
+	public GameObject [] bossTiles;
+	public GameObject [] bossWalls;
 
 	private Transform boardHolder;
 	private List <Vector3> gridPositions = new List <Vector3> ();
@@ -48,32 +54,51 @@ public class BoardManager : MonoBehaviour {
 					toInstantiate = outerWalls [Random.Range (0, outerWalls.Length)];
 				GameObject instance =
 					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
-				instance.transform.SetParent (boardHolder);
 			}
 		}
+		/*//boss 1
+		for (int x = -15; x < bossColumns + 1; x++) {
+			for (int y = 6; y < bossRows + 1; y++) {
+				GameObject toInstantiate = bossTiles [Random.Range (0, bossTiles.Length)];
+				if (x == -15 || x == bossColumns || y == 6|| y == bossRows)
+					toInstantiate = bossWalls [Random.Range (0, bossWalls.Length)];
+				GameObject instance =
+					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
+				instance.transform.SetParent (boardHolder);
+			}
+		}*/
 		//Player
 		GameObject playerI =
 			Instantiate (player, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
 		//Nurse
 		GameObject nurseI =
-			Instantiate (nurse, new Vector3 (1, 1, 0f), Quaternion.identity) as GameObject;
+			Instantiate (nurse, new Vector3 (18, 14, 0f), Quaternion.identity) as GameObject;
 		//Owl
 		GameObject owlI =
 			Instantiate (owl, new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
+		//BoyTwin
+		GameObject boyI =
+			Instantiate (boyTwin, new Vector3 (10, -3, 0f), Quaternion.identity) as GameObject;
+		//GirlTwin
+		GameObject girlI =
+			Instantiate (girlTwin, new Vector3 (11, -3, 0f), Quaternion.identity) as GameObject;
+		//Librarian
+		GameObject lib =
+			Instantiate (librarian, new Vector3 (20, -7, 0f), Quaternion.identity) as GameObject;
 		//Health Game
 		GameObject healthA =
 			Instantiate (health, new Vector3 (19, 14, 0f), Quaternion.identity) as GameObject;
 		//Music
 		GameObject musicI =
-			Instantiate (music, new Vector3 (5, 3, 0f), Quaternion.identity) as GameObject;
+			Instantiate (music, new Vector3 (22, -4, 0f), Quaternion.identity) as GameObject;
 		GameObject cPath =
 			Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject dPath =
 			Instantiate (path, new Vector3 (9, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject gPath =
-			Instantiate (path, new Vector3 (7, 3, 0f), Quaternion.identity) as GameObject;
+			Instantiate (pathT, new Vector3 (7, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject hPath =
-			Instantiate (pathF, new Vector3 (10, 3, 0f), Quaternion.identity) as GameObject;
+			Instantiate (path, new Vector3 (10, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject iPath =
 			Instantiate (pathT, new Vector3 (6, 3, 0f), Quaternion.identity) as GameObject;
 
