@@ -14,14 +14,21 @@ public class Dialogue : MonoBehaviour {
 		dialogue = GetComponent<Text>();
 		dialogue.text = "";
 	
+		TextAsset Test = (TextAsset)Resources.Load ("testing");
+		string Tester = Test.text;
+		dialogueStrings [0] = Tester;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	/*void Update () {
 		if (Input.GetKeyDown (KeyCode.Space)) 
 		{
 			StartCoroutine (DisplayString (dialogueStrings [0]));
 		}
+	}*/
+
+	public void StartText() {
+		StartCoroutine (DisplayString (dialogueStrings [0]));
 	}
 
 	private IEnumerator DisplayString(string stringToDisplay)
@@ -45,6 +52,6 @@ public class Dialogue : MonoBehaviour {
 				break;
 			}
 		}
-		dialogue.text = "";
+		//dialogue.text = "";
 	}
 }
