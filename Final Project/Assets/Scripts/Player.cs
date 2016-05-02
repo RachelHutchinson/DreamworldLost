@@ -81,14 +81,5 @@ public class Player : MovingObject {
 		Application.LoadLevel (Application.loadedLevel);
 	}
 
-	void OnTriggerEnter(Collider other)
-	{	
-		Debug.Log ("Detecting");
-		if (other.gameObject.CompareTag ("Entrance")) {
-			Debug.Log ("Teleporting!");
-			player.transform.position = new Vector3 (10, 3, 0f);
-		}
-		return;
-	}
 }
 
