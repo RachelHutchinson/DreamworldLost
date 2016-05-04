@@ -9,8 +9,8 @@ public class BoardManager : MonoBehaviour {
 	public int innerRows = 10;
 	public int outerColumns = 60;
 	public int outerRows = 50;
-	public int bossColumns = 2;
-	public int bossRows = 5;
+	public int bossColumns = 25;
+	public int bossRows = 10;
 	public GameObject player;
 	public GameObject owl;
 	public GameObject nurse;
@@ -56,17 +56,17 @@ public class BoardManager : MonoBehaviour {
 					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
 			}
 		}
-		/*//boss 1
+		//boss 1
 		for (int x = -15; x < bossColumns + 1; x++) {
-			for (int y = 6; y < bossRows + 1; y++) {
+			for (int y = -1; y < bossRows + 1; y++) {
 				GameObject toInstantiate = bossTiles [Random.Range (0, bossTiles.Length)];
-				if (x == -15 || x == bossColumns || y == 6|| y == bossRows)
+				if (x == -15 || x == bossColumns || y == -1 || y == bossRows)
 					toInstantiate = bossWalls [Random.Range (0, bossWalls.Length)];
 				GameObject instance =
-					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
+					Instantiate (toInstantiate, new Vector3 (x + 6, y + 23, 0f), Quaternion.identity) as GameObject;
 				instance.transform.SetParent (boardHolder);
 			}
-		}*/
+		}
 		//Player
 		GameObject playerI =
 			Instantiate (player, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
@@ -91,6 +91,7 @@ public class BoardManager : MonoBehaviour {
 		//Music
 		GameObject musicI =
 			Instantiate (music, new Vector3 (22, -4, 0f), Quaternion.identity) as GameObject;
+		//Path
 		GameObject cPath =
 			Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject dPath =
@@ -101,6 +102,20 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (path, new Vector3 (10, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject iPath =
 			Instantiate (pathT, new Vector3 (6, 3, 0f), Quaternion.identity) as GameObject;
+		//Path to Boss
+		for (int x = 3; x < 3 + 1; x++) {
+			for (int y = 3; y < 23 + 1; y++) 
+			{
+			GameObject toInstantiate = path;
+			GameObject instance =
+					Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
+			}
+		}
+		GameObject rPath =
+			Instantiate (path, new Vector3 (9, 23, 0f), Quaternion.identity) as GameObject;
+		GameObject sPath =
+			Instantiate (path, new Vector3 (8, 23, 0f), Quaternion.identity) as GameObject;
+
 
 		//Bush
 		GameObject aPlant =
