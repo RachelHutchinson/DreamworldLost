@@ -10,11 +10,12 @@ public class BoardManager : MonoBehaviour {
 	public int outerColumns = 60;
 	public int outerRows = 50;
 	public int bossColumns = 15;
-	public int bossRows = 10;
+	public int bossRows = 6;
 	public GameObject player;
 	public GameObject owl;
 	public GameObject nurse;
 	public GameObject music;
+	public GameObject boss;
 	public GameObject path;
 	public GameObject health;
 	public GameObject plantA;
@@ -58,13 +59,13 @@ public class BoardManager : MonoBehaviour {
 			}
 		}
 		//boss 1
-		for (int x = 0; x < bossColumns + 1; x++) {
-			for (int y = -1; y < bossRows + 1; y++) {
+		for (int x = -10; x < bossColumns + 1; x++) {
+			for (int y = 0; y < bossRows + 1; y++) {
 				GameObject toInstantiate = bossTiles [Random.Range (0, bossTiles.Length)];
-				if (x == 0 || x == bossColumns || y == -1 || y == bossRows)
+				if (x == -10 || x == bossColumns || y == 0 || y == bossRows)
 					toInstantiate = bossWalls [Random.Range (0, bossWalls.Length)];
 				GameObject instance =
-					Instantiate (toInstantiate, new Vector3 (x - 17, y + 23, 0f), Quaternion.identity) as GameObject;
+					Instantiate (toInstantiate, new Vector3 (x - 7, y + 22, 0f), Quaternion.identity) as GameObject;
 				instance.transform.SetParent (boardHolder);
 			}
 		}
@@ -86,6 +87,9 @@ public class BoardManager : MonoBehaviour {
 		//Librarian
 		GameObject lib =
 			Instantiate (librarian, new Vector3 (20, -7, 0f), Quaternion.identity) as GameObject;
+		//Boss
+		GameObject bos =
+			Instantiate (boss, new Vector3 (-5, 33, 0f), Quaternion.identity) as GameObject;
 		//Health Game
 		GameObject healthA =
 			Instantiate (health, new Vector3 (19, 14, 0f), Quaternion.identity) as GameObject;
