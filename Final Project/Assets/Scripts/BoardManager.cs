@@ -9,7 +9,7 @@ public class BoardManager : MonoBehaviour {
 	public int innerRows = 10;
 	public int outerColumns = 60;
 	public int outerRows = 50;
-	public int bossColumns = 25;
+	public int bossColumns = 15;
 	public int bossRows = 10;
 	public GameObject player;
 	public GameObject owl;
@@ -19,6 +19,7 @@ public class BoardManager : MonoBehaviour {
 	public GameObject health;
 	public GameObject plantA;
 	public GameObject pathT;
+	public GameObject pathE;
 	public GameObject librarian;
 	public GameObject girlTwin;
 	public GameObject boyTwin;
@@ -57,13 +58,13 @@ public class BoardManager : MonoBehaviour {
 			}
 		}
 		//boss 1
-		for (int x = -15; x < bossColumns + 1; x++) {
+		for (int x = 0; x < bossColumns + 1; x++) {
 			for (int y = -1; y < bossRows + 1; y++) {
 				GameObject toInstantiate = bossTiles [Random.Range (0, bossTiles.Length)];
-				if (x == -15 || x == bossColumns || y == -1 || y == bossRows)
+				if (x == 0 || x == bossColumns || y == -1 || y == bossRows)
 					toInstantiate = bossWalls [Random.Range (0, bossWalls.Length)];
 				GameObject instance =
-					Instantiate (toInstantiate, new Vector3 (x + 6, y + 23, 0f), Quaternion.identity) as GameObject;
+					Instantiate (toInstantiate, new Vector3 (x - 17, y + 23, 0f), Quaternion.identity) as GameObject;
 				instance.transform.SetParent (boardHolder);
 			}
 		}
@@ -111,6 +112,8 @@ public class BoardManager : MonoBehaviour {
 					Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
 			}
 		}
+		GameObject qPath =
+			Instantiate (pathE, new Vector3 (10, 23, 0f), Quaternion.identity) as GameObject;
 		GameObject rPath =
 			Instantiate (path, new Vector3 (9, 23, 0f), Quaternion.identity) as GameObject;
 		GameObject sPath =
