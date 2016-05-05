@@ -18,9 +18,7 @@ public class PathToBoss : MonoBehaviour {
 		
 		if (Input.GetKeyDown (KeyCode.LeftArrow)) 
 		{
-			Destroy (player);
-			GameObject playerI =
-				Instantiate (nPlayer, new Vector3 (6, 23, 0f), Quaternion.identity) as GameObject;
+			player.transform.position = new Vector3 (6, 23, 0);
 		}
 		return;
 	}

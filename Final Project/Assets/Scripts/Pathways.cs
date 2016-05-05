@@ -18,9 +18,7 @@ public class Pathways : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.RightArrow)) 
 		{
-			Destroy (player);
-			GameObject playerI =
-				Instantiate (nPlayer, new Vector3 (10, 3, 0f), Quaternion.identity) as GameObject;
+			player.transform.position = new Vector3 (10, 3, 0);
 		}
 		return;
 	}

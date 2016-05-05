@@ -89,7 +89,7 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (librarian, new Vector3 (20, -7, 0f), Quaternion.identity) as GameObject;
 		//Boss
 		GameObject bos =
-			Instantiate (boss, new Vector3 (-5, 33, 0f), Quaternion.identity) as GameObject;
+			Instantiate (boss, new Vector3 (-5, 28, 0f), Quaternion.identity) as GameObject;
 		//Health Game
 		GameObject healthA =
 			Instantiate (health, new Vector3 (19, 14, 0f), Quaternion.identity) as GameObject;
