@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class CountDown : MonoBehaviour {
 
-	float timeRemaining = 20;
+	float timeRemaining = 60;
 	GameObject player;
 	GameObject owlCur;
 	GameObject pickT;
@@ -52,7 +52,7 @@ public class CountDown : MonoBehaviour {
 		pTime = false;
 		GameObject playerR =
 			Instantiate (playerI, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
-		timeRemaining = 20;
+		timeRemaining = 60;
 		GameObject owlR =
 			Instantiate (owl[Random.Range(0,2)], new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
 		GameObject timeP =
