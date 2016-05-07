@@ -19,6 +19,7 @@ public class BoardManager : MonoBehaviour {
 	public GameObject path;
 	public GameObject health;
 	public GameObject plantA;
+	public GameObject plantB;
 	public GameObject pathT;
 	public GameObject pathE;
 	public GameObject librarian;
@@ -128,11 +129,11 @@ public class BoardManager : MonoBehaviour {
 		GameObject aPlant =
 			Instantiate (plantA, new Vector3 (10, 20, 0f), Quaternion.identity) as GameObject;
 		GameObject bPlant = 
-			Instantiate (plantA, new Vector3 (22, -15, 0f), Quaternion.identity) as GameObject;
+			Instantiate (plantB, new Vector3 (22, -15, 0f), Quaternion.identity) as GameObject;
 		GameObject cPlant =
 			Instantiate (plantA, new Vector3 (14, -3, 0f), Quaternion.identity) as GameObject;
 		GameObject dPlant =
-			Instantiate (plantA, new Vector3 (20, 3, 0f), Quaternion.identity) as GameObject;
+			Instantiate (plantB, new Vector3 (20, 3, 0f), Quaternion.identity) as GameObject;
 	}
 
 

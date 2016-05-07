@@ -13,12 +13,12 @@ public class GameManager : MonoBehaviour {
 	private int level = 1;
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 		boardScript = GetComponent<BoardManager> ();
 		InitGame ();
 	}
 
-	void InitGame ()
+	public void InitGame ()
 	{
 		boardScript.SetupScene(level);
 	}

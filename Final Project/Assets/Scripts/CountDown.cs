@@ -9,6 +9,8 @@ public class CountDown : MonoBehaviour {
 	GameObject player;
 	GameObject owlCur;
 	GameObject pickT;
+	GameObject darkI;
+	GameObject darkO;
 	public GameObject[] owl;
 	public GameObject playerI;
 	public GameObject timePick;
@@ -25,6 +27,8 @@ public class CountDown : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		owlCur = GameObject.FindGameObjectWithTag ("Owl");
 		pickT = GameObject.FindGameObjectWithTag ("Time");
+		darkI = GameObject.FindGameObjectWithTag ("DarknessI");
+		darkO = GameObject.FindGameObjectWithTag ("DarknessO");
 		//pTime = GameObject.Find ("TimePickUp").GetComponent<time> ();
 		timeRemaining -= Time.deltaTime;
 	}
@@ -38,8 +42,6 @@ public class CountDown : MonoBehaviour {
 			//countDownText.text = " "+(int)timeRemaining;
 		} else {
 			Destroy (player);
-			Destroy (owlCur);
-			Destroy (timePick);
 			Restart();
 		}
 		if (pTime == true) {
@@ -49,6 +51,10 @@ public class CountDown : MonoBehaviour {
 		
 
 	void Restart () {
+		Destroy (owlCur);
+		Destroy (timePick);
+		Destroy (darkO);
+		Destroy (darkI);
 		pTime = false;
 		GameObject playerR =
 			Instantiate (playerI, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
