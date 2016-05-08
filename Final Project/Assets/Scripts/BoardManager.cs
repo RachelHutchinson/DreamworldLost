@@ -27,6 +27,8 @@ public class BoardManager : MonoBehaviour {
 	public GameObject floorT;
 	public GameObject floorH;
 	public GameObject healthPick;
+	public GameObject darkO;
+	public GameObject darkB;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
 	public GameObject [] innerWalls;
@@ -128,8 +130,6 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (pathE, new Vector3 (10, 23, 0f), Quaternion.identity) as GameObject;
 		GameObject rPath =
 			Instantiate (path, new Vector3 (9, 23, 0f), Quaternion.identity) as GameObject;
-		GameObject sPath =
-			Instantiate (path, new Vector3 (8, 23, 0f), Quaternion.identity) as GameObject;
 		//Bush
 		GameObject aPlant =
 			Instantiate (plantA, new Vector3 (10, 20, 0f), Quaternion.identity) as GameObject;
@@ -139,6 +139,11 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (plantA, new Vector3 (14, -3, 0f), Quaternion.identity) as GameObject;
 		GameObject dPlant =
 			Instantiate (plantB, new Vector3 (20, 3, 0f), Quaternion.identity) as GameObject;
+		// Darkness
+		GameObject dark1 =
+			Instantiate (darkO, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
+		GameObject dark2 =
+			Instantiate (darkB, new Vector3 (-5, 22, 0f), Quaternion.identity) as GameObject;
 	}
 
 
