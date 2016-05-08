@@ -17,7 +17,6 @@ public class BoardManager : MonoBehaviour {
 	public GameObject music;
 	public GameObject boss;
 	public GameObject path;
-	public GameObject health;
 	public GameObject plantA;
 	public GameObject plantB;
 	public GameObject pathT;
@@ -25,6 +24,9 @@ public class BoardManager : MonoBehaviour {
 	public GameObject librarian;
 	public GameObject girlTwin;
 	public GameObject boyTwin;
+	public GameObject floorT;
+	public GameObject floorH;
+	public GameObject healthPick;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
 	public GameObject [] innerWalls;
@@ -91,12 +93,12 @@ public class BoardManager : MonoBehaviour {
 		//Boss
 		GameObject bos =
 			Instantiate (boss, new Vector3 (-5, 28, 0f), Quaternion.identity) as GameObject;
-		//Health Game
-		GameObject healthA =
-			Instantiate (health, new Vector3 (19, 14, 0f), Quaternion.identity) as GameObject;
 		//Music
 		GameObject musicI =
 			Instantiate (music, new Vector3 (22, -4, 0f), Quaternion.identity) as GameObject;
+		//Health Pickup
+		GameObject healthP =
+			Instantiate (healthPick, new Vector3 (0, 3, 0f), Quaternion.identity) as GameObject;
 		//Path
 		GameObject cPath =
 			Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
@@ -108,6 +110,11 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (path, new Vector3 (10, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject iPath =
 			Instantiate (pathT, new Vector3 (6, 3, 0f), Quaternion.identity) as GameObject;
+		//Special Tiles
+		GameObject fT =
+			Instantiate (floorT, new Vector3 (2, 7, 0f), Quaternion.identity) as GameObject;
+		GameObject hT =
+			Instantiate (floorH, new Vector3 (0, 3, 0f), Quaternion.identity) as GameObject;
 		//Path to Boss
 		for (int x = 3; x < 3 + 1; x++) {
 			for (int y = 3; y < 23 + 1; y++) 
@@ -123,8 +130,6 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (path, new Vector3 (9, 23, 0f), Quaternion.identity) as GameObject;
 		GameObject sPath =
 			Instantiate (path, new Vector3 (8, 23, 0f), Quaternion.identity) as GameObject;
-
-
 		//Bush
 		GameObject aPlant =
 			Instantiate (plantA, new Vector3 (10, 20, 0f), Quaternion.identity) as GameObject;
