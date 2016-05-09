@@ -12,9 +12,12 @@ public class CountDown : MonoBehaviour {
 	GameObject darkI;
 	GameObject darkO;
 	GameObject darkB;
+	public GameObject dark1;
+	public GameObject dark2;
 	public GameObject[] owl;
 	public GameObject playerI;
 	public GameObject timePick;
+	public AudioClip innerRoom;
 	public static bool pTime = false;
 
 
@@ -28,10 +31,6 @@ public class CountDown : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		owlCur = GameObject.FindGameObjectWithTag ("Owl");
 		pickT = GameObject.FindGameObjectWithTag ("Time");
-		darkI = GameObject.FindGameObjectWithTag ("DarknessI");
-		darkO = GameObject.FindGameObjectWithTag ("DarknessO");
-		darkB = GameObject.FindGameObjectWithTag ("DarknessB");
-		//pTime = GameObject.Find ("TimePickUp").GetComponent<time> ();
 		timeRemaining -= Time.deltaTime;
 	}
 
@@ -41,7 +40,6 @@ public class CountDown : MonoBehaviour {
 		int seconds = Mathf.FloorToInt (timeRemaining - minutes * 60);
 		string niceTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
 		if (timeRemaining > 0) {
-			//countDownText.text = " "+(int)timeRemaining;
 		} else {
 			Destroy (player);
 			Restart();
@@ -61,10 +59,11 @@ public class CountDown : MonoBehaviour {
 		Destroy (darkO);
 		Destroy (darkI);
 		Destroy (darkB);
-		GameObject dark1 =
-			Instantiate (darkO, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
-		GameObject dark2 =
-			Instantiate (darkB, new Vector3 (-5, 22, 0f), Quaternion.identity) as GameObject;
+		//SoundManager.instance.musicSource.Play (innerRoom);
+		GameObject darkL =
+			Instantiate (dark1, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
+		GameObject darkM =
+			Instantiate (dark2, new Vector3 (-5, 22, 0f), Quaternion.identity) as GameObject;
 		pTime = false;
 		GameObject playerR =
 			Instantiate (playerI, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
@@ -73,11 +72,11 @@ public class CountDown : MonoBehaviour {
 			Instantiate (owl[Random.Range(0,2)], new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
 		GameObject timeP =
 			Instantiate (timePick, new Vector3 (2, 7, 0f), Quaternion.identity) as GameObject;
-		CameraScript.instance.Start ();
-		CameraScript.instance.LateUpdate ();
 		Player.instance.Start ();
 		Player.instance.Update ();
 		OnGUI ();
 		Start ();
+		CameraScript.instance.Start ();
+		CameraScript.instance.LateUpdate ();
 	}
 }

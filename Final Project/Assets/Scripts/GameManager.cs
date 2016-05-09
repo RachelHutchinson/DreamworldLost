@@ -6,8 +6,7 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour {
 
 	private BoardManager boardScript;
-	public AudioClip roomSound1;
-	public AudioClip fieldSound1;
+
 
 
 	private int level = 1;

@@ -35,6 +35,7 @@ public class BoardManager : MonoBehaviour {
 	public GameObject [] outerWalls;
 	public GameObject [] bossTiles;
 	public GameObject [] bossWalls;
+	public AudioClip innerRoom;
 
 	private Transform boardHolder;
 	private List <Vector3> gridPositions = new List <Vector3> ();
@@ -190,6 +191,7 @@ public class BoardManager : MonoBehaviour {
 
 	public void SetupScene (int level)
 	{
+	//	SoundManager.instance.musicSource.Play (innerRoom);
 		BoardSetup ();
 		InitialiseList ();
 	}

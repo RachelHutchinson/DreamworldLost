@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour {
 
 	public AudioSource musicSource;
 	public static SoundManager instance = null;
+	public AudioSource efxSource;
 	public float lowPitchRange = 0.95f;
 	public float highPitchRange = 1.05f;
 
@@ -16,10 +17,11 @@ public class SoundManager : MonoBehaviour {
 			Destroy (gameObject);
 		DontDestroyOnLoad (gameObject);
 	}
-	
-	public void RandomizeSfx (params AudioClip [] clips)
+
+	public void PlaySingle (AudioClip clip)
 	{
-		int randomIndex = Random.Range (0, clips.Length);
-		float randomPitch = Random.Range (lowPitchRange, highPitchRange);
+		
+		efxSource.clip = clip;
+		efxSource.Play ();
 	}
-	}
+}

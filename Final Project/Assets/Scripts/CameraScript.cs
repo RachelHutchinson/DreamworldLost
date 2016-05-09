@@ -10,21 +10,24 @@ public class CameraScript : MonoBehaviour {
 
 	public void Start ()
 	{	
-		bossT = true;
 		player = GameObject.FindGameObjectWithTag ("Player");
 		offset = transform.position - player.transform.position;
+		bossT = true;
+	}
+
+	public void Update ()
+	{
+		if (bossT == false) {
+			Camera.main.orthographicSize = 8;
+		} else {
+			Camera.main.orthographicSize = 5;
+		}
 	}
 
 	public void LateUpdate ()
 	{ 
 		player = GameObject.FindGameObjectWithTag ("Player");
 		transform.position = player.transform.position + offset;
-		if (bossT == false) {
-			Camera.main.orthographicSize = 8;
-		} else {
-			Camera.main.orthographicSize = 5;
-		}
-			
 	}
 		
 }

@@ -9,9 +9,9 @@ public class Boss : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		GameObject hL =
-			Instantiate (handL, new Vector3 (-7, 28, 0f), Quaternion.identity) as GameObject;
+			Instantiate (handL, new Vector3 (1, 28, 0f), Quaternion.identity) as GameObject;
 		GameObject hR =
-			Instantiate (handR, new Vector3 (-3, 28, 0f), Quaternion.identity) as GameObject;
+			Instantiate (handR, new Vector3 (-11, 28, 0f), Quaternion.identity) as GameObject;
 	
 	}
 	
