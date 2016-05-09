@@ -26,7 +26,7 @@ public class Pathways : MonoBehaviour {
 			player.transform.position = new Vector3 (10, 3, 0);
 			GameObject dark =
 				Instantiate (darkness, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
-		//	SoundManager.instance.musicSource.Play (outerRoom);
+			SoundManager.instance.MainMusic (outerRoom);
 		}
 		return;
 	}

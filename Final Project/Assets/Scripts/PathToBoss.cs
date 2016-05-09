@@ -28,7 +28,7 @@ public class PathToBoss : MonoBehaviour {
 			player.transform.position = new Vector3 (6, 23, 0);
 			GameObject darkO =
 				Instantiate (dark, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
-		//	SoundManager.instance.musicSource.Play (boss);
+			SoundManager.instance.MainMusic (boss);
 		}
 		return;
 	}

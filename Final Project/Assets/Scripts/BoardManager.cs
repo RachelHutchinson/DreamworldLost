@@ -76,7 +76,7 @@ public class BoardManager : MonoBehaviour {
 			}
 		}
 		//Player
-		GameObject playerI =
+		GameObject playerI=
 			Instantiate (player, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
 		//Nurse
 		GameObject nurseI =
@@ -191,7 +191,7 @@ public class BoardManager : MonoBehaviour {
 
 	public void SetupScene (int level)
 	{
-	//	SoundManager.instance.musicSource.Play (innerRoom);
+		SoundManager.instance.MainMusic (innerRoom);
 		BoardSetup ();
 		InitialiseList ();
 	}

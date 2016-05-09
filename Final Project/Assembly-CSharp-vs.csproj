@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoardManager.cs" />
+     <Compile Include="Assets\Scripts\Boss.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\CountDown.cs" />
      <Compile Include="Assets\Scripts\DialogTrigger.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerT.cs" />
      <Compile Include="Assets\Scripts\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\TimePickUp.cs" />
      <Compile Include="Assets\Scripts\Wall.cs" />
      <None Include="Assets\Resources\testing.txt" />
  <Reference Include="UnityEngine.UI">

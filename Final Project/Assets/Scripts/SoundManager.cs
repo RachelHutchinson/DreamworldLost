@@ -18,10 +18,11 @@ public class SoundManager : MonoBehaviour {
 		DontDestroyOnLoad (gameObject);
 	}
 
-	public void PlaySingle (AudioClip clip)
+	public void MainMusic (AudioClip clip)
 	{
 		
-		efxSource.clip = clip;
-		efxSource.Play ();
+		musicSource.clip = clip;
+		musicSource.Play ();
 	}
+
 }
