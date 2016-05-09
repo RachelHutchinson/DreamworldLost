@@ -59,6 +59,12 @@ public class CountDown : MonoBehaviour {
 		Destroy (darkO);
 		Destroy (darkI);
 		Destroy (darkB);
+		darkI = GameObject.FindGameObjectWithTag ("DarknessI");
+		darkO = GameObject.FindGameObjectWithTag ("DarknessO");
+		darkB = GameObject.FindGameObjectWithTag ("DarknessB");
+		Destroy (darkO);
+		Destroy (darkI);
+		Destroy (darkB);
 		SoundManager.instance.MainMusic (innerRoom);
 		GameObject darkL =
 			Instantiate (dark1, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
