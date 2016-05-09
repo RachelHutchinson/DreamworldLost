@@ -13,10 +13,6 @@ public class Dialogue : MonoBehaviour {
 	void Start () {
 		dialogue = GetComponent<Text>();
 		dialogue.text = "";
-	
-		TextAsset Test = (TextAsset)Resources.Load ("testing");
-		string Tester = Test.text;
-		dialogueStrings [0] = Tester;
 	}
 	
 	// Update is called once per frame
@@ -27,8 +23,8 @@ public class Dialogue : MonoBehaviour {
 		}
 	}*/
 
-	public void StartText() {
-		StartCoroutine (DisplayString (dialogueStrings [0]));
+	public void StartText(string openingText) {
+		StartCoroutine (DisplayString (openingText));
 	}
 
 	private IEnumerator DisplayString(string stringToDisplay)

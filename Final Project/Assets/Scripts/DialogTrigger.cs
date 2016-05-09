@@ -4,6 +4,7 @@ using System.Collections;
 public class DialogTrigger : MonoBehaviour {
 
 	Dialogue NurseTrigger;
+	int numberOfDialogLines = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -17,12 +18,38 @@ public class DialogTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D (Collider2D other) {
-		Debug.Log ("Hello??");
 		//if space key is down
-		if (Input.GetKeyDown (KeyCode.Space)) 
+		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space)) 
 		{
-			NurseTrigger.StartText ();
+			if (numberOfDialogLines == 0)
+			{
+				NurseTrigger.StartText ("I'm a nurse!");
+				numberOfDialogLines = 1;
+			}
+			else if (numberOfDialogLines == 0)
+			{
+				NurseTrigger.StartText ("You are not!");
+
+				//make something appear
+				numberOfDialogLines = 2;
+
+				//set questCompleted to true
+			}
+			else
+			{
+				NurseTrigger.StartText ("");
+				numberOfDialogLines = 0;
+			}
 		}
-		//end if
+
+	}
+
+	void OnTriggerExit2D (Collider2D other) 
+	{
+		NurseTrigger.StartText ("");
+		numberOfDialogLines = 0;
 	}
 }
+
+//set bool for quest vs completed dialog
+//reward player for fulfilling a quest with pickup
