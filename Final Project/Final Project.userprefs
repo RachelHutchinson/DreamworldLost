@@ -1,9 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Dialogue.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BoardManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\DialogTrigger.cs" Line="55" Column="51" />
-      <File FileName="Assets\Scripts\Dialogue.cs" Line="21" Column="4" />
+      <File FileName="Assets\Scripts\BoardManager.cs" Line="130" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

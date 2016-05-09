@@ -26,6 +26,10 @@ public class BoardManager : MonoBehaviour {
 	public GameObject boyTwin;
 	public GameObject floorT;
 	public GameObject floorH;
+	public GameObject floorB;
+	public GameObject floorG;
+	public GameObject floorM;
+	public GameObject floorL;
 	public GameObject healthPick;
 	public GameObject darkO;
 	public GameObject darkB;
@@ -118,6 +122,14 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (floorT, new Vector3 (2, 7, 0f), Quaternion.identity) as GameObject;
 		GameObject hT =
 			Instantiate (floorH, new Vector3 (0, 3, 0f), Quaternion.identity) as GameObject;
+		GameObject bT =
+			Instantiate (floorB, new Vector3 (3, 0, 0f), Quaternion.identity) as GameObject;
+		GameObject gT =
+			Instantiate (floorG, new Vector3 (4, 0, 0f), Quaternion.identity) as GameObject;
+		GameObject mT =
+			Instantiate (floorM, new Vector3 (7, 2, 0f), Quaternion.identity) as GameObject;
+		GameObject lT =
+			Instantiate (floorL, new Vector3 (0, 5, 0f), Quaternion.identity) as GameObject;
 		//Path to Boss
 		for (int x = 3; x < 3 + 1; x++) {
 			for (int y = 3; y < 23 + 1; y++) 
