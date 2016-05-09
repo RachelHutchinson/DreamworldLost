@@ -7,7 +7,7 @@ public class Player : MovingObject {
 	private Animator animator;
 	GameObject player;
 	public static Player instance = null;
-	double coolDownTime = 0.5;
+	double coolDownTime = 0.7;
 	double currentCoolDownTime = 0;
 
 	//protected override void Start () 

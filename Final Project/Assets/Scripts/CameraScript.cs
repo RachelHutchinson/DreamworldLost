@@ -13,6 +13,7 @@ public class CameraScript : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		offset = transform.position - player.transform.position;
 		bossT = true;
+		Camera.main.orthographicSize = 5;
 	}
 
 	public void Update ()
