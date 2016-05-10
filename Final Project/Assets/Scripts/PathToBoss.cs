@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PathToBoss : MonoBehaviour {
 
@@ -7,6 +8,7 @@ public class PathToBoss : MonoBehaviour {
 	public GameObject dark;
 	public GameObject darkB;
 	public AudioClip boss;
+
 	
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
@@ -29,6 +31,7 @@ public class PathToBoss : MonoBehaviour {
 			GameObject darkO =
 				Instantiate (dark, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
 			SoundManager.instance.MainMusic (boss);
+			Boss.showTime = true;
 		}
 		return;
 	}

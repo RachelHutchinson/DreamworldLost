@@ -30,7 +30,6 @@ public class BoardManager : MonoBehaviour {
 	public GameObject floorG;
 	public GameObject floorM;
 	public GameObject floorL;
-	public GameObject healthPick;
 	public GameObject darkO;
 	public GameObject darkB;
 	public GameObject [] innerTiles;
@@ -103,9 +102,6 @@ public class BoardManager : MonoBehaviour {
 		//Music
 		GameObject musicI =
 			Instantiate (music, new Vector3 (22, -4, 0f), Quaternion.identity) as GameObject;
-		//Health Pickup
-		GameObject healthP =
-			Instantiate (healthPick, new Vector3 (0, 3, 0f), Quaternion.identity) as GameObject;
 		//Path
 		GameObject cPath =
 			Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;

@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour {
 
 	private BoardManager boardScript;
+	public int playerHealth;
 
 
 
@@ -24,5 +25,7 @@ public class GameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	}
+		Boss score = GetComponent <Boss> ();
+		playerHealth = score.playerHealth; 
+		}
 }

@@ -50,7 +50,7 @@ public class CountDown : MonoBehaviour {
 	}
 		
 
-	void Restart () {
+	public void Restart () {
 		Destroy (owlCur);
 		Destroy (timePick);
 		darkI = GameObject.FindGameObjectWithTag ("DarknessI");
@@ -80,6 +80,8 @@ public class CountDown : MonoBehaviour {
 			Instantiate (timePick, new Vector3 (2, 7, 0f), Quaternion.identity) as GameObject;
 		Player.instance.Start ();
 		Player.instance.Update ();
+		//Boss.instance.Start ();
+		//Boss.instance.Update ();
 		OnGUI ();
 		Start ();
 		CameraScript.instance.Start ();
