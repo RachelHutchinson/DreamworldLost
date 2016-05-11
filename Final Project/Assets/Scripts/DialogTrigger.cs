@@ -3,8 +3,10 @@ using System.Collections;
 
 public class DialogTrigger : MonoBehaviour {
 
+	float dialogueCoolDown = 0;
 	Dialogue NurseTrigger;
 	int numberOfDialogLines = 0;
+	bool isNurseQuestComplete;
 
 	// Use this for initialization
 	void Start () {
@@ -14,31 +16,72 @@ public class DialogTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.GetKeyDown (KeyCode.A)) 
+		{
+			isNurseQuestComplete = true;
+		}
+		dialogueCoolDown -= Time.deltaTime;
 	}
 
 	void OnTriggerStay2D (Collider2D other) {
 		//if space key is down
-		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space)) 
+		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space)&& dialogueCoolDown <= 0) 
 		{
-			if (numberOfDialogLines == 0)
-			{
-				NurseTrigger.StartText ("I'm a nurse!");
-				numberOfDialogLines = 1;
-			}
-			else if (numberOfDialogLines == 0)
-			{
-				NurseTrigger.StartText ("You are not!");
+			if (isNurseQuestComplete == false) {
+				if (numberOfDialogLines == 0)
+				{
+					dialogueCoolDown = NurseTrigger.StartText ("Hello, I'm the Nurse!");
+					numberOfDialogLines = 1;
+				}
+				else if (numberOfDialogLines == 1)
+				{
+					dialogueCoolDown = NurseTrigger.StartText ("Could you please help me?");
+					numberOfDialogLines = 2;
+				}
+				else if (numberOfDialogLines == 2)
+				{
+					dialogueCoolDown = NurseTrigger.StartText ("Please press 'A' and then come speak to me.");
+				
+					//make something appear
+					numberOfDialogLines = 3;
+				
+					//set questCompleted to true
+				}
 
-				//make something appear
-				numberOfDialogLines = 2;
-
-				//set questCompleted to true
+				else
+				{
+					NurseTrigger.StartText ("");
+					numberOfDialogLines = 0;
+				}
+			
 			}
-			else
+			else 
 			{
-				NurseTrigger.StartText ("");
-				numberOfDialogLines = 0;
+				if (numberOfDialogLines == 0)
+				{
+					dialogueCoolDown = NurseTrigger.StartText ("Oh, thank you!");
+					numberOfDialogLines = 1;
+				}
+				else if (numberOfDialogLines == 1)
+				{
+					dialogueCoolDown = NurseTrigger.StartText ("You did great!");
+					numberOfDialogLines = 2;
+				}
+				else if (numberOfDialogLines == 2)
+				{
+					dialogueCoolDown = NurseTrigger.StartText ("Please take this as a reward.");
+					
+					//send pickup to room for future use
+					numberOfDialogLines = 3;
+					
+					//set questCompleted to true, unable to redo this quest after doing it once
+				}
+
+				else
+				{
+					NurseTrigger.StartText ("");
+					numberOfDialogLines = 0;
+				}
 			}
 		}
 
@@ -49,6 +92,8 @@ public class DialogTrigger : MonoBehaviour {
 		NurseTrigger.StartText ("");
 		numberOfDialogLines = 0;
 	}
+
+
 }
 
 //set bool for quest vs completed dialog

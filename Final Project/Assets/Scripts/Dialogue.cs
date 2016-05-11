@@ -6,7 +6,7 @@ public class Dialogue : MonoBehaviour {
 
 	private Text dialogue;
 	public string[] dialogueStrings;
-	public float secondsBetweenCharacters = 0.4f; 
+	public float secondsBetweenCharacters = 0.1f; 
 
 
 	// Use this for initialization
@@ -16,15 +16,9 @@ public class Dialogue : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	/*void Update () {
-		if (Input.GetKeyDown (KeyCode.Space)) 
-		{
-			StartCoroutine (DisplayString (dialogueStrings [0]));
-		}
-	}*/
-
-	public void StartText(string openingText) {
+	public float StartText(string openingText) {
 		StartCoroutine (DisplayString (openingText));
+		return openingText.Length * secondsBetweenCharacters;
 	}
 
 	private IEnumerator DisplayString(string stringToDisplay)
