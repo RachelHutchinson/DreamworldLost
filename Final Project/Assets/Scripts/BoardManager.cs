@@ -32,6 +32,7 @@ public class BoardManager : MonoBehaviour {
 	public GameObject floorL;
 	public GameObject darkO;
 	public GameObject darkB;
+	public GameObject [] treeTiles;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
 	public GameObject [] innerWalls;
@@ -89,13 +90,13 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (owl, new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
 		//BoyTwin
 		GameObject boyI =
-			Instantiate (boyTwin, new Vector3 (10, -3, 0f), Quaternion.identity) as GameObject;
+			Instantiate (boyTwin, new Vector3 (16, -15, 0f), Quaternion.identity) as GameObject;
 		//GirlTwin
 		GameObject girlI =
-			Instantiate (girlTwin, new Vector3 (11, -3, 0f), Quaternion.identity) as GameObject;
+			Instantiate (girlTwin, new Vector3 (17, -15, 0f), Quaternion.identity) as GameObject;
 		//Librarian
 		GameObject lib =
-			Instantiate (librarian, new Vector3 (20, -7, 0f), Quaternion.identity) as GameObject;
+			Instantiate (librarian, new Vector3 (11, -3, 0f), Quaternion.identity) as GameObject;
 		//Boss
 		GameObject bos =
 			Instantiate (boss, new Vector3 (-5, 28, 0f), Quaternion.identity) as GameObject;
@@ -153,6 +154,40 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (darkO, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
 		GameObject dark2 =
 			Instantiate (darkB, new Vector3 (-5, 22, 0f), Quaternion.identity) as GameObject;
+		// Tree Set Up
+		GameObject tree =
+			Instantiate (treeTiles[0], new Vector3 (15, -14, 0f), Quaternion.identity) as GameObject;
+		GameObject treeO =
+			Instantiate (treeTiles[1], new Vector3 (16, -14, 0f), Quaternion.identity) as GameObject;
+		GameObject treeP =
+			Instantiate (treeTiles[2], new Vector3 (17, -14, 0f), Quaternion.identity) as GameObject;
+		GameObject treeQ =
+			Instantiate (treeTiles[3], new Vector3 (15, -13, 0f), Quaternion.identity) as GameObject;
+		GameObject TreeR =
+			Instantiate (treeTiles[4], new Vector3 (16, -13, 0f), Quaternion.identity) as GameObject;
+		GameObject TreeS =
+			Instantiate (treeTiles[5], new Vector3 (17, -13, 0f), Quaternion.identity) as GameObject;
+		GameObject treeT =
+			Instantiate (treeTiles[6], new Vector3 (15, -12, 0f), Quaternion.identity) as GameObject;
+		GameObject treeU =
+			Instantiate (treeTiles[7], new Vector3 (16, -12, 0f), Quaternion.identity) as GameObject;
+		GameObject treeV =
+			Instantiate (treeTiles[8], new Vector3 (17, -12, 0f), Quaternion.identity) as GameObject;
+		GameObject treeW =
+			Instantiate (treeTiles[9], new Vector3 (15, -11, 0f), Quaternion.identity) as GameObject;
+		GameObject TreeX =
+			Instantiate (treeTiles[10], new Vector3 (16, -11, 0f), Quaternion.identity) as GameObject;
+		GameObject TreeY =
+			Instantiate (treeTiles[11], new Vector3 (17, -11, 0f), Quaternion.identity) as GameObject;
+		GameObject TreeZ =
+			Instantiate (treeTiles[12], new Vector3 (15, -10, 0f), Quaternion.identity) as GameObject;
+		GameObject treeA =
+			Instantiate (treeTiles[13], new Vector3 (16, -10, 0f), Quaternion.identity) as GameObject;
+		GameObject TreeB =
+			Instantiate (treeTiles[14], new Vector3 (17, -10, 0f), Quaternion.identity) as GameObject;
+		GameObject TreeC =
+			Instantiate (treeTiles[15], new Vector3 (16, -9, 0f), Quaternion.identity) as GameObject;
+
 	}
 
 
