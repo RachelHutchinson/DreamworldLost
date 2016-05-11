@@ -9,8 +9,10 @@ public class Boss : MonoBehaviour {
 	public GameObject handR;
 	public int playerHealth;
 	public int damageOne;
+	GameObject player;
 	public static bool showTime = false;
 	public static bool attackle = false;
+	public static bool hit = false;
 	Text playerHealthText;
 	public int[] xCor = new int[21];
 	public int[] yCor = new int[7];
@@ -36,19 +38,17 @@ public class Boss : MonoBehaviour {
 			StartCoroutine (AttackTime ());
 			attackle = false;
 		}
-	}
-
-	void OnTriggerStay2D (Collider2D other) 
-	{
-		if(other.tag == "Player"){
-		playerHealth = playerHealth - damageOne;
-			Debug.Log ("Hit!");
+		if (hit == true){	
+			playerHealth = playerHealth - damageOne;
+			hit = false;
 		}
-	}		
+	}
 
 	public IEnumerator AttackTime ()
 	{
 			yield return new WaitForSeconds (3);
+			GameObject testHand =
+			Instantiate (handL, new Vector3 (0, 25, 0f), Quaternion.identity) as GameObject;
 			GameObject hand =
 			Instantiate (handL, new Vector3 (Random.Range(-15, xCor.Length-15), Random.Range(23, yCor.Length+23), 0f), Quaternion.identity) as GameObject;
 			yield return new WaitForSeconds (1);
@@ -79,6 +79,5 @@ public class Boss : MonoBehaviour {
 		yield return new WaitForSeconds (1);
 		Destroy (handX);
 	}
-
 
 }
