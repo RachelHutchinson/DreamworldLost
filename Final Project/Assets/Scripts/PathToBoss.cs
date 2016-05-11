@@ -32,6 +32,7 @@ public class PathToBoss : MonoBehaviour {
 				Instantiate (dark, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
 			SoundManager.instance.MainMusic (boss);
 			Boss.showTime = true;
+			Boss.attackle = true;
 		}
 		return;
 	}

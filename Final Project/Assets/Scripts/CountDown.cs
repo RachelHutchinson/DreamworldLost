@@ -86,5 +86,7 @@ public class CountDown : MonoBehaviour {
 		Start ();
 		CameraScript.instance.Start ();
 		CameraScript.instance.LateUpdate ();
+		Boss.showTime = false;
+		Boss.attackle = false;
 	}
 }
