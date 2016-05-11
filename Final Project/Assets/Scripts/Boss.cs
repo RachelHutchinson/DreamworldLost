@@ -12,10 +12,8 @@ public class Boss : MonoBehaviour {
 	public static bool showTime = false;
 	public static bool attackle = false;
 	Text playerHealthText;
-	//public int[] xCor = new int[16] {-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5};
-	//public int[] yCor = new int[5] {22, 23, 24, 25, 26};
-	//public int xCord;
-	//public int yCord;
+	public int[] xCor = new int[21];
+	public int[] yCor = new int[7];
 
 
 	public void Start () 
@@ -52,26 +50,35 @@ public class Boss : MonoBehaviour {
 	{
 			yield return new WaitForSeconds (3);
 			GameObject hand =
-				Instantiate (handL, new Vector3 (3, 25, 0f), Quaternion.identity) as GameObject;
+			Instantiate (handL, new Vector3 (Random.Range(-15, xCor.Length-15), Random.Range(23, yCor.Length+23), 0f), Quaternion.identity) as GameObject;
 			yield return new WaitForSeconds (1);
 			Destroy (hand);
 			yield return new WaitForSeconds (3);
 			GameObject handT =
-				Instantiate (handR, new Vector3 (-5, 26, 0f), Quaternion.identity) as GameObject;
+			Instantiate (handR, new Vector3 (Random.Range(-15, xCor.Length-15), Random.Range(23, yCor.Length+23), 0f), Quaternion.identity) as GameObject;
 			yield return new WaitForSeconds (1);
 			Destroy (handT);
+		yield return new WaitForSeconds (3);
+		GameObject handU =
+			Instantiate (handL, new Vector3 (Random.Range(-15, xCor.Length-15), Random.Range(23, yCor.Length+23), 0f), Quaternion.identity) as GameObject;
+		yield return new WaitForSeconds (1);
+		Destroy (handU);
+		yield return new WaitForSeconds (3);
+		GameObject handV =
+			Instantiate (handR, new Vector3 (Random.Range (-15, xCor.Length-15), Random.Range(23, yCor.Length+23), 0f), Quaternion.identity) as GameObject;
+		yield return new WaitForSeconds (1);
+		Destroy (handV);
+		yield return new WaitForSeconds (3);
+		GameObject handW =
+			Instantiate (handL, new Vector3 (Random.Range(-15, xCor.Length-15), Random.Range(23, yCor.Length+23), 0f), Quaternion.identity) as GameObject;
+		yield return new WaitForSeconds (1);
+		Destroy (handW);
+		yield return new WaitForSeconds (3);
+		GameObject handX =
+			Instantiate (handR, new Vector3 (Random.Range(-15, xCor.Length-15), Random.Range(23, yCor.Length+23), 0f), Quaternion.identity) as GameObject;
+		yield return new WaitForSeconds (1);
+		Destroy (handX);
 	}
-
-	//public void xRandom ()
-	//{
-		//xCord = Random.Range(0, xCor.Length);
-	//}
-
-	//public void yRandom ()
-	//{
-		//yCord = Random.Range(0, yCor.Length);
-	//}
-
 
 
 }
