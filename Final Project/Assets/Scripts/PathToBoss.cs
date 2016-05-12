@@ -4,35 +4,37 @@ using UnityEngine.UI;
 
 public class PathToBoss : MonoBehaviour {
 
-	GameObject player;
+	public GameObject player;
 	public GameObject dark;
 	public GameObject darkB;
 	public AudioClip boss;
 
 	
 	void Start () {
-		player = GameObject.FindGameObjectWithTag ("Player");
+
 	}
 
 	void Update () {
-		player = GameObject.FindGameObjectWithTag ("Player");
-		darkB = GameObject.FindGameObjectWithTag ("DarknessB");
 	}
 	
-	void OnTriggerStay2D (Collider2D other) {
+	void OnTriggerEnter2D (Collider2D other) {
 		
-		if (Input.GetKeyDown (KeyCode.LeftArrow)) 
+		if (Input.GetKey (KeyCode.LeftArrow)) 
 		{
-			Destroy (darkB);
-			darkB = GameObject.FindGameObjectWithTag ("DarknessB");
-			Destroy (darkB);
+			darkB.SetActive(false);
+		}
+		return;
+	}
+	void OnTriggerExit2D (Collider2D other) {
+		
+		if (Input.GetKey (KeyCode.LeftArrow)) {
 			CameraScript.bossT = false;
-			player.transform.position = new Vector3 (6, 23, 0);
-			GameObject darkO =
-				Instantiate (dark, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
 			SoundManager.instance.MainMusic (boss);
 			Boss.showTime = true;
 			Boss.attackle = true;
+			dark.SetActive (true);
+		} else {
+			CameraScript.bossT = true;
 		}
 		return;
 	}

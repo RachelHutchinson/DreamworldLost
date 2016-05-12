@@ -59,6 +59,11 @@ public class Player : MovingObject {
 			animator.SetTrigger ("playerI");
 		}
 	}
+
+	public void Walk(int xDir, int yDir) {
+		RaycastHit2D rHit;
+		Move (xDir, yDir, out rHit);
+	}
 		
 
 	protected override void AttemptMove <T> (int xDir, int yDir)

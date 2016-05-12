@@ -3,33 +3,41 @@ using System.Collections;
 
 public class Pathways : MonoBehaviour {
 
-	GameObject player;
-	public GameObject darkness;
+	public GameObject player;
+	public GameObject darkI;
 	public GameObject darkO;
-	public AudioClip outerRoom;
 
+	public AudioClip outerRoom;
+	public int room;
+	//x and y of the wall of the room you just left
+	//wall
 
 	void Start () {
-		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
 	void Update () {
-		player = GameObject.FindGameObjectWithTag ("Player");
-		darkO = GameObject.FindGameObjectWithTag ("DarknessO");
 	}
 
-	void OnTriggerStay2D (Collider2D other) {
+	void OnTriggerEnter2D (Collider2D other) {
 
-		if (Input.GetKeyDown (KeyCode.RightArrow)) 
+		if (Input.GetKey (KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) 
 		{
-			Destroy (darkO);
-			player.transform.position = new Vector3 (10, 3, 0);
-			GameObject dark =
-				Instantiate (darkness, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
+			darkO.SetActive(false);
+			darkI.SetActive(false);
+
 			SoundManager.instance.MainMusic (outerRoom);
 		}
-		return;
 	}
+
+	void OnTriggerExit2D (Collider2D other) {
 		
+		if (Input.GetKey (KeyCode.RightArrow)) {
+			//make wall appear
+			darkI.SetActive (true);
+			SoundManager.instance.MainMusic (outerRoom);
+		} else {
+			darkO.SetActive (true);
+		}
+	}		
 
 }

@@ -52,9 +52,9 @@ public class Boss : MonoBehaviour {
 			addedHealth = false;
 		}
 		if (playerHealth < 1) {
+			playerHealth = 100;
 			CountDown countDown = GameObject.Find("Timer").GetComponent<CountDown>();
 			countDown.Restart ();
-			playerHealth = 100;
 		}
 	}
 

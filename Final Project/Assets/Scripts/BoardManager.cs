@@ -30,6 +30,7 @@ public class BoardManager : MonoBehaviour {
 	public GameObject floorG;
 	public GameObject floorM;
 	public GameObject floorL;
+	public GameObject darkI;
 	public GameObject darkO;
 	public GameObject darkB;
 	public GameObject flower;
@@ -52,6 +53,7 @@ public class BoardManager : MonoBehaviour {
 		//Room 1
 		for (int x = -1; x < innerColumns + 1; x++) {
 			for (int y = -1; y < innerRows + 1; y++) {
+				if (x == 8 && y == 3) { continue; }
 				GameObject toInstantiate = innerTiles [Random.Range (0, innerTiles.Length)];
 				if (x == -1 || x == innerColumns || y == -1 || y == innerRows)
 					toInstantiate = innerWalls [Random.Range (0, innerWalls.Length)];
@@ -62,6 +64,8 @@ public class BoardManager : MonoBehaviour {
 		//Room 2
 		for (int x = 9; x < outerColumns + 1; x++) {
 			for (int y = -20; y < outerRows + 1; y++) {
+				if (x == 9 && y == 3) { continue; }
+				if (x == 9 && y == 23) { continue; }
 				GameObject toInstantiate = outerTiles [Random.Range (0, outerTiles.Length)];
 				if (x == 9 || x == outerColumns || y == -20 || y == outerRows)
 					toInstantiate = outerWalls [Random.Range (0, outerWalls.Length)];
@@ -72,6 +76,7 @@ public class BoardManager : MonoBehaviour {
 		//boss 1
 		for (int x = -10; x < bossColumns + 1; x++) {
 			for (int y = 0; y < bossRows + 1; y++) {
+				if (x == 15 && y == 1) { continue; }
 				GameObject toInstantiate = bossTiles [Random.Range (0, bossTiles.Length)];
 				if (x == -10 || x == bossColumns || y == 0 || y == bossRows)
 					toInstantiate = bossWalls [Random.Range (0, bossWalls.Length)];
@@ -81,7 +86,7 @@ public class BoardManager : MonoBehaviour {
 			}
 		}
 		//Player
-		GameObject playerI=
+		GameObject playerI =
 			Instantiate (player, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
 		//Nurse
 		GameObject nurseI =
@@ -105,19 +110,40 @@ public class BoardManager : MonoBehaviour {
 		GameObject bos =
 			Instantiate (boss, new Vector3 (-5, 28, 0f), Quaternion.identity) as GameObject;
 		//Music
-		GameObject musicI =
-			Instantiate (music, new Vector3 (22, -4, 0f), Quaternion.identity) as GameObject;
+		Instantiate (music, new Vector3 (22, -4, 0f), Quaternion.identity);
+		// Darkness
+		GameObject dark =
+			Instantiate (darkI, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
+		GameObject dark1 =
+			Instantiate (darkO, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
+		GameObject dark2 =
+			Instantiate (darkB, new Vector3 (-5, 22, 0f), Quaternion.identity) as GameObject;
+		//Add darkness to countdown for reset
+		GameObject timer = GameObject.Find ("Timer");
+		CountDown countDown = timer.GetComponent<CountDown> ();
+		countDown.darkI = dark;
+		countDown.darkO = dark1;
+		countDown.darkB = dark2;
+
 		//Path
 		GameObject cPath =
-			Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
+			Instantiate (path, new Vector3 (7, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject dPath =
-			Instantiate (path, new Vector3 (9, 3, 0f), Quaternion.identity) as GameObject;
+			Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject gPath =
-			Instantiate (pathT, new Vector3 (7, 3, 0f), Quaternion.identity) as GameObject;
+			Instantiate (pathT, new Vector3 (9, 3, 0f), Quaternion.identity) as GameObject;
+
+		Pathways pathScript = gPath.GetComponent<Pathways> ();
+		pathScript.player = playerI;
+		pathScript.darkI = dark;
+		pathScript.darkO = dark1;
+
 		GameObject hPath =
 			Instantiate (path, new Vector3 (10, 3, 0f), Quaternion.identity) as GameObject;
 		GameObject iPath =
-			Instantiate (pathT, new Vector3 (6, 3, 0f), Quaternion.identity) as GameObject;
+			Instantiate (path, new Vector3 (6, 3, 0f), Quaternion.identity) as GameObject;
+
+		dark.SetActive (false);
 		//Special Tiles
 		GameObject fT =
 			Instantiate (floorT, new Vector3 (2, 7, 0f), Quaternion.identity) as GameObject;
@@ -142,6 +168,11 @@ public class BoardManager : MonoBehaviour {
 		}
 		GameObject qPath =
 			Instantiate (pathE, new Vector3 (10, 23, 0f), Quaternion.identity) as GameObject;
+		PathToBoss pathScript2 = qPath.GetComponent<PathToBoss> ();
+		pathScript2.player = playerI;
+		pathScript2.dark = dark1;
+		pathScript2.darkB = dark2;
+
 		GameObject rPath =
 			Instantiate (path, new Vector3 (9, 23, 0f), Quaternion.identity) as GameObject;
 		//Bush
@@ -153,11 +184,7 @@ public class BoardManager : MonoBehaviour {
 			Instantiate (plantA, new Vector3 (14, -3, 0f), Quaternion.identity) as GameObject;
 		GameObject dPlant =
 			Instantiate (plantB, new Vector3 (20, 3, 0f), Quaternion.identity) as GameObject;
-		// Darkness
-		GameObject dark1 =
-			Instantiate (darkO, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
-		GameObject dark2 =
-			Instantiate (darkB, new Vector3 (-5, 22, 0f), Quaternion.identity) as GameObject;
+
 		// Tree Set Up
 		GameObject tree =
 			Instantiate (treeTiles[0], new Vector3 (15, -14, 0f), Quaternion.identity) as GameObject;
@@ -242,5 +269,7 @@ public class BoardManager : MonoBehaviour {
 		BoardSetup ();
 		InitialiseList ();
 	}
+
+
 }
 

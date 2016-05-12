@@ -9,9 +9,9 @@ public class CountDown : MonoBehaviour {
 	GameObject player;
 	GameObject owlCur;
 	GameObject pickT;
-	GameObject darkI;
-	GameObject darkO;
-	GameObject darkB;
+	public GameObject darkI;
+	public GameObject darkO;
+	public GameObject darkB;
 	public GameObject dark1;
 	public GameObject dark2;
 	public GameObject[] owl;
@@ -49,45 +49,28 @@ public class CountDown : MonoBehaviour {
 		}
 	}
 		
-
 	public void Restart () {
-			Destroy (player);
-			Destroy (owlCur);
-			Destroy (timePick);
-			darkI = GameObject.FindGameObjectWithTag ("DarknessI");
-			darkO = GameObject.FindGameObjectWithTag ("DarknessO");
-			darkB = GameObject.FindGameObjectWithTag ("DarknessB");
-			Destroy (darkO);
-			Destroy (darkI);
-			Destroy (darkB);
-			darkI = GameObject.FindGameObjectWithTag ("DarknessI");
-			darkO = GameObject.FindGameObjectWithTag ("DarknessO");
-			darkB = GameObject.FindGameObjectWithTag ("DarknessB");
-			Destroy (darkO);
-			Destroy (darkI);
-			Destroy (darkB);
-			SoundManager.instance.MainMusic (innerRoom);
-			GameObject darkL =
-			Instantiate (dark1, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
-			GameObject darkM =
-			Instantiate (dark2, new Vector3 (-5, 22, 0f), Quaternion.identity) as GameObject;
-			pTime = false;
-			GameObject playerR =
-			Instantiate (playerI, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
-			timeRemaining = 120;
-			GameObject owlR =
+		Destroy (player);
+		player = Instantiate(playerI, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
+		Player playerScript = player.GetComponent<Player> ();
+		playerScript.Start ();
+
+		Destroy (owlCur);
+		Destroy (timePick);
+		darkI.SetActive(false);
+		darkO.SetActive(true);
+		darkB.SetActive(true);
+		SoundManager.instance.MainMusic (innerRoom);
+		pTime = false;
+		timeRemaining = 120;
+		GameObject owlR =
 			Instantiate (owl [Random.Range (0, 2)], new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
-			GameObject timeP =
+		GameObject timeP =
 			Instantiate (timePick, new Vector3 (2, 7, 0f), Quaternion.identity) as GameObject;
-			Player.instance.Start ();
-			Player.instance.Update ();
-			OnGUI ();
-			Start ();
-			CameraScript.instance.Start ();
-			CameraScript.instance.LateUpdate ();
-			Boss.showTime = false;
-			Boss.attackle = false;
-			Boss.startAttack = false;
-			Boss.addedHealth = false;
+		Boss.showTime = false;
+		Boss.attackle = false;
+		Boss.startAttack = false;
+		Boss.addedHealth = false;
+		CameraScript.bossT = true;
 	}
 }
