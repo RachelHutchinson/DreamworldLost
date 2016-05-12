@@ -8,7 +8,6 @@ public class Boss : MonoBehaviour {
 	public GameObject handL;
 	public GameObject handR;
 	public int playerHealth;
-	public int damageOne;
 	GameObject player;
 	public static bool showTime = false;
 	public static bool attackle = false;
@@ -44,12 +43,18 @@ public class Boss : MonoBehaviour {
 			attackle = false;
 		}
 		if (hit == true){	
-			playerHealth = playerHealth - damageOne;
+			playerHealth = playerHealth - 20;
+			Debug.Log (playerHealth);
 			hit = false;
 		}
 		if (addedHealth == true) {
 			playerHealth = playerHealth + 200;
 			addedHealth = false;
+		}
+		if (playerHealth < 1) {
+			CountDown countDown = GameObject.Find("Timer").GetComponent<CountDown>();
+			countDown.Restart ();
+			playerHealth = 100;
 		}
 	}
 

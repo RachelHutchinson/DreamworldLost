@@ -19,6 +19,8 @@ public class CountDown : MonoBehaviour {
 	public GameObject timePick;
 	public AudioClip innerRoom;
 	public static bool pTime = false;
+	public static CountDown instance = null;
+
 
 	// Use this for initialization
 	void Start () {
@@ -40,8 +42,7 @@ public class CountDown : MonoBehaviour {
 		string niceTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
 		if (timeRemaining > 0) {
 		} else {
-			Destroy (player);
-			Restart();
+			Restart ();
 		}
 		if (pTime == true) {
 			GUI.Label (new Rect (10, 10, 250, 100), niceTime);
@@ -50,42 +51,43 @@ public class CountDown : MonoBehaviour {
 		
 
 	public void Restart () {
-		Destroy (owlCur);
-		Destroy (timePick);
-		darkI = GameObject.FindGameObjectWithTag ("DarknessI");
-		darkO = GameObject.FindGameObjectWithTag ("DarknessO");
-		darkB = GameObject.FindGameObjectWithTag ("DarknessB");
-		Destroy (darkO);
-		Destroy (darkI);
-		Destroy (darkB);
-		darkI = GameObject.FindGameObjectWithTag ("DarknessI");
-		darkO = GameObject.FindGameObjectWithTag ("DarknessO");
-		darkB = GameObject.FindGameObjectWithTag ("DarknessB");
-		Destroy (darkO);
-		Destroy (darkI);
-		Destroy (darkB);
-		SoundManager.instance.MainMusic (innerRoom);
-		GameObject darkL =
+			Destroy (player);
+			Destroy (owlCur);
+			Destroy (timePick);
+			darkI = GameObject.FindGameObjectWithTag ("DarknessI");
+			darkO = GameObject.FindGameObjectWithTag ("DarknessO");
+			darkB = GameObject.FindGameObjectWithTag ("DarknessB");
+			Destroy (darkO);
+			Destroy (darkI);
+			Destroy (darkB);
+			darkI = GameObject.FindGameObjectWithTag ("DarknessI");
+			darkO = GameObject.FindGameObjectWithTag ("DarknessO");
+			darkB = GameObject.FindGameObjectWithTag ("DarknessB");
+			Destroy (darkO);
+			Destroy (darkI);
+			Destroy (darkB);
+			SoundManager.instance.MainMusic (innerRoom);
+			GameObject darkL =
 			Instantiate (dark1, new Vector3 (18, 2, 0f), Quaternion.identity) as GameObject;
-		GameObject darkM =
+			GameObject darkM =
 			Instantiate (dark2, new Vector3 (-5, 22, 0f), Quaternion.identity) as GameObject;
-		pTime = false;
-		GameObject playerR =
+			pTime = false;
+			GameObject playerR =
 			Instantiate (playerI, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
-		timeRemaining = 120;
-		GameObject owlR =
-			Instantiate (owl[Random.Range(0,2)], new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
-		GameObject timeP =
+			timeRemaining = 120;
+			GameObject owlR =
+			Instantiate (owl [Random.Range (0, 2)], new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
+			GameObject timeP =
 			Instantiate (timePick, new Vector3 (2, 7, 0f), Quaternion.identity) as GameObject;
-		Player.instance.Start ();
-		Player.instance.Update ();
-		OnGUI ();
-		Start ();
-		CameraScript.instance.Start ();
-		CameraScript.instance.LateUpdate ();
-		Boss.showTime = false;
-		Boss.attackle = false;
-		Boss.startAttack = false;
-		Boss.addedHealth = false;
+			Player.instance.Start ();
+			Player.instance.Update ();
+			OnGUI ();
+			Start ();
+			CameraScript.instance.Start ();
+			CameraScript.instance.LateUpdate ();
+			Boss.showTime = false;
+			Boss.attackle = false;
+			Boss.startAttack = false;
+			Boss.addedHealth = false;
 	}
 }
