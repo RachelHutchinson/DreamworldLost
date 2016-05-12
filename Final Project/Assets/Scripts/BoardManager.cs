@@ -32,6 +32,7 @@ public class BoardManager : MonoBehaviour {
 	public GameObject floorL;
 	public GameObject darkO;
 	public GameObject darkB;
+	public GameObject flower;
 	public GameObject [] treeTiles;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
@@ -85,6 +86,9 @@ public class BoardManager : MonoBehaviour {
 		//Nurse
 		GameObject nurseI =
 			Instantiate (nurse, new Vector3 (18, 14, 0f), Quaternion.identity) as GameObject;
+		//Flower
+		GameObject flowerO =
+			Instantiate (flower, new Vector3 (18, -13, 0f), Quaternion.identity) as GameObject;
 		//Owl
 		GameObject owlI =
 			Instantiate (owl, new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;

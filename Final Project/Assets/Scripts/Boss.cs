@@ -13,6 +13,7 @@ public class Boss : MonoBehaviour {
 	public static bool showTime = false;
 	public static bool attackle = false;
 	public static bool startAttack = false;
+	public static bool addedHealth = false;
 	public static bool hit = false;
 	Text playerHealthText;
 	public int[] xCor = new int[21];
@@ -45,6 +46,10 @@ public class Boss : MonoBehaviour {
 		if (hit == true){	
 			playerHealth = playerHealth - damageOne;
 			hit = false;
+		}
+		if (addedHealth == true) {
+			playerHealth = playerHealth + 200;
+			addedHealth = false;
 		}
 	}
 

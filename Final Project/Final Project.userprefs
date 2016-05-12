@@ -1,18 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CountDown.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HealthPickUp.cs">
     <Files>
-      <File FileName="Assets\Scripts\Boss.cs" Line="38" Column="4" />
-      <File FileName="Assets\Scripts\BoardManager.cs" Line="189" Column="51" />
+      <File FileName="Assets\Scripts\BoardManager.cs" Line="121" Column="41" />
+      <File FileName="Assets\Scripts\Boss.cs" Line="52" Column="4" />
       <File FileName="Assets\Scripts\PathToBoss.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CountDown.cs" Line="22" Column="1" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CountDown.cs" Line="82" Column="12" />
+      <File FileName="Assets\Scripts\GameManager.cs" Line="29" Column="91" />
       <File FileName="Assets\Scripts\Pathways.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TimePickUp.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TimePickUp.cs" Line="17" Column="1" />
       <File FileName="Assets\Scripts\MovingObject.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CameraScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BossHands.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\HealthPickUp.cs" Line="10" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

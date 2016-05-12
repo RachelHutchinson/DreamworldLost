@@ -7,6 +7,7 @@ public class DialogTrigger : MonoBehaviour {
 	Dialogue NurseTrigger;
 	int numberOfDialogLines = 0;
 	bool isNurseQuestComplete;
+	public static bool nurseDialogue = false;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +17,7 @@ public class DialogTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.A)) 
+		if (Flower.flowerBool == true) 
 		{
 			isNurseQuestComplete = true;
 		}
@@ -41,6 +42,7 @@ public class DialogTrigger : MonoBehaviour {
 				else if (numberOfDialogLines == 2)
 				{
 					dialogueCoolDown = NurseTrigger.StartText ("Please press 'A' and then come speak to me.");
+					nurseDialogue = true;
 				
 					//make something appear
 					numberOfDialogLines = 3;
@@ -70,6 +72,7 @@ public class DialogTrigger : MonoBehaviour {
 				else if (numberOfDialogLines == 2)
 				{
 					dialogueCoolDown = NurseTrigger.StartText ("Please take this as a reward.");
+					GameManager.hPick = true;
 					
 					//send pickup to room for future use
 					numberOfDialogLines = 3;

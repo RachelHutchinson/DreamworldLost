@@ -6,9 +6,8 @@ using Random = UnityEngine.Random;
 public class GameManager : MonoBehaviour {
 
 	private BoardManager boardScript;
-	public int playerHealth;
-
-
+	public GameObject healthPickUp;
+	public static bool hPick = false;
 
 	private int level = 1;
 
@@ -25,7 +24,10 @@ public class GameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		Boss score = GetComponent <Boss> ();
-		playerHealth = score.playerHealth; 
+		if (hPick == true) {
+			GameObject health=
+				Instantiate (healthPickUp, new Vector3 (0, 3, 0f), Quaternion.identity) as GameObject;
+			hPick = false;
 		}
+	}
 }
