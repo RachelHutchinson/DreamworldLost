@@ -7,6 +7,7 @@ public class DialogTrigger : MonoBehaviour {
 	Dialogue NurseTrigger;
 	int numberOfDialogLines = 0;
 	bool isNurseQuestComplete;
+	bool pickUpReceived;
 	public static bool nurseDialogue = false;
 
 	// Use this for initialization
@@ -57,7 +58,7 @@ public class DialogTrigger : MonoBehaviour {
 				}
 			
 			}
-			else 
+			else if (pickUpReceived ==false) 
 			{
 				if (numberOfDialogLines == 0)
 				{
@@ -72,14 +73,24 @@ public class DialogTrigger : MonoBehaviour {
 				else if (numberOfDialogLines == 2)
 				{
 					dialogueCoolDown = NurseTrigger.StartText ("Please take this as a reward.");
-					GameManager.hPick = true;
-					
 					//send pickup to room for future use
 					numberOfDialogLines = 3;
-					
-					//set questCompleted to true, unable to redo this quest after doing it once
 				}
-
+				else
+				{
+					GameManager.hPick = true;
+					pickUpReceived = true;
+					NurseTrigger.StartText ("");
+					numberOfDialogLines = 0;
+				}
+			}
+			else 
+			{
+				if (numberOfDialogLines == 0)
+				{
+					dialogueCoolDown = NurseTrigger.StartText ("Oh, thank you!");
+					numberOfDialogLines = 1;
+				}
 				else
 				{
 					NurseTrigger.StartText ("");

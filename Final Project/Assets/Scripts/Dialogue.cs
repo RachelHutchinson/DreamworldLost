@@ -18,7 +18,8 @@ public class Dialogue : MonoBehaviour {
 	// Update is called once per frame
 	public float StartText(string openingText) {
 		StartCoroutine (DisplayString (openingText));
-		return openingText.Length * secondsBetweenCharacters;
+		return openingText.Length * secondsBetweenCharacters + 1;
+		//above line returns how long full text takes to display
 	}
 
 	private IEnumerator DisplayString(string stringToDisplay)
