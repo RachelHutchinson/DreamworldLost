@@ -80,13 +80,12 @@ public class CountDown : MonoBehaviour {
 			Instantiate (timePick, new Vector3 (2, 7, 0f), Quaternion.identity) as GameObject;
 		Player.instance.Start ();
 		Player.instance.Update ();
-		//Boss.instance.Start ();
-		//Boss.instance.Update ();
 		OnGUI ();
 		Start ();
 		CameraScript.instance.Start ();
 		CameraScript.instance.LateUpdate ();
 		Boss.showTime = false;
 		Boss.attackle = false;
+		Boss.startAttack = false;
 	}
 }
