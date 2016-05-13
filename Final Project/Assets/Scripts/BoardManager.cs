@@ -34,6 +34,8 @@ public class BoardManager : MonoBehaviour {
 	public GameObject darkO;
 	public GameObject darkB;
 	public GameObject flower;
+	public GameObject coverWallO;
+	public GameObject coverWallT;
 	public GameObject [] treeTiles;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
@@ -89,26 +91,19 @@ public class BoardManager : MonoBehaviour {
 		GameObject playerI =
 			Instantiate (player, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
 		//Nurse
-		GameObject nurseI =
-			Instantiate (nurse, new Vector3 (18, 14, 0f), Quaternion.identity) as GameObject;
+		Instantiate (nurse, new Vector3 (18, 14, 0f), Quaternion.identity);
 		//Flower
-		GameObject flowerO =
-			Instantiate (flower, new Vector3 (18, -13, 0f), Quaternion.identity) as GameObject;
+		Instantiate (flower, new Vector3 (18, -13, 0f), Quaternion.identity);
 		//Owl
-		GameObject owlI =
-			Instantiate (owl, new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
+		Instantiate (owl, new Vector3 (3, 7, 0f), Quaternion.identity);
 		//BoyTwin
-		GameObject boyI =
-			Instantiate (boyTwin, new Vector3 (16, -15, 0f), Quaternion.identity) as GameObject;
+		Instantiate (boyTwin, new Vector3 (16, -15, 0f), Quaternion.identity);
 		//GirlTwin
-		GameObject girlI =
-			Instantiate (girlTwin, new Vector3 (17, -15, 0f), Quaternion.identity) as GameObject;
+		Instantiate (girlTwin, new Vector3 (17, -15, 0f), Quaternion.identity);
 		//Librarian
-		GameObject lib =
-			Instantiate (librarian, new Vector3 (11, -3, 0f), Quaternion.identity) as GameObject;
+		Instantiate (librarian, new Vector3 (11, -3, 0f), Quaternion.identity);
 		//Boss
-		GameObject bos =
-			Instantiate (boss, new Vector3 (-5, 28, 0f), Quaternion.identity) as GameObject;
+		Instantiate (boss, new Vector3 (-5, 28, 0f), Quaternion.identity);
 		//Music
 		Instantiate (music, new Vector3 (22, -4, 0f), Quaternion.identity);
 		// Darkness
@@ -124,12 +119,14 @@ public class BoardManager : MonoBehaviour {
 		countDown.darkI = dark;
 		countDown.darkO = dark1;
 		countDown.darkB = dark2;
-
+		//CoverWalls
+		GameObject coverWall1 =
+			Instantiate (coverWallO, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
+		GameObject coverWall2 =
+			Instantiate (coverWallT, new Vector3 (9, 23, 0f), Quaternion.identity) as GameObject;
 		//Path
-		GameObject cPath =
-			Instantiate (path, new Vector3 (7, 3, 0f), Quaternion.identity) as GameObject;
-		GameObject dPath =
-			Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity) as GameObject;
+		Instantiate (path, new Vector3 (7, 3, 0f), Quaternion.identity);
+		Instantiate (path, new Vector3 (8, 3, 0f), Quaternion.identity);
 		GameObject gPath =
 			Instantiate (pathT, new Vector3 (9, 3, 0f), Quaternion.identity) as GameObject;
 
@@ -137,26 +134,19 @@ public class BoardManager : MonoBehaviour {
 		pathScript.player = playerI;
 		pathScript.darkI = dark;
 		pathScript.darkO = dark1;
+		pathScript.coverWall = coverWall1;
 
-		GameObject hPath =
-			Instantiate (path, new Vector3 (10, 3, 0f), Quaternion.identity) as GameObject;
-		GameObject iPath =
-			Instantiate (path, new Vector3 (6, 3, 0f), Quaternion.identity) as GameObject;
+		Instantiate (path, new Vector3 (10, 3, 0f), Quaternion.identity);
+		Instantiate (path, new Vector3 (6, 3, 0f), Quaternion.identity);
 
 		dark.SetActive (false);
 		//Special Tiles
-		GameObject fT =
-			Instantiate (floorT, new Vector3 (2, 7, 0f), Quaternion.identity) as GameObject;
-		GameObject hT =
-			Instantiate (floorH, new Vector3 (0, 3, 0f), Quaternion.identity) as GameObject;
-		GameObject bT =
-			Instantiate (floorB, new Vector3 (3, 0, 0f), Quaternion.identity) as GameObject;
-		GameObject gT =
-			Instantiate (floorG, new Vector3 (4, 0, 0f), Quaternion.identity) as GameObject;
-		GameObject mT =
-			Instantiate (floorM, new Vector3 (7, 2, 0f), Quaternion.identity) as GameObject;
-		GameObject lT =
-			Instantiate (floorL, new Vector3 (0, 5, 0f), Quaternion.identity) as GameObject;
+		Instantiate (floorT, new Vector3 (2, 7, 0f), Quaternion.identity);
+		Instantiate (floorH, new Vector3 (0, 3, 0f), Quaternion.identity);
+		Instantiate (floorB, new Vector3 (3, 0, 0f), Quaternion.identity);
+		Instantiate (floorG, new Vector3 (4, 0, 0f), Quaternion.identity);
+		Instantiate (floorM, new Vector3 (7, 2, 0f), Quaternion.identity);
+		Instantiate (floorL, new Vector3 (0, 5, 0f), Quaternion.identity);
 		//Path to Boss
 		for (int x = 3; x < 3 + 1; x++) {
 			for (int y = 3; y < 23 + 1; y++) 
@@ -172,52 +162,32 @@ public class BoardManager : MonoBehaviour {
 		pathScript2.player = playerI;
 		pathScript2.dark = dark1;
 		pathScript2.darkB = dark2;
+		pathScript2.coverWall = coverWall2;
 
-		GameObject rPath =
-			Instantiate (path, new Vector3 (9, 23, 0f), Quaternion.identity) as GameObject;
+		Instantiate (path, new Vector3 (9, 23, 0f), Quaternion.identity);
 		//Bush
-		GameObject aPlant =
-			Instantiate (plantA, new Vector3 (10, 20, 0f), Quaternion.identity) as GameObject;
-		GameObject bPlant = 
-			Instantiate (plantB, new Vector3 (22, -15, 0f), Quaternion.identity) as GameObject;
-		GameObject cPlant =
-			Instantiate (plantA, new Vector3 (14, -3, 0f), Quaternion.identity) as GameObject;
-		GameObject dPlant =
-			Instantiate (plantB, new Vector3 (20, 3, 0f), Quaternion.identity) as GameObject;
+		Instantiate (plantA, new Vector3 (10, 20, 0f), Quaternion.identity);
+		Instantiate (plantB, new Vector3 (22, -15, 0f), Quaternion.identity);
+		Instantiate (plantA, new Vector3 (14, -3, 0f), Quaternion.identity);
+		Instantiate (plantB, new Vector3 (20, 3, 0f), Quaternion.identity);
 
 		// Tree Set Up
-		GameObject tree =
-			Instantiate (treeTiles[0], new Vector3 (15, -14, 0f), Quaternion.identity) as GameObject;
-		GameObject treeO =
-			Instantiate (treeTiles[1], new Vector3 (16, -14, 0f), Quaternion.identity) as GameObject;
-		GameObject treeP =
-			Instantiate (treeTiles[2], new Vector3 (17, -14, 0f), Quaternion.identity) as GameObject;
-		GameObject treeQ =
-			Instantiate (treeTiles[3], new Vector3 (15, -13, 0f), Quaternion.identity) as GameObject;
-		GameObject TreeR =
-			Instantiate (treeTiles[4], new Vector3 (16, -13, 0f), Quaternion.identity) as GameObject;
-		GameObject TreeS =
-			Instantiate (treeTiles[5], new Vector3 (17, -13, 0f), Quaternion.identity) as GameObject;
-		GameObject treeT =
-			Instantiate (treeTiles[6], new Vector3 (15, -12, 0f), Quaternion.identity) as GameObject;
-		GameObject treeU =
-			Instantiate (treeTiles[7], new Vector3 (16, -12, 0f), Quaternion.identity) as GameObject;
-		GameObject treeV =
-			Instantiate (treeTiles[8], new Vector3 (17, -12, 0f), Quaternion.identity) as GameObject;
-		GameObject treeW =
-			Instantiate (treeTiles[9], new Vector3 (15, -11, 0f), Quaternion.identity) as GameObject;
-		GameObject TreeX =
-			Instantiate (treeTiles[10], new Vector3 (16, -11, 0f), Quaternion.identity) as GameObject;
-		GameObject TreeY =
-			Instantiate (treeTiles[11], new Vector3 (17, -11, 0f), Quaternion.identity) as GameObject;
-		GameObject TreeZ =
-			Instantiate (treeTiles[12], new Vector3 (15, -10, 0f), Quaternion.identity) as GameObject;
-		GameObject treeA =
-			Instantiate (treeTiles[13], new Vector3 (16, -10, 0f), Quaternion.identity) as GameObject;
-		GameObject TreeB =
-			Instantiate (treeTiles[14], new Vector3 (17, -10, 0f), Quaternion.identity) as GameObject;
-		GameObject TreeC =
-			Instantiate (treeTiles[15], new Vector3 (16, -9, 0f), Quaternion.identity) as GameObject;
+		Instantiate (treeTiles[0], new Vector3 (15, -14, 0f), Quaternion.identity);
+		Instantiate (treeTiles[1], new Vector3 (16, -14, 0f), Quaternion.identity);
+		Instantiate (treeTiles[2], new Vector3 (17, -14, 0f), Quaternion.identity);
+		Instantiate (treeTiles[3], new Vector3 (15, -13, 0f), Quaternion.identity);
+		Instantiate (treeTiles[4], new Vector3 (16, -13, 0f), Quaternion.identity);
+		Instantiate (treeTiles[5], new Vector3 (17, -13, 0f), Quaternion.identity);
+		Instantiate (treeTiles[6], new Vector3 (15, -12, 0f), Quaternion.identity);
+		Instantiate (treeTiles[7], new Vector3 (16, -12, 0f), Quaternion.identity);
+		Instantiate (treeTiles [8], new Vector3 (17, -12, 0f), Quaternion.identity);
+		Instantiate (treeTiles[9], new Vector3 (15, -11, 0f), Quaternion.identity);
+		Instantiate (treeTiles[10], new Vector3 (16, -11, 0f), Quaternion.identity);
+		Instantiate (treeTiles[11], new Vector3 (17, -11, 0f), Quaternion.identity);
+		Instantiate (treeTiles[12], new Vector3 (15, -10, 0f), Quaternion.identity);
+		Instantiate (treeTiles[13], new Vector3 (16, -10, 0f), Quaternion.identity);
+		Instantiate (treeTiles[14], new Vector3 (17, -10, 0f), Quaternion.identity);
+		Instantiate (treeTiles[15], new Vector3 (16, -9, 0f), Quaternion.identity);
 
 	}
 

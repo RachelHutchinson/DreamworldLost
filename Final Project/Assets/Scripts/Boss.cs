@@ -43,7 +43,7 @@ public class Boss : MonoBehaviour {
 			attackle = false;
 		}
 		if (hit == true){	
-			playerHealth = playerHealth - 20;
+			playerHealth = playerHealth - 40;
 			Debug.Log (playerHealth);
 			hit = false;
 		}
@@ -61,17 +61,13 @@ public class Boss : MonoBehaviour {
 	public IEnumerator AttackTime ()
 	{
 		while (startAttack == true) {
-			yield return new WaitForSeconds (3);
-			GameObject testHand =
-			Instantiate (handL, new Vector3 (0, 25, 0f), Quaternion.identity) as GameObject;
+			yield return new WaitForSeconds (1);
 			GameObject hand =
 			Instantiate (handL, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject handT =
+				Instantiate (handR, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			yield return new WaitForSeconds (1);
 			Destroy (hand);
-			yield return new WaitForSeconds (3);
-			GameObject handT =
-			Instantiate (handR, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
-			yield return new WaitForSeconds (1);
 			Destroy (handT);
 		}
 		

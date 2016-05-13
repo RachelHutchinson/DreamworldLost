@@ -11,3 +11,7 @@
 /Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/obj/Debug/Assembly-CSharp.dll
+/Users/RachelHutchinson/Documents/FinalProjectRPG/Final Project/obj/Debug/Assembly-CSharp.dll.mdb
