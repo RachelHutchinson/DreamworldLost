@@ -42,13 +42,17 @@ public class DialogTrigger : MonoBehaviour {
 				}
 				else if (numberOfDialogLines == 2)
 				{
-					dialogueCoolDown = NurseTrigger.StartText ("Please press 'A' and then come speak to me.");
+					dialogueCoolDown = NurseTrigger.StartText ("Please help me find a flower for my medicine.");
 					nurseDialogue = true;
-				
-					//make something appear
 					numberOfDialogLines = 3;
 				
-					//set questCompleted to true
+				}
+				else if (numberOfDialogLines == 3)
+				{
+					dialogueCoolDown = NurseTrigger.StartText ("Go find it, and then come speak to me.");
+					nurseDialogue = true;
+					numberOfDialogLines = 4;
+					
 				}
 
 				else
@@ -72,9 +76,23 @@ public class DialogTrigger : MonoBehaviour {
 				}
 				else if (numberOfDialogLines == 2)
 				{
-					dialogueCoolDown = NurseTrigger.StartText ("Please take this as a reward.");
-					//send pickup to room for future use
+					dialogueCoolDown = NurseTrigger.StartText ("Lord Angra Mainyu had taken all my healing medicine away!");
 					numberOfDialogLines = 3;
+				}
+				else if (numberOfDialogLines == 3)
+				{
+					dialogueCoolDown = NurseTrigger.StartText ("But with this, I can make new medicine to help people!");
+					numberOfDialogLines = 4;
+				}
+				else if (numberOfDialogLines == 4)
+				{
+					dialogueCoolDown = NurseTrigger.StartText ("Thank you for your help.");
+					numberOfDialogLines = 5;
+				}
+				else if (numberOfDialogLines == 5)
+				{
+					dialogueCoolDown = NurseTrigger.StartText ("Please take this as a reward.");
+					numberOfDialogLines = 6;
 				}
 				else
 				{
@@ -88,7 +106,7 @@ public class DialogTrigger : MonoBehaviour {
 			{
 				if (numberOfDialogLines == 0)
 				{
-					dialogueCoolDown = NurseTrigger.StartText ("Oh, thank you!");
+					dialogueCoolDown = NurseTrigger.StartText ("Take care, child!");
 					numberOfDialogLines = 1;
 				}
 				else
