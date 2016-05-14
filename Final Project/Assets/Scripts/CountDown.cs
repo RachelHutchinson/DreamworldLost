@@ -56,6 +56,7 @@ public class CountDown : MonoBehaviour {
 		
 		
 	public void Restart () {
+		OwlDialog.didPlayerDieAtBoss = true;
 		walls = true;
 		Destroy (player);
 		player = Instantiate(playerI, new Vector3 (3, 3, 0f), Quaternion.identity) as GameObject;
