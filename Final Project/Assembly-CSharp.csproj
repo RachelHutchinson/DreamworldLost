@@ -60,6 +60,8 @@
      <Compile Include="Assets\Scripts\GirlPickUp.cs" />
      <Compile Include="Assets\Scripts\HealthPickUp.cs" />
      <Compile Include="Assets\Scripts\MovingObject.cs" />
+     <Compile Include="Assets\Scripts\MusicianDialog.cs" />
+     <Compile Include="Assets\Scripts\OwlDialog.cs" />
      <Compile Include="Assets\Scripts\PathToBoss.cs" />
      <Compile Include="Assets\Scripts\Pathways.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />

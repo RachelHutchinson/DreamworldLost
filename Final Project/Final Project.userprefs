@@ -1,23 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BoardManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DialogTrigger.cs">
     <Files>
-      <File FileName="Assets\Scripts\BoardManager.cs" Line="276" Column="1" />
-      <File FileName="Assets\Scripts\Boss.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\DialogTrigger.cs" Line="76" Column="5" />
-      <File FileName="Assets\Scripts\Flower.cs" Line="15" Column="4" />
-      <File FileName="Assets\Scripts\BossHands.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CountDown.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player.cs" Line="64" Column="15" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="32" Column="3" />
-      <File FileName="Assets\Scripts\MovingObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CameraScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Pathways.cs" Line="44" Column="1" />
-      <File FileName="Assets\Scripts\PathToBoss.cs" Line="33" Column="25" />
+      <File FileName="Assets\Scripts\DialogTrigger.cs" Line="109" Column="66" />
       <File FileName="Assets\Scripts\Dialogue.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HealthPickUp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SoundManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TimePickUp.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
