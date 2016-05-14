@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoardManager.cs" />
      <Compile Include="Assets\Scripts\Boss.cs" />
+     <Compile Include="Assets\Scripts\BossFace.cs" />
      <Compile Include="Assets\Scripts\BossHands.cs" />
      <Compile Include="Assets\Scripts\BoyPickUp.cs" />
      <Compile Include="Assets\Scripts\CameraScript.cs" />

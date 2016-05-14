@@ -47,6 +47,7 @@ public class BoardManager : MonoBehaviour {
 	public GameObject [] bossWalls;
 	public AudioClip innerRoom;
 
+
 	private Transform boardHolder;
 	private List <Vector3> gridPositions = new List <Vector3> ();
 

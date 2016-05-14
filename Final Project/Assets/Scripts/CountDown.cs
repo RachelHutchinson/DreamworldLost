@@ -20,12 +20,15 @@ public class CountDown : MonoBehaviour {
 	public AudioClip innerRoom;
 	public static bool pTime = false;
 	public static bool walls = false;
+	public static bool reset = false;
 	public static CountDown instance = null;
+
 
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
+
 	}
 	
 	// Update is called once per frame
@@ -74,6 +77,8 @@ public class CountDown : MonoBehaviour {
 		Boss.attackle = false;
 		Boss.startAttack = false;
 		Boss.addedHealth = false;
+		Boss.hitP = false;
 		CameraScript.bossT = true;
+		reset = true;
 	}
 }
