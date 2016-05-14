@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 
 	private BoardManager boardScript;
 	public GameObject healthPickUp;
+	public GameObject musicPickUp;
 	public static bool hPick = false;
 
 	private int level = 1;
@@ -25,9 +26,12 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (hPick == true) {
-			GameObject health=
-				Instantiate (healthPickUp, new Vector3 (0, 3, 0f), Quaternion.identity) as GameObject;
+			Instantiate (healthPickUp, new Vector3 (0, 3, 0f), Quaternion.identity);
 			hPick = false;
+		}
+		if (MusicianDialog.musicPick == true) {
+				Instantiate (musicPickUp, new Vector3 (7, 2, 0f), Quaternion.identity);
+			MusicianDialog.musicPick = false;
 		}
 	}
 }

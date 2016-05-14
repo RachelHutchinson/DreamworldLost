@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class CountDown : MonoBehaviour {
 
-	public float timeRemaining = 120;
+	public float timeRemaining = 180;
 	GameObject player;
 	GameObject owlCur;
 	GameObject pickT;
@@ -70,7 +70,7 @@ public class CountDown : MonoBehaviour {
 		MusicPickUp.mPickUp = false;
 		SoundManager.instance.MainMusic (innerRoom);
 		pTime = false;
-		timeRemaining = 120;
+		timeRemaining = 180;
 		GameObject owlR =
 			Instantiate (owl [Random.Range (0, 2)], new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
 		GameObject timeP =
@@ -81,6 +81,7 @@ public class CountDown : MonoBehaviour {
 		Boss.addedHealth = false;
 		Boss.hitP = false;
 		CameraScript.bossT = true;
+		HealthPickUp.noSaveScumbing = false;
 		reset = true;
 	}
 }

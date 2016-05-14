@@ -7,10 +7,15 @@ public class MusicianDialog : MonoBehaviour {
 	Dialogue MusicianTrigger;
 	int numberOfDialogLines = 0;
 	public static bool MusicianDialogue = false;
+	public static bool musicPick = false;
 	bool isDialogOneDone;
 	bool isDialogTwoDone;
 	bool isDialogThreeDone;
 	bool rachelIsMagic;
+	public AudioClip ohThe;
+	public AudioClip ohTheDrama;
+	public AudioClip ofTheDramatic;
+	public AudioClip backtonorm;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +32,7 @@ public class MusicianDialog : MonoBehaviour {
 			if (isDialogOneDone == false) {
 				if (numberOfDialogLines == 0) 
 				{
+					SoundManager.instance.MainMusic (ohThe);
 				dialogueCoolDown = MusicianTrigger.StartText ("Ah, a child? I've never seen you around before.");
 				numberOfDialogLines = 1;
 				} 
@@ -77,6 +83,7 @@ public class MusicianDialog : MonoBehaviour {
 				}
 				else if (numberOfDialogLines == 1)
 				{
+					SoundManager.instance.MainMusic (ohTheDrama);
 					dialogueCoolDown = MusicianTrigger.StartText ("Lord Angra Mainyu.. That Evil fiend");
 					numberOfDialogLines = 2;
 				}
@@ -107,6 +114,7 @@ public class MusicianDialog : MonoBehaviour {
 			{
 				if (numberOfDialogLines == 0)
 				{
+					SoundManager.instance.MainMusic (ofTheDramatic);
 					dialogueCoolDown = MusicianTrigger.StartText ("Now, I have no inspiration! No motivation! I cannot produce a single satisfactory piece!");
 					numberOfDialogLines = 1;
 				}
@@ -137,6 +145,7 @@ public class MusicianDialog : MonoBehaviour {
 			{
 				if (numberOfDialogLines == 0)
 				{
+					SoundManager.instance.MainMusic (backtonorm);
 					dialogueCoolDown = MusicianTrigger.StartText ("Oh, I got a bit carried away. Thank you, child, for hearing me out.");
 					numberOfDialogLines = 1;
 				}
@@ -164,6 +173,7 @@ public class MusicianDialog : MonoBehaviour {
 				{
 					dialogueCoolDown = MusicianTrigger.StartText ("I will write a victory song for you to lift up our spirits!");
 					numberOfDialogLines = 6;
+					musicPick = true;
 				}
 				else
 				{
