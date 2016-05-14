@@ -7,7 +7,7 @@ public class Player : MovingObject {
 	private Animator animator;
 	GameObject player;
 	public static Player instance = null;
-	double coolDownTime = 0.3;
+	double coolDownTime = 0.35;
 	double currentCoolDownTime = 0;
 	public static bool bPlayer = false;
 	//public static bool gPlayer = false;
