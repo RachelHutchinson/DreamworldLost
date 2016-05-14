@@ -7,6 +7,8 @@ public class Boss : MonoBehaviour {
 
 	public GameObject handL;
 	public GameObject handR;
+	public GameObject handLG;
+	public GameObject handRG;
 	public GameObject hL;
 	public GameObject hR;
 	public GameObject handLP;
@@ -41,10 +43,11 @@ public class Boss : MonoBehaviour {
 
 	public void Update () {
 		if (showTime == true) {	
-			playerHealthText.text = "氣: " + playerHealth; 
+			playerHealthText.text = "氣: " + playerHealth;
 		} else {
 			playerHealthText.text = " ";
-		}
+		}	
+
 
 		if (attackle == true) {
 			
@@ -99,11 +102,30 @@ public class Boss : MonoBehaviour {
 				Instantiate (handL, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			GameObject handRi =
 				Instantiate (handR, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject hChaseL =
+				Instantiate (handLG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject hChaseR =
+				Instantiate (handRG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject hChaseLO =
+				Instantiate (handLG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject hChaseRO =
+				Instantiate (handRG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject hChaseLT =
+				Instantiate (handLG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject hChaseRT =
+				Instantiate (handRG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			yield return new WaitForSeconds (1);
 			Destroy (hand);
 			Destroy (handT);
 			Destroy (handLe);
 			Destroy (handRi);
+			Destroy (hChaseL);
+			Destroy (hChaseR);
+			Destroy (hChaseLO);
+			Destroy (hChaseRO);
+			Destroy (hChaseLT);
+			Destroy (hChaseRT);
+
 		}
 		while (purpleAttack == true) {
 			yield return new WaitForSeconds (1);
@@ -115,11 +137,29 @@ public class Boss : MonoBehaviour {
 				Instantiate (handLP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			GameObject handRi =
 				Instantiate (handRP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject hChaseL =
+				Instantiate (handLG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject hChaseR =
+				Instantiate (handRG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject hChaseLO =
+				Instantiate (handLG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject hChaseRO =
+				Instantiate (handRG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject hChaseLT =
+				Instantiate (handLG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject hChaseRT =
+				Instantiate (handRG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			yield return new WaitForSeconds (1);
 			Destroy (hand);
 			Destroy (handT);
 			Destroy (handLe);
 			Destroy (handRi);
+			Destroy (hChaseL);
+			Destroy (hChaseR);
+			Destroy (hChaseLO);
+			Destroy (hChaseRO);
+			Destroy (hChaseLT);
+			Destroy (hChaseRT);
 		}
 	}
 

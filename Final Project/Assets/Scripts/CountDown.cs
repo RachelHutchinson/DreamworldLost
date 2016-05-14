@@ -67,6 +67,7 @@ public class CountDown : MonoBehaviour {
 		darkI.SetActive(false);
 		darkO.SetActive(true);
 		darkB.SetActive(true);
+		MusicPickUp.mPickUp = false;
 		SoundManager.instance.MainMusic (innerRoom);
 		pTime = false;
 		timeRemaining = 120;

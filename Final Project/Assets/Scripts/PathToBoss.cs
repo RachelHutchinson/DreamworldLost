@@ -9,6 +9,8 @@ public class PathToBoss : MonoBehaviour {
 	public GameObject darkB;
 	public GameObject coverWall;
 	public AudioClip boss;
+	public AudioClip boss2;
+
 
 	void Start () {
 		GameObject timer = GameObject.Find ("Timer");
@@ -37,7 +39,10 @@ public class PathToBoss : MonoBehaviour {
 		
 		if (Input.GetKey (KeyCode.LeftArrow)) {
 			CameraScript.bossT = false;
-			SoundManager.instance.MainMusic (boss);
+			if (MusicPickUp.mPickUp == true)
+			{SoundManager.instance.MainMusic (boss2);
+			}else{
+				SoundManager.instance.MainMusic (boss);}
 			Boss.showTime = true;
 			Boss.attackle = true;
 			dark.SetActive (true);

@@ -8,6 +8,8 @@ public class Pathways : MonoBehaviour {
 	public GameObject darkO;
 	public GameObject coverWall;
 	public AudioClip outerRoom;
+	public AudioClip outerRoom2;
+
 	public int room;
 	//x and y of the wall of the room you just left
 	//wall
@@ -38,7 +40,11 @@ public class Pathways : MonoBehaviour {
 		
 		if (Input.GetKey (KeyCode.RightArrow)) {
 			darkI.SetActive (true);
+			if (MusicPickUp.mPickUp == true)
+			{SoundManager.instance.MainMusic (outerRoom2);
+			} else {
 			SoundManager.instance.MainMusic (outerRoom);
+			}
 			coverWall.SetActive (true);
 		} else {
 			darkO.SetActive (true);
