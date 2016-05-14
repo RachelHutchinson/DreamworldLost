@@ -37,6 +37,7 @@ public class BoardManager : MonoBehaviour {
 	public GameObject coverWallO;
 	public GameObject coverWallT;
 	public GameObject boyP;
+	public GameObject girlP;
 	public GameObject [] treeTiles;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
@@ -147,6 +148,7 @@ public class BoardManager : MonoBehaviour {
 		Instantiate (floorB, new Vector3 (3, 0, 0f), Quaternion.identity);
 		Instantiate (boyP, new Vector3 (3, 0, 0f), Quaternion.identity);
 		Instantiate (floorG, new Vector3 (4, 0, 0f), Quaternion.identity);
+		Instantiate (girlP, new Vector3 (4, 0, 0f), Quaternion.identity);
 		Instantiate (floorM, new Vector3 (7, 2, 0f), Quaternion.identity);
 		Instantiate (floorL, new Vector3 (0, 5, 0f), Quaternion.identity);
 		//Path to Boss

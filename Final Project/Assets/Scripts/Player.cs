@@ -7,10 +7,10 @@ public class Player : MovingObject {
 	private Animator animator;
 	GameObject player;
 	public static Player instance = null;
-	double coolDownTime = 0.35;
+	double coolDownTime = 0.6;
 	double currentCoolDownTime = 0;
 	public static bool bPlayer = false;
-	//public static bool gPlayer = false;
+	public static bool gPlayer = false;
 
 	//protected override void Start () 
 	public void Start ()
@@ -24,9 +24,13 @@ public class Player : MovingObject {
 	public void Update () 	
 	{
 		if (bPlayer == true) {
-			Debug.Log ("true");
 			animator.SetTrigger ("boyAnime");
 			bPlayer = false;
+		} 
+		if (gPlayer == true) {
+			Debug.Log ("hit");
+			animator.SetTrigger ("girlAnime");
+			gPlayer = false;
 		}
 		if (currentCoolDownTime > 0) 
 		{
