@@ -13,6 +13,7 @@ public class Boss : MonoBehaviour {
 	public GameObject hR;
 	public GameObject handLP;
 	public GameObject handRP;
+	public GameObject bossFace;
 	public int playerHealth;
 	GameObject player;
 	public GameObject boss;
@@ -60,7 +61,7 @@ public class Boss : MonoBehaviour {
 				playerHealth = playerHealth - 100;
 				hit = false;
 			} else {
-				playerHealth = playerHealth - 40;
+				playerHealth = playerHealth - 20;
 				hit = false;
 			}
 		}
@@ -73,7 +74,7 @@ public class Boss : MonoBehaviour {
 			CountDown countDown = GameObject.Find("Timer").GetComponent<CountDown>();
 			countDown.Restart ();
 		}
-		if (playerHealth < 80) {
+		if (playerHealth < 60) {
 			startAttack = false;
 			purpleAttack = true;
 			purpleFace = true;
@@ -94,6 +95,8 @@ public class Boss : MonoBehaviour {
 	{
 		while (startAttack == true) {
 			yield return new WaitForSeconds (1);
+			GameObject bossO =
+				Instantiate (bossFace, new Vector3 (9, 23, 0f), Quaternion.identity) as GameObject;
 			GameObject hand =
 				Instantiate (handL, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			GameObject handT =
@@ -114,6 +117,10 @@ public class Boss : MonoBehaviour {
 				Instantiate (handLG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			GameObject hChaseRT =
 				Instantiate (handRG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject bossP =
+				Instantiate (bossFace, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject bossQ =
+				Instantiate (bossFace, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			yield return new WaitForSeconds (1);
 			Destroy (hand);
 			Destroy (handT);
@@ -125,7 +132,9 @@ public class Boss : MonoBehaviour {
 			Destroy (hChaseRO);
 			Destroy (hChaseLT);
 			Destroy (hChaseRT);
-
+			Destroy (bossO);
+			Destroy (bossP);
+			Destroy (bossQ);
 		}
 		while (purpleAttack == true) {
 			yield return new WaitForSeconds (1);
