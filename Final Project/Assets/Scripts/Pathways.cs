@@ -25,6 +25,15 @@ public class Pathways : MonoBehaviour {
 			coverWall.SetActive (false);
 			CountDown.walls = false;
 		}
+
+		if (TwinGirlDialog.playing == true) {
+			HideandSeek ();
+			TwinGirlDialog.playing = false;
+		}
+		if (TwinGirlDialog.playingNO == true) {
+			canSee ();
+			TwinGirlDialog.playingNO = false;
+		}
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
@@ -34,6 +43,14 @@ public class Pathways : MonoBehaviour {
 			darkO.SetActive(false);
 			darkI.SetActive(false);
 		}
+	}
+
+	public void HideandSeek () {
+			darkO.SetActive (true);
+	}
+
+	public void canSee () {
+		darkO.SetActive (false);
 	}
 
 	void OnTriggerExit2D (Collider2D other) {

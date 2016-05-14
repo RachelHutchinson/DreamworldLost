@@ -8,6 +8,9 @@ public class TwinBoyDialog : MonoBehaviour {
 	int numberOfDialogLines = 0;
 	public static bool BoyDialogue = false;
 	bool wasBoyFound;
+	public GameObject boyHead;
+	public GameObject boy;
+	GameObject boyT;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +21,8 @@ public class TwinBoyDialog : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		dialogueCoolDown -= Time.deltaTime;
+		boyT = GameObject.FindGameObjectWithTag ("Boy");
+
 	}
 	void OnTriggerStay2D (Collider2D other) {
 		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space) && dialogueCoolDown <= 0) {
@@ -42,6 +47,14 @@ public class TwinBoyDialog : MonoBehaviour {
 					dialogueCoolDown = BoyTrigger.StartText ("I'll go hide, and you can find me.");
 					numberOfDialogLines = 5;
 					} 
+				else if (numberOfDialogLines == 5) {
+					TwinGirlDialog.playing = true;
+					Destroy (boyT);
+					Instantiate (boyHead, new Vector3 (16, 18, 0f), Quaternion.identity);
+					numberOfDialogLines = 6;
+				} else if (numberOfDialogLines == 6) {
+					TwinGirlDialog.playingNO = true;
+				}
 				else {
 					BoyTrigger.StartText ("");
 					numberOfDialogLines = 0;

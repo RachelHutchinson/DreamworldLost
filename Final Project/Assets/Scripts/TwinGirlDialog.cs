@@ -7,7 +7,12 @@ public class TwinGirlDialog : MonoBehaviour {
 	Dialogue GirlTrigger;
 	int numberOfDialogLines = 0;
 	public static bool GirlDialogue = false;
+	public static bool playingNO = false;
+	public static bool playing = false;
 	bool wasGirlFound;
+	public GameObject girlHead;
+	public GameObject girl;
+	GameObject girlT;
 
 
 	void Start () {
@@ -19,6 +24,8 @@ public class TwinGirlDialog : MonoBehaviour {
 	void Update () 
 	{
 		dialogueCoolDown -= Time.deltaTime;
+		girlT = GameObject.FindGameObjectWithTag ("Girl");
+
 	}
 	void OnTriggerStay2D (Collider2D other) {
 		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space) && dialogueCoolDown <= 0) {
@@ -46,7 +53,16 @@ public class TwinGirlDialog : MonoBehaviour {
 				else if (numberOfDialogLines == 5) {
 					dialogueCoolDown = GirlTrigger.StartText ("I'll go hide, and you can find me.");
 					numberOfDialogLines = 6;
+				
 					}
+				else if (numberOfDialogLines == 6) {
+					playing = true;
+					Destroy (girlT);
+					Instantiate (girlHead, new Vector3 (14, -11, 0f), Quaternion.identity);
+					numberOfDialogLines = 7;
+				} else if (numberOfDialogLines == 7) {
+					playingNO = true;
+				}
 				else
 				{
 					GirlTrigger.StartText ("");

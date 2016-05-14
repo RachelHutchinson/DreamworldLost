@@ -38,8 +38,10 @@ public class BoardManager : MonoBehaviour {
 	public GameObject coverWallT;
 	public GameObject boyP;
 	public GameObject girlP;
-	public GameObject musicP;
-	public GameObject [] treeTiles;
+	public GameObject tree1;
+	public GameObject tree2;
+	public GameObject ctree1;
+	public GameObject ctree2;
 	public GameObject [] innerTiles;
 	public GameObject [] outerTiles;
 	public GameObject [] innerWalls;
@@ -178,22 +180,10 @@ public class BoardManager : MonoBehaviour {
 		Instantiate (plantB, new Vector3 (20, 3, 0f), Quaternion.identity);
 
 		// Tree Set Up
-		Instantiate (treeTiles[0], new Vector3 (15, -14, 0f), Quaternion.identity);
-		Instantiate (treeTiles[1], new Vector3 (16, -14, 0f), Quaternion.identity);
-		Instantiate (treeTiles[2], new Vector3 (17, -14, 0f), Quaternion.identity);
-		Instantiate (treeTiles[3], new Vector3 (15, -13, 0f), Quaternion.identity);
-		Instantiate (treeTiles[4], new Vector3 (16, -13, 0f), Quaternion.identity);
-		Instantiate (treeTiles[5], new Vector3 (17, -13, 0f), Quaternion.identity);
-		Instantiate (treeTiles[6], new Vector3 (15, -12, 0f), Quaternion.identity);
-		Instantiate (treeTiles[7], new Vector3 (16, -12, 0f), Quaternion.identity);
-		Instantiate (treeTiles [8], new Vector3 (17, -12, 0f), Quaternion.identity);
-		Instantiate (treeTiles[9], new Vector3 (15, -11, 0f), Quaternion.identity);
-		Instantiate (treeTiles[10], new Vector3 (16, -11, 0f), Quaternion.identity);
-		Instantiate (treeTiles[11], new Vector3 (17, -11, 0f), Quaternion.identity);
-		Instantiate (treeTiles[12], new Vector3 (15, -10, 0f), Quaternion.identity);
-		Instantiate (treeTiles[13], new Vector3 (16, -10, 0f), Quaternion.identity);
-		Instantiate (treeTiles[14], new Vector3 (17, -10, 0f), Quaternion.identity);
-		Instantiate (treeTiles[15], new Vector3 (16, -9, 0f), Quaternion.identity);
+		Instantiate (tree1, new Vector3 (14, -13, 0f), Quaternion.identity);
+		Instantiate (tree2, new Vector3 (16, 16, 0f), Quaternion.identity);
+		Instantiate (ctree1, new Vector3 (14, -13, 0f), Quaternion.identity);
+		Instantiate (ctree2, new Vector3 (16, 16, 0f), Quaternion.identity);
 
 	}
 
