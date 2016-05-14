@@ -9,9 +9,10 @@ public class TwinGirlDialog : MonoBehaviour {
 	public static bool GirlDialogue = false;
 	public static bool playingNO = false;
 	public static bool playing = false;
-	bool wasGirlFound;
+	bool wasGirlSpeak;
 	public GameObject girlHead;
 	public GameObject girl;
+	public GameObject girlP;
 	GameObject girlT;
 
 
@@ -25,11 +26,21 @@ public class TwinGirlDialog : MonoBehaviour {
 	{
 		dialogueCoolDown -= Time.deltaTime;
 		girlT = GameObject.FindGameObjectWithTag ("Girl");
+		if (GirlHeadFound.wasGirlFound == true){
+				playing = true;
+				Destroy (girlT);
+				Instantiate (girl, new Vector3 (17, -15, 0f), Quaternion.identity);
+				wasGirlSpeak = true;
+				GirlHeadFound.wasGirlFound = false;
+				numberOfDialogLines = 0;
+				Instantiate (girlP, new Vector3 (4, 0, 0f), Quaternion.identity);
+				TwinGirlDialog.playingNO = true;
+				}
 
 	}
 	void OnTriggerStay2D (Collider2D other) {
 		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space) && dialogueCoolDown <= 0) {
-			if (wasGirlFound == false) {
+			if (wasGirlSpeak == false) {
 				if (numberOfDialogLines == 0) {
 					dialogueCoolDown = GirlTrigger.StartText ("Who are you?");
 					numberOfDialogLines = 1;

@@ -46,7 +46,7 @@ public class Pathways : MonoBehaviour {
 	}
 
 	public void HideandSeek () {
-			darkO.SetActive (true);
+		darkO.SetActive (true);
 	}
 
 	public void canSee () {
