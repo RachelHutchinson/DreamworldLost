@@ -66,9 +66,15 @@ public class Boss : MonoBehaviour {
 			Instantiate (handL, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			GameObject handT =
 				Instantiate (handR, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject handLe =
+				Instantiate (handL, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
+			GameObject handRi =
+				Instantiate (handR, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			yield return new WaitForSeconds (1);
 			Destroy (hand);
 			Destroy (handT);
+			Destroy (handLe);
+			Destroy (handRi);
 		}
 		
 	}

@@ -7,8 +7,10 @@ public class Player : MovingObject {
 	private Animator animator;
 	GameObject player;
 	public static Player instance = null;
-	double coolDownTime = 0.45;
+	double coolDownTime = 0.3;
 	double currentCoolDownTime = 0;
+	public static bool bPlayer = false;
+	//public static bool gPlayer = false;
 
 	//protected override void Start () 
 	public void Start ()
@@ -21,6 +23,11 @@ public class Player : MovingObject {
 	// Update is called once per frame
 	public void Update () 	
 	{
+		if (bPlayer == true) {
+			Debug.Log ("true");
+			animator.SetTrigger ("boyAnime");
+			bPlayer = false;
+		}
 		if (currentCoolDownTime > 0) 
 		{
 			currentCoolDownTime = currentCoolDownTime - Time.deltaTime;
