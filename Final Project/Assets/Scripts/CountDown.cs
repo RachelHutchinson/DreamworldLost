@@ -80,6 +80,7 @@ public class CountDown : MonoBehaviour {
 		Boss.startAttack = false;
 		Boss.addedHealth = false;
 		Boss.hitP = false;
+		Boss.faceAttack = false;
 		CameraScript.bossT = true;
 		HealthPickUp.noSaveScumbing = false;
 		reset = true;

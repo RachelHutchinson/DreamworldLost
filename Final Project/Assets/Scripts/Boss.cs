@@ -20,12 +20,14 @@ public class Boss : MonoBehaviour {
 	public static bool showTime = false;
 	public static bool attackle = false;
 	public static bool startAttack = false;
+	public static bool faceAttack = false;
 	public static bool purpleAttack = false;
 	public static bool addedHealth = false;
 	public static bool hit = false;
 	public static bool hitP = false;
 	public static bool purpleFace = false;
 	Text playerHealthText;
+	GameObject [] allTheHands;
 	public int[] xCor = new int[21];
 	public int[] yCor = new int[7];
 	private Animator animator;
@@ -43,16 +45,15 @@ public class Boss : MonoBehaviour {
 	}
 
 	public void Update () {
+		allTheHands = GameObject.FindGameObjectsWithTag ("Hand");
 		if (showTime == true) {	
 			playerHealthText.text = "氣: " + playerHealth;
 		} else {
 			playerHealthText.text = " ";
 		}	
-
-
 		if (attackle == true) {
 			
-			startAttack = true;
+			faceAttack = true;
 			StartCoroutine (AttackTime ());
 			attackle = false;
 		}
@@ -93,6 +94,178 @@ public class Boss : MonoBehaviour {
 
 	public IEnumerator AttackTime ()
 	{
+		if (faceAttack == true) {
+			yield return new WaitForSeconds (1);
+			for (int x = -1; x < -1 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			for (int x = -24; x < -24 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			yield return new WaitForSeconds (1);
+			for (int x = -2; x < -2 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			for (int x = -23; x < -23 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			yield return new WaitForSeconds (1);
+			for (int x = -3; x < -3 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			for (int x = -22; x < -22 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			yield return new WaitForSeconds (1);
+			for (int x = -4; x < -4 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			for (int x = -21; x < -21 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			yield return new WaitForSeconds (1);
+			for (int x = -5; x < -5 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			for (int x = -20; x < -20 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			yield return new WaitForSeconds (1);
+			for (int x = -6; x < -6 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			for (int x = -19; x < -19 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			yield return new WaitForSeconds (1);
+			for (int x = -7; x < -7 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			for (int x = -18; x < -18 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			yield return new WaitForSeconds (1);
+			for (int x = -8; x < -8 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			for (int x = -17; x < -17 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			yield return new WaitForSeconds (1);
+			for (int x = -9; x < -9 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			for (int x = -16; x < -16 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			yield return new WaitForSeconds (1);
+			for (int x = -10; x < -10 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			for (int x = -15; x < -15 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			yield return new WaitForSeconds (1);
+			for (int x = -11; x < -11 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			for (int x = -14; x < -14 + 1; x++) {
+				for (int y = 22; y < 27 + 1; y++) 
+				{
+					GameObject toInstantiate = bossFace;
+					GameObject instance =
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;}
+			}
+			yield return new WaitForSeconds (1);
+			for ( int i = 0; i < allTheHands.Length; i++ ) {
+				Destroy (allTheHands[i]);
+			}
+			startAttack = true;
+		}
 		while (startAttack == true) {
 			yield return new WaitForSeconds (1);
 			GameObject bossO =
@@ -109,18 +282,12 @@ public class Boss : MonoBehaviour {
 				Instantiate (handLG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			GameObject hChaseR =
 				Instantiate (handRG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
-			GameObject hChaseLO =
-				Instantiate (handLG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			GameObject hChaseRO =
 				Instantiate (handRG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			GameObject hChaseLT =
 				Instantiate (handLG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			GameObject hChaseRT =
 				Instantiate (handRG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
-			GameObject bossP =
-				Instantiate (bossFace, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
-			GameObject bossQ =
-				Instantiate (bossFace, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 			yield return new WaitForSeconds (1);
 			Destroy (hand);
 			Destroy (handT);
@@ -128,13 +295,9 @@ public class Boss : MonoBehaviour {
 			Destroy (handRi);
 			Destroy (hChaseL);
 			Destroy (hChaseR);
-			Destroy (hChaseLO);
 			Destroy (hChaseRO);
 			Destroy (hChaseLT);
 			Destroy (hChaseRT);
-			Destroy (bossO);
-			Destroy (bossP);
-			Destroy (bossQ);
 		}
 		while (purpleAttack == true) {
 			yield return new WaitForSeconds (1);
