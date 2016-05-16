@@ -150,7 +150,7 @@ public class BoardManager : MonoBehaviour {
 		Instantiate (floorB, new Vector3 (3, 0, 0f), Quaternion.identity);
 		Instantiate (floorG, new Vector3 (4, 0, 0f), Quaternion.identity);
 		Instantiate (floorM, new Vector3 (7, 2, 0f), Quaternion.identity);
-		Instantiate (floorL, new Vector3 (0, 5, 0f), Quaternion.identity);
+		//Instantiate (floorL, new Vector3 (0, 5, 0f), Quaternion.identity);
 		//Path to Boss
 		for (int x = 3; x < 3 + 1; x++) {
 			for (int y = 3; y < 23 + 1; y++) 
