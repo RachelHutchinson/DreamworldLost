@@ -88,9 +88,16 @@ public class Boss : MonoBehaviour {
 			addedHealth = false;
 		}
 		if (playerHealth < 1) {
+			StopCoroutine (AttackTime ());
+			showTime = false;
+			attackle = false;
+			startAttack = false;
+			faceAttack = false;
+			purpleAttack = false;
+			addedHealth = false;
+			startDefence = false;
 			playerHealth = 100;
 			bossHealth = 1000;
-			StopCoroutine (AttackTime ());
 			CountDown countDown = GameObject.Find("Timer").GetComponent<CountDown>();
 			countDown.Restart ();
 		}

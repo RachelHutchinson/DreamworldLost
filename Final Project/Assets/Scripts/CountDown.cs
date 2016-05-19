@@ -75,12 +75,6 @@ public class CountDown : MonoBehaviour {
 			Instantiate (owl [Random.Range (0, 2)], new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
 		GameObject timeP =
 			Instantiate (timePick, new Vector3 (2, 7, 0f), Quaternion.identity) as GameObject;
-		Boss.showTime = false;
-		Boss.attackle = false;
-		Boss.startAttack = false;
-		Boss.addedHealth = false;
-		Boss.hitP = false;
-		Boss.faceAttack = false;
 		CameraScript.bossT = true;
 		HealthPickUp.noSaveScumbing = false;
 		reset = true;
