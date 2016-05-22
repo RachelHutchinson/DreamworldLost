@@ -44,7 +44,7 @@ public class Boss : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 		showTime = false;
 		playerHealth = 100;
-		bossHealth = 1000;
+		bossHealth = 500;
 		GameObject hL =
 			Instantiate (handL, new Vector3 (1, 28, 0f), Quaternion.identity) as GameObject;
 		GameObject hR =
@@ -89,6 +89,10 @@ public class Boss : MonoBehaviour {
 		}
 		if (playerHealth < 1) {
 			StopCoroutine (AttackTime ());
+			for (int i = 0; i < allTheHands.Length; i++) {
+				Destroy (allTheHands [i]);
+			}
+			Debug.Log ("STOPPING EVERYTHING");
 			showTime = false;
 			attackle = false;
 			startAttack = false;
@@ -96,10 +100,10 @@ public class Boss : MonoBehaviour {
 			purpleAttack = false;
 			addedHealth = false;
 			startDefence = false;
-			playerHealth = 100;
-			bossHealth = 1000;
 			CountDown countDown = GameObject.Find("Timer").GetComponent<CountDown>();
 			countDown.Restart ();
+			playerHealth = 100;
+			bossHealth = 500;
 		}
 		if (purpleAttack == true) {
 			purpleAttack = true;
@@ -110,181 +114,33 @@ public class Boss : MonoBehaviour {
 		}
 			
 	}
+		
 
 	public IEnumerator AttackTime ()
 	{
 		while (showDown == true)
 			{
 		if (faceAttack == true) {
-			yield return new WaitForSeconds (1);
-			for (int x = -1; x < -1 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
+				yield return new WaitForSeconds (1);
+				for (int x = -1; x > -13 + 1; x--) {
+					for (int y = 22; y < 27 + 1; y++) {
+						GameObject toInstantiate = bossFace;
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity);
+					}
+					yield return new WaitForSeconds (1);
 				}
-			}
-			for (int x = -24; x < -24 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
+				for (int x = -24; x < -14 + 1; x++) {
+					for (int y = 22; y < 27 + 1; y++) {
+						GameObject toInstantiate = bossFace;
+						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity);
+					}
+				yield return new WaitForSeconds (1);
 				}
-			}
-			yield return new WaitForSeconds (1);
-			for (int x = -2; x < -2 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
+				for (int i = 0; i < allTheHands.Length; i++) {
+					Destroy (allTheHands [i]);
 				}
-			}
-			for (int x = -23; x < -23 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			yield return new WaitForSeconds (1);
-			for (int x = -3; x < -3 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			for (int x = -22; x < -22 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			yield return new WaitForSeconds (1);
-			for (int x = -4; x < -4 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			for (int x = -21; x < -21 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			yield return new WaitForSeconds (1);
-			for (int x = -5; x < -5 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			for (int x = -20; x < -20 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			yield return new WaitForSeconds (1);
-			for (int x = -6; x < -6 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			for (int x = -19; x < -19 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			yield return new WaitForSeconds (1);
-			for (int x = -7; x < -7 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			for (int x = -18; x < -18 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			yield return new WaitForSeconds (1);
-			for (int x = -8; x < -8 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			for (int x = -17; x < -17 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			yield return new WaitForSeconds (1);
-			for (int x = -9; x < -9 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			for (int x = -16; x < -16 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			yield return new WaitForSeconds (1);
-			for (int x = -10; x < -10 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			for (int x = -15; x < -15 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			yield return new WaitForSeconds (1);
-			for (int x = -11; x < -11 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity);
-				}
-			}
-			for (int x = -14; x < -14 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					GameObject instance =
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity) as GameObject;
-				}
-			}
-			yield return new WaitForSeconds (1);
-			for (int i = 0; i < allTheHands.Length; i++) {
-				Destroy (allTheHands [i]);
-			}
-			startAttack = true;
+				faceAttack = false;
+				startAttack = true;
 		}
 		if (startAttack == true) {
 			for (int x = -15; x < -2 + 1; x++) {
