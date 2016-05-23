@@ -93,6 +93,7 @@ public class Boss : MonoBehaviour {
 				Destroy (allTheHands [i]);
 			}
 			Debug.Log ("STOPPING EVERYTHING");
+			showDown = false;
 			showTime = false;
 			attackle = false;
 			startAttack = false;

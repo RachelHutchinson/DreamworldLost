@@ -22,7 +22,7 @@ public class MusicianDialog : MonoBehaviour {
 			GameObject DialogBox = GameObject.FindGameObjectWithTag ("Dialog Box");
 			MusicianTrigger = DialogBox.GetComponent <Dialogue> ();
 	}
-	
+	 
 	// Update is called once per frame
 	void Update () {
 			dialogueCoolDown -= Time.deltaTime;
