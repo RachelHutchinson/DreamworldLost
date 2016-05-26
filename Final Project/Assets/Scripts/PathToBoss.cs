@@ -45,6 +45,7 @@ public class PathToBoss : MonoBehaviour {
 				SoundManager.instance.MainMusic (boss);}
 			Boss.showTime = true;
 			Boss.attackle = true;
+			Boss.checkIfDead = false;
 			dark.SetActive (true);
 			coverWall.SetActive (true);
 		} else {

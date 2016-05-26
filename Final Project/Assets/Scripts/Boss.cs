@@ -32,6 +32,7 @@ public class Boss : MonoBehaviour {
 	public static bool hitBoss = false;
 	public static bool purpleFace = false;
 	public static bool showDown = false;
+	public static bool checkIfDead = false;
 	Text playerHealthText;
 	Text bossHealthText;
 	GameObject [] allTheHands;
@@ -88,11 +89,11 @@ public class Boss : MonoBehaviour {
 			addedHealth = false;
 		}
 		if (playerHealth < 1) {
+			checkIfDead = true;
 			StopCoroutine (AttackTime ());
 			for (int i = 0; i < allTheHands.Length; i++) {
 				Destroy (allTheHands [i]);
 			}
-			Debug.Log ("STOPPING EVERYTHING");
 			showDown = false;
 			showTime = false;
 			attackle = false;
@@ -106,95 +107,83 @@ public class Boss : MonoBehaviour {
 			playerHealth = 100;
 			bossHealth = 500;
 		}
-		if (purpleAttack == true) {
-			purpleAttack = true;
-			purpleFace = true;
-			hitP = true;
-		} else {
-			purpleAttack = false;
-		}
 			
 	}
 		
 
 	public IEnumerator AttackTime ()
 	{
-		while (showDown == true)
-			{
-		if (faceAttack == true) {
-				yield return new WaitForSeconds (1);
-				for (int x = -1; x > -13 + 1; x--) {
-					for (int y = 22; y < 27 + 1; y++) {
-						GameObject toInstantiate = bossFace;
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity);
-					}
+		if (checkIfDead == false) {
+			while (showDown == true) {
+				if (faceAttack == true) {
 					yield return new WaitForSeconds (1);
-				}
-				for (int x = -24; x < -14 + 1; x++) {
-					for (int y = 22; y < 27 + 1; y++) {
-						GameObject toInstantiate = bossFace;
-						Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity);
+					for (int x = 0; x < 10; x++) {
+						for (int y = 22; y < 27 + 1; y++) {
+							GameObject toInstantiate = bossFace;
+							Instantiate (toInstantiate, new Vector3 (7 - x, y, 0f), Quaternion.identity);
+							Instantiate (toInstantiate, new Vector3 (x - 16, y, 0f), Quaternion.identity);
+						}
+						yield return new WaitForSeconds (1);
 					}
-				yield return new WaitForSeconds (1);
+					for (int i = 0; i < allTheHands.Length; i++) {
+						Destroy (allTheHands [i]);
+					}
+					faceAttack = false;
+					startAttack = true;
 				}
-				for (int i = 0; i < allTheHands.Length; i++) {
-					Destroy (allTheHands [i]);
+				if (startAttack == true) {
+					for (int x = -15; x < -2 + 1; x++) {
+						for (int y = 22; y < 27 + 1; y++) {
+							GameObject toInstantiate = bossFace;
+							Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity);
+						}
+						yield return new WaitForSeconds (1);
+						Instantiate (handL, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+						Instantiate (handR, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+						Instantiate (handL, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+						Instantiate (handR, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+						yield return new WaitForSeconds (1);
+						for (int i = 0; i < allTheHands.Length; i++) {
+							Destroy (allTheHands [i]);
+						}
+						startAttack = false;
+						startDefence = true;
+					}
 				}
-				faceAttack = false;
-				startAttack = true;
-		}
-		if (startAttack == true) {
-			for (int x = -15; x < -2 + 1; x++) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity);
-				}
-			yield return new WaitForSeconds (1);
-				Instantiate (handL, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
-				Instantiate (handR, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
-				Instantiate (handL, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
-				Instantiate (handR, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
-				yield return new WaitForSeconds (1);
-				for (int i = 0; i < allTheHands.Length; i++) {
-					Destroy (allTheHands [i]);
-				}
-				startAttack = false;
-				startDefence = true;
-			}
-			}
-		if (startDefence == true) {
-				yield return new WaitForSeconds (1);
-			for (int x = -1; x > -15 + 1; x--) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity);
-				}
-				yield return new WaitForSeconds (1);
-				Instantiate (handLB, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
-				Instantiate (handRB, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
-				Instantiate (handLB, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
-				Instantiate (handRB, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+				if (startDefence == true) {
+					yield return new WaitForSeconds (1);
+					for (int x = -1; x > -15 + 1; x--) {
+						for (int y = 22; y < 27 + 1; y++) {
+							GameObject toInstantiate = bossFace;
+							Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity);
+						}
+						yield return new WaitForSeconds (1);
+						Instantiate (handLB, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+						Instantiate (handRB, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+						Instantiate (handLB, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+						Instantiate (handRB, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
 
-				yield return new WaitForSeconds (1);
-				for (int i = 0; i < allTheHands.Length; i++) {
-					Destroy (allTheHands [i]);
+						yield return new WaitForSeconds (1);
+						for (int i = 0; i < allTheHands.Length; i++) {
+							Destroy (allTheHands [i]);
+						}
+						purpleAttack = true;
+						startDefence = false;
+					}
 				}
-				purpleAttack = true;
-				startDefence = false;
-			}
-		}
-		if (purpleAttack == true) {
-			for (int x = -15; x > -24 + 1; x--) {
-				for (int y = 22; y < 27 + 1; y++) {
-					GameObject toInstantiate = bossFace;
-					Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity);
-				}
-				yield return new WaitForSeconds (1);
-				Instantiate (handLP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
-				Instantiate (handRP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
-				Instantiate (handLP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
-				Instantiate (handRP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
-				/*GameObject hChaseL =
+				if (purpleAttack == true) {
+					hitP = true;
+					for (int x = -15; x > -24 + 1; x--) {
+						for (int y = 22; y < 27 + 1; y++) {
+							GameObject toInstantiate = bossFace;
+							Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity);
+						}
+						yield return new WaitForSeconds (1);
+						Instantiate (handLP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+						Instantiate (handRP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+						Instantiate (handLP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+						Instantiate (handRP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+						/*GameObject hChaseL =
 					Instantiate (handLG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 				GameObject hChaseR =
 					Instantiate (handRG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
@@ -206,12 +195,14 @@ public class Boss : MonoBehaviour {
 					Instantiate (handLG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;
 				GameObject hChaseRT =
 					Instantiate (handRG, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity) as GameObject;*/
-				yield return new WaitForSeconds (1);
-				for (int i = 0; i < allTheHands.Length; i++) {
-					Destroy (allTheHands [i]);
-				}
-				faceAttack = true;
-				purpleAttack = false;
+						yield return new WaitForSeconds (1);
+						for (int i = 0; i < allTheHands.Length; i++) {
+							Destroy (allTheHands [i]);
+						}
+						faceAttack = true;
+						hitP = false;
+						purpleAttack = false;
+					}
 				}
 			}
 		}
