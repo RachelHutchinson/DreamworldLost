@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoardManager.cs" />
      <Compile Include="Assets\Scripts\BookPickUp.cs" />
-     <Compile Include="Assets\Scripts\Boss Green Hands.cs" />
      <Compile Include="Assets\Scripts\Boss.cs" />
      <Compile Include="Assets\Scripts\BossFace.cs" />
      <Compile Include="Assets\Scripts\BossHands.cs" />
