@@ -151,6 +151,11 @@ public class OwlDialog : MonoBehaviour {
 				}
 			}
 		}
-
 	}
+	void OnTriggerExit2D (Collider2D other) 
+	{
+		OwlTrigger.StartText ("");
+		numberOfDialogLines = 0;
+	}
+	//Trigger exit
 }
