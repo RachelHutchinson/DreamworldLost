@@ -19,6 +19,7 @@ public class CountDown : MonoBehaviour {
 	public GameObject timePick;
 	public GameObject LPick;
 	public AudioClip innerRoom;
+	public static bool timeIsUp = false;
 	public static bool pTime = false;
 	public static bool walls = false;
 	public static bool reset = false;
@@ -48,7 +49,7 @@ public class CountDown : MonoBehaviour {
 		string niceTime = string.Format ("{0:0}:{1:00}", minutes, seconds);
 		if (timeRemaining > 0) {
 		} else {
-			Restart ();
+			timeIsUp = true;
 		}
 		if (pTime == true) {
 			GUI.Label (new Rect (10, 10, 250, 100), niceTime);

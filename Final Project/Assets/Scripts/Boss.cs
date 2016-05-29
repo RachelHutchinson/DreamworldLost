@@ -93,7 +93,7 @@ public class Boss : MonoBehaviour {
 			playerHealth = playerHealth + 200;
 			addedHealth = false;
 		}
-		if (playerHealth < 1) {
+			if (playerHealth < 1 || CountDown.timeIsUp == true) {
 			StopCoroutine (bossCoroutine);
 			bossCoroutine = AttackTime ();
 			for (int i = 0; i < allTheHands.Length; i++) {
@@ -111,6 +111,7 @@ public class Boss : MonoBehaviour {
 			countDown.Restart ();
 			playerHealth = 100;
 			bossHealth = 500;
+			CountDown.timeIsUp = false;
 		}
 			
 	}
