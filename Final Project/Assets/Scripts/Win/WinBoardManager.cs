@@ -5,8 +5,8 @@ using Random = UnityEngine.Random;
 
 public class WinBoardManager : MonoBehaviour {
 
-	public int innerColumns = 10;
-	public int innerRows = 10;
+	public int innerColumns = 8;
+	public int innerRows =  8;
 	public GameObject player;
 	public GameObject owl;
 	public GameObject nurse;
@@ -27,9 +27,6 @@ public class WinBoardManager : MonoBehaviour {
 		//Room 1
 		for (int x = -1; x < innerColumns + 1; x++) {
 			for (int y = -1; y < innerRows + 1; y++) {
-				if (x == 8 && y == 3) {
-					continue;
-				}
 				GameObject toInstantiate = innerTiles[Random.Range (0, innerTiles.Length)];
 				if (x == -1 || x == innerColumns || y == -1 || y == innerRows)
 					toInstantiate = innerWalls[Random.Range (0, innerTiles.Length)];
@@ -38,14 +35,13 @@ public class WinBoardManager : MonoBehaviour {
 				instance.transform.SetParent (boardHolder2);
 			}
 		}
+		Instantiate (owl, new Vector3 (3, 7, 0f), Quaternion.identity);
 		Instantiate (player, new Vector3 (3, 3, 0f), Quaternion.identity);
 		Instantiate (nurse, new Vector3 (0, 3, 0f), Quaternion.identity);
 		Instantiate (boyTwin, new Vector3 (3, 0, 0f), Quaternion.identity);
 		Instantiate (girlTwin, new Vector3 (4, 0, 0f), Quaternion.identity);
 		Instantiate (music, new Vector3 (7, 2, 0f), Quaternion.identity);
 		Instantiate (librarian, new Vector3 (0, 5, 0f), Quaternion.identity);
-		Debug.Log ("starting upB");
-
 	}
 
 	public class Count
