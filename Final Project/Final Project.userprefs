@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Boss.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Win/WinBoardManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Boss.cs" Line="181" Column="28" />
-      <File FileName="Assets\Scripts\PathToBoss.cs" Line="25" Column="28" />
-      <File FileName="Assets\Scripts\BookPickUp.cs" Line="38" Column="1" />
+      <File FileName="Assets/Scripts/BoardManager.cs" Line="64" Column="81" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="20" Column="1" />
+      <File FileName="Assets/Scripts/Win/WinBoardManager.cs" Line="9" Column="28" />
+      <File FileName="Assets/Scripts/Win/WinGameManager.cs" Line="16" Column="3" />
+      <File FileName="Assets/Scripts/CameraScript.cs" Line="14" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
