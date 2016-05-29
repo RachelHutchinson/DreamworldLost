@@ -32,11 +32,11 @@ public class GameManager : MonoBehaviour {
 			Application.LoadLevel (2);
 		}
 		if (hPick == true) {
-			Instantiate (healthPickUp, new Vector3 (0, 3, 0f), Quaternion.identity);
+			Instantiate (healthPickUp, new Vector3 (0, 2, 0f), Quaternion.identity);
 			hPick = false;
 		}
 		if (MusicianDialog.musicPick == true) {
-				Instantiate (musicPickUp, new Vector3 (7, 2, 0f), Quaternion.identity);
+				Instantiate (musicPickUp, new Vector3 (5, 7, 0f), Quaternion.identity);
 			MusicianDialog.musicPick = false;
 		}
 	}

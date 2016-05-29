@@ -17,6 +17,7 @@ public class CountDown : MonoBehaviour {
 	public GameObject[] owl;
 	public GameObject playerI;
 	public GameObject timePick;
+	public GameObject LPick;
 	public AudioClip innerRoom;
 	public static bool pTime = false;
 	public static bool walls = false;
@@ -75,6 +76,10 @@ public class CountDown : MonoBehaviour {
 			Instantiate (owl [Random.Range (0, 2)], new Vector3 (3, 7, 0f), Quaternion.identity) as GameObject;
 		GameObject timeP =
 			Instantiate (timePick, new Vector3 (2, 7, 0f), Quaternion.identity) as GameObject;
+		if (LibrarianDialog.setForPick == true) {
+			Instantiate (LPick, new Vector3 (0, 5, 0f), Quaternion.identity);
+			LibrarianDialog.silenceInTheLibrary = true;
+		}
 		CameraScript.bossT = true;
 		HealthPickUp.noSaveScumbing = false;
 		reset = true;

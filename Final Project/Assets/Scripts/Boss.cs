@@ -46,7 +46,7 @@ public class Boss : MonoBehaviour {
 		animator = GetComponent<Animator> ();
 		showTime = false;
 		playerHealth = 100;
-		bossHealth = 10;
+		bossHealth = 500;
 		GameObject hL =
 			Instantiate (handL, new Vector3 (1, 28, 0f), Quaternion.identity) as GameObject;
 		GameObject hR =
@@ -110,7 +110,7 @@ public class Boss : MonoBehaviour {
 			CountDown countDown = GameObject.Find("Timer").GetComponent<CountDown>();
 			countDown.Restart ();
 			playerHealth = 100;
-			bossHealth = 10;
+			bossHealth = 500;
 		}
 			
 	}
