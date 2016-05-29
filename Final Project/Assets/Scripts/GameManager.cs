@@ -9,11 +9,13 @@ public class GameManager : MonoBehaviour {
 	public GameObject healthPickUp;
 	public GameObject musicPickUp;
 	public static bool hPick = false;
+	private Boss bossScript;
 
 	private int level = 1;
 
 	// Use this for initialization
 	public void Start () {
+		bossScript = GetComponent<Boss>();
 		boardScript = GetComponent<BoardManager> ();
 		InitGame ();
 	}
@@ -25,6 +27,10 @@ public class GameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (bossScript.bossHealth < 0)
+		{
+			Application.LoadLevel (2);
+		}
 		if (hPick == true) {
 			Instantiate (healthPickUp, new Vector3 (0, 3, 0f), Quaternion.identity);
 			hPick = false;

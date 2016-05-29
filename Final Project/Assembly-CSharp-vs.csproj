@@ -78,6 +78,8 @@
      <Compile Include="Assets\Scripts\TwinBoyDialog.cs" />
      <Compile Include="Assets\Scripts\TwinGirlDialog.cs" />
      <Compile Include="Assets\Scripts\Wall.cs" />
+     <Compile Include="Assets\Scripts\Win\WinBoardManager.cs" />
+     <Compile Include="Assets\Scripts\Win\WinGameManager.cs" />
      <None Include="Assets\Resources\testing.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
