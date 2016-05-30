@@ -7,14 +7,20 @@ public class MenuScript : MonoBehaviour {
 	public Canvas quitMenu;
 	public Button startText;
 	public Button exitText;
+	public Canvas howtoMenu;
 
 	// Use this for initialization
 	void Start () {
 		quitMenu = quitMenu.GetComponent<Canvas> ();
+		//howtoMenu = howtoMenu.GetComponent<Canvas> ();
 		startText = startText.GetComponent<Button> ();
 		exitText = exitText.GetComponent<Button> ();
+		//howtoText = howtoText.GetComponent<Button> ();
+
+
 		//dissable the quit menu
 		quitMenu.enabled = false;
+		//howtoMenu.enabled = false;
 
 	
 	}
@@ -41,6 +47,7 @@ public class MenuScript : MonoBehaviour {
 		exitText.enabled = false;
 	}
 
+
 	public void NoPress ()
 	{
 		// dissable quit menu
@@ -49,8 +56,12 @@ public class MenuScript : MonoBehaviour {
 		startText.enabled = true;
 		exitText.enabled = true;
 	}
-
-
-
+	public void HowtoPress ()
+	{
+		howtoMenu.enabled = true;
+		startText.enabled = false;
+		exitText.enabled = false;
+		
+	}
 
 }
