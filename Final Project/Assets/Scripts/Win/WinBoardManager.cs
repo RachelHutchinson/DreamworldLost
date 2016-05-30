@@ -12,7 +12,6 @@ public class WinBoardManager : MonoBehaviour {
 	public GameObject nurse;
 	public GameObject music;
 	public GameObject librarian;
-	public GameObject girlTwin;
 	public GameObject boyTwin;
 	public GameObject bed;
 	public GameObject chest;
@@ -42,7 +41,6 @@ public class WinBoardManager : MonoBehaviour {
 		Instantiate (player, new Vector3 (7, 7, 0f), Quaternion.identity);
 		Instantiate (nurse, new Vector3 (1, 2, 0f), Quaternion.identity);
 		Instantiate (boyTwin, new Vector3 (3, 0, 0f), Quaternion.identity);
-		Instantiate (girlTwin, new Vector3 (4, 0, 0f), Quaternion.identity);
 		Instantiate (music, new Vector3 (5, 7, 0f), Quaternion.identity);
 		Instantiate (librarian, new Vector3 (0, 5, 0f), Quaternion.identity);
 		Instantiate (bed, new Vector3 (7, 7, 0f), Quaternion.identity);

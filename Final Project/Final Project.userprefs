@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MenuScriptTwo.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Win\WinBoardManager.cs">
     <Files>
+      <File FileName="Assets\Scripts\Win\WinBoardManager.cs" Line="44" Column="1" />
       <File FileName="Assets\Scripts\BoardManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Win\WinBoardManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Win\WinGameManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CameraScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MenuScriptTwo.cs" Line="7" Column="2" />
