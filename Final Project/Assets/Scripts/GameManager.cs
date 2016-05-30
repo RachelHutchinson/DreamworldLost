@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (bossScript.bossHealth < 0)
+		if (bossScript.bossHealth < 1)
 		{
 			Application.LoadLevel (2);
 		}
