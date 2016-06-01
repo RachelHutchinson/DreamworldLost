@@ -16,9 +16,9 @@ public class WinBoardManager : MonoBehaviour {
 	public GameObject bed;
 	public GameObject chest;
 	public GameObject rug;
+	public GameObject backToMenu;
 	public GameObject [] innerTiles;
 	public GameObject [] innerWalls;
-	public AudioClip innerRoom;
 
 	private Transform boardHolder2;
 	private List <Vector3> gridPositions = new List <Vector3> ();
@@ -29,6 +29,7 @@ public class WinBoardManager : MonoBehaviour {
 		//Room 1
 		for (int x = -1; x < innerColumns + 1; x++) {
 			for (int y = -1; y < innerRows + 1; y++) {
+				if (x == 8 && y == 3) { continue; }
 				GameObject toInstantiate = innerTiles[Random.Range (0, innerTiles.Length)];
 				if (x == -1 || x == innerColumns || y == -1 || y == innerRows)
 					toInstantiate = innerWalls[Random.Range (0, innerTiles.Length)];
@@ -37,6 +38,7 @@ public class WinBoardManager : MonoBehaviour {
 				instance.transform.SetParent (boardHolder2);
 			}
 		}
+		Instantiate (backToMenu, new Vector3 (8, 3, 0f), Quaternion.identity);
 		Instantiate (owl, new Vector3 (3, 7, 0f), Quaternion.identity);
 		Instantiate (player, new Vector3 (7, 7, 0f), Quaternion.identity);
 		Instantiate (nurse, new Vector3 (1, 2, 0f), Quaternion.identity);
@@ -87,7 +89,6 @@ public class WinBoardManager : MonoBehaviour {
 
 	public void SetupScene (int level)
 	{
-		//SoundManager.instance.MainMusic (innerRoom);
 		BoardSetup ();
 		InitialiseList ();
 	}
