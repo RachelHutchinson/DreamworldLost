@@ -17,7 +17,6 @@ public class BookPickUp : MonoBehaviour {
 		
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			advice = true;
-			Debug.Log ("Let me work");
 		}
 	}
 

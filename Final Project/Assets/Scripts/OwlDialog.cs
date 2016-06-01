@@ -9,14 +9,12 @@ public class OwlDialog : MonoBehaviour {
 	public static bool didPlayerDieAtBoss;
 
 
-	// Use this for initialization
 	void Start () 
 	{
 		GameObject DialogBox = GameObject.FindGameObjectWithTag ("Dialog Box");
 		OwlTrigger = DialogBox.GetComponent <Dialogue> ();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		//set this if statement the equivalent of losing all health/dying at the boss room
 		dialogueCoolDown -= Time.deltaTime;

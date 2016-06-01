@@ -9,13 +9,11 @@ public class Dialogue : MonoBehaviour {
 	public float secondsBetweenCharacters = 0.1f; 
 
 
-	// Use this for initialization
 	void Start () {
 		dialogue = GetComponent<Text>();
 		dialogue.text = "";
 	}
 	
-	// Update is called once per frame
 	public float StartText(string openingText) {
 		StartCoroutine (DisplayString (openingText));
 		return openingText.Length * secondsBetweenCharacters + 1;

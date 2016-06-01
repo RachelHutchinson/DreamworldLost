@@ -10,13 +10,11 @@ public class DialogTrigger : MonoBehaviour {
 	bool pickUpReceived;
 	public static bool nurseDialogue = false;
 
-	// Use this for initialization
 	void Start () {
 		GameObject DialogBox = GameObject.FindGameObjectWithTag ("Dialog Box");
 		NurseTrigger = DialogBox.GetComponent <Dialogue> ();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (Flower.flowerBool == true) 
 		{

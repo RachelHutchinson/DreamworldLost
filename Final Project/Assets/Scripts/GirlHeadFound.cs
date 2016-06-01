@@ -8,13 +8,11 @@ public class GirlHeadFound : MonoBehaviour {
 	int numberOfDialogLines = 0;
 	public static bool wasGirlFound;
 
-	// Use this for initialization
 	void Start () {
 		GameObject DialogBox = GameObject.FindGameObjectWithTag ("Dialog Box");
 		GirlHeadTrigger = DialogBox.GetComponent <Dialogue> ();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		dialogueCoolDown -= Time.deltaTime;
 	}

@@ -17,13 +17,11 @@ public class MusicianDialog : MonoBehaviour {
 	public AudioClip ofTheDramatic;
 	public AudioClip backtonorm;
 
-	// Use this for initialization
 	void Start () {
 			GameObject DialogBox = GameObject.FindGameObjectWithTag ("Dialog Box");
 			MusicianTrigger = DialogBox.GetComponent <Dialogue> ();
 	}
 	 
-	// Update is called once per frame
 	void Update () {
 			dialogueCoolDown -= Time.deltaTime;
 	}

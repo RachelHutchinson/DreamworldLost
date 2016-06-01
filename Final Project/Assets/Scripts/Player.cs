@@ -12,7 +12,6 @@ public class Player : MovingObject {
 	public static bool bPlayer = false;
 	public static bool gPlayer = false;
 
-	//protected override void Start () 
 	public void Start ()
 	{
 		animator = GetComponent<Animator> ();
@@ -20,7 +19,6 @@ public class Player : MovingObject {
 		base.Start ();
 	}
 
-	// Update is called once per frame
 	public void Update () 	
 	{
 		if (bPlayer == true) {
@@ -81,9 +79,6 @@ public class Player : MovingObject {
 	{
 		base.AttemptMove <T> (xDir, yDir);
 		RaycastHit2D hit;
-		/*if (AttemptMove (xDir, yDir, outhit))
-			CheckIfGameOver ();
-		GameManager.instance.playersTurn = false;*/
 	}
 
 	protected override void OnCantMove <T> (T component)

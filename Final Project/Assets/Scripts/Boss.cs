@@ -148,6 +148,7 @@ public class Boss : MonoBehaviour {
 						Instantiate (handR, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
 						Instantiate (handL, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
 						Instantiate (handR, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
+						Instantiate (bossFace, new Vector3 (8, 23, 0f), Quaternion.identity);
 						yield return new WaitForSeconds (1);
 						
 						for (int i = 0; i < allTheHands.Length; i++) {
@@ -170,7 +171,7 @@ public class Boss : MonoBehaviour {
 						Instantiate (handRB, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
 						Instantiate (handLB, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
 						Instantiate (handRB, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
-
+						Instantiate (bossFace, new Vector3 (8, 23, 0f), Quaternion.identity);
 						yield return new WaitForSeconds (1);
 						for (int i = 0; i < allTheHands.Length; i++) {
 							Destroy (allTheHands [i]);
@@ -187,7 +188,7 @@ public class Boss : MonoBehaviour {
 							Instantiate (toInstantiate, new Vector3 (x + 8, y, 0f), Quaternion.identity);
 						}
 						yield return new WaitForSeconds (1);
-						
+						Instantiate (bossFace, new Vector3 (8, 23, 0f), Quaternion.identity);
 						Instantiate (handLP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
 						Instantiate (handRP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);
 						Instantiate (handLP, new Vector3 (Random.Range (-15, xCor.Length - 15), Random.Range (23, yCor.Length + 23), 0f), Quaternion.identity);

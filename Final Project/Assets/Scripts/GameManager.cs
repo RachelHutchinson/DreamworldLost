@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour {
 
 	private int level = 1;
 
-	// Use this for initialization
 	public void Start () {
 		bossScript = GetComponent<Boss>();
 		boardScript = GetComponent<BoardManager> ();
@@ -25,7 +24,6 @@ public class GameManager : MonoBehaviour {
 		boardScript.SetupScene(level);
 	}
 
-	// Update is called once per frame
 	void Update () {
 		if (bossScript.bossHealth < 1)
 		{

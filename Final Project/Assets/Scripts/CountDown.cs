@@ -27,13 +27,11 @@ public class CountDown : MonoBehaviour {
 
 
 
-	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		owlCur = GameObject.FindGameObjectWithTag ("Owl");

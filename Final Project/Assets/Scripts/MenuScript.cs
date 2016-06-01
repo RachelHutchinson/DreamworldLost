@@ -9,7 +9,6 @@ public class MenuScript : MonoBehaviour {
 	public Button exitText;
 	public Canvas howtoMenu;
 
-	// Use this for initialization
 	void Start () {
 		quitMenu = quitMenu.GetComponent<Canvas> ();
 		//howtoMenu = howtoMenu.GetComponent<Canvas> ();

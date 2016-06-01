@@ -13,13 +13,11 @@ public class TwinBoyDialog : MonoBehaviour {
 	public GameObject boyP;
 	GameObject boyT;
 
-	// Use this for initialization
 	void Start () {
 		GameObject DialogBox = GameObject.FindGameObjectWithTag ("Dialog Box");
 		BoyTrigger = DialogBox.GetComponent <Dialogue> ();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		dialogueCoolDown -= Time.deltaTime;
 		boyT = GameObject.FindGameObjectWithTag ("Boy");
