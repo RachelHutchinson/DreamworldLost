@@ -73,12 +73,13 @@
      <Compile Include="Assets\Scripts\PathToBoss.cs" />
      <Compile Include="Assets\Scripts\Pathways.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\PlayerT.cs" />
      <Compile Include="Assets\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\TimePickUp.cs" />
      <Compile Include="Assets\Scripts\TwinBoyDialog.cs" />
      <Compile Include="Assets\Scripts\TwinGirlDialog.cs" />
      <Compile Include="Assets\Scripts\Wall.cs" />
+     <Compile Include="Assets\Scripts\Win\BackToMenu.cs" />
+     <Compile Include="Assets\Scripts\Win\OwlDialogue.cs" />
      <Compile Include="Assets\Scripts\Win\WinBoardManager.cs" />
      <Compile Include="Assets\Scripts\Win\WinGameManager.cs" />
      <None Include="Assets\Resources\testing.txt" />

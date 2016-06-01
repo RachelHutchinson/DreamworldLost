@@ -66,34 +66,16 @@ public class TwinBoyDialog : MonoBehaviour {
 				} else if (numberOfDialogLines == 6) {
 					TwinGirlDialog.playingNO = true;
 				}
-				/*else if (wasBoySpeak == true){
-					Debug.Log ("Let me working");
-
-					if (numberOfDialogLines == 0) {
-						dialogueCoolDown = BoyTrigger.StartText ("You found me!");
-						numberOfDialogLines = 1;
-					} 
-					else if (numberOfDialogLines == 1) {
-						dialogueCoolDown = BoyTrigger.StartText ("I can't believe you managed to find your best buddy so quickly.");
-						numberOfDialogLines = 2;
-					} 
-					else if (numberOfDialogLines == 2) {
-						dialogueCoolDown = BoyTrigger.StartText ("I guess Clancy's secret hiding spot was no match for you.");
-						numberOfDialogLines = 3;
-					} 
-					else if (numberOfDialogLines == 3) {
-						dialogueCoolDown = BoyTrigger.StartText ("Since you are the winner, I'll put my toy chest in your room.");
-						numberOfDialogLines = 4;
-					} 
-					else if (numberOfDialogLines == 4) {
-						dialogueCoolDown = BoyTrigger.StartText ("T a k  F r  l y n  M   a e");
-						numberOfDialogLines = 5;
-					} */
-					else {
+				else {
 						BoyTrigger.StartText ("");
 						numberOfDialogLines = 0;
 					}
 				}
 			}
 		}
+	void OnTriggerExit2D (Collider2D other) 
+	{
+		BoyTrigger.StartText ("");
+		numberOfDialogLines = 0;
+	}
 	}

@@ -82,4 +82,9 @@ public class TwinGirlDialog : MonoBehaviour {
 			}
 		}
 	}
+	void OnTriggerExit2D (Collider2D other) 
+	{
+		GirlTrigger.StartText ("");
+		numberOfDialogLines = 0;
+	}
 }

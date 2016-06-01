@@ -196,4 +196,9 @@ public class MusicianDialog : MonoBehaviour {
 			}
 		}
 	}
+	void OnTriggerExit2D (Collider2D other) 
+	{
+		MusicianTrigger.StartText ("");
+		numberOfDialogLines = 0;
+	}
 }

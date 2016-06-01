@@ -51,4 +51,9 @@ public class GirlHeadFound : MonoBehaviour {
 			}
 		}
 	}
+	void OnTriggerExit2D (Collider2D other) 
+	{
+		GirlHeadTrigger.StartText ("");
+		numberOfDialogLines = 0;
+	}
 }
