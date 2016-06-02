@@ -73,6 +73,7 @@ public class TwinBoyDialog : MonoBehaviour {
 		}
 	void OnTriggerExit2D (Collider2D other) 
 	{
+		BoyTrigger.StopText();
 		BoyTrigger.StartText ("");
 		numberOfDialogLines = 0;
 	}

@@ -119,6 +119,7 @@ public class DialogTrigger : MonoBehaviour {
 
 	void OnTriggerExit2D (Collider2D other) 
 	{
+		NurseTrigger.StopText();
 		NurseTrigger.StartText ("");
 		numberOfDialogLines = 0;
 	}

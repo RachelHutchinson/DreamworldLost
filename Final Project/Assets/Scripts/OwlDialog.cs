@@ -22,7 +22,7 @@ public class OwlDialog : MonoBehaviour {
 
 	void OnTriggerStay2D (Collider2D other) {
 
-		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space)&& dialogueCoolDown <= 0)
+		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space) && dialogueCoolDown <= 0)
 		{
 			if (didPlayerDieAtBoss == false) 
 			{
@@ -152,8 +152,8 @@ public class OwlDialog : MonoBehaviour {
 	}
 	void OnTriggerExit2D (Collider2D other) 
 	{
-		OwlTrigger.StartText ("");
+		OwlTrigger.StopText();
+		OwlTrigger.StartText("");
 		numberOfDialogLines = 0;
 	}
-	//Trigger exit
 }

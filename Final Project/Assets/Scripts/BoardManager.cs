@@ -44,9 +44,9 @@ public class BoardManager : MonoBehaviour {
 	public GameObject innerTiles;
 	public GameObject [] outerTiles;
 	public GameObject innerWalls;
-	public GameObject [] outerWalls;
-	public GameObject [] bossTiles;
-	public GameObject [] bossWalls;
+	public GameObject outerWalls;
+	public GameObject bossTiles;
+	public GameObject bossWalls;
 	public AudioClip innerRoom;
 
 
@@ -80,34 +80,18 @@ public class BoardManager : MonoBehaviour {
 				if (x == 9 && y == 23) { continue; }
 				GameObject toInstantiate = outerTiles [Random.Range (0, outerTiles.Length)];
 				if (x == 9 || x == outerColumns || y == -20 || y == outerRows)
-					toInstantiate = outerWalls [Random.Range (0, outerWalls.Length)];
+					toInstantiate = outerWalls;
 				GameObject instance =
 					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
 			}
 		}
 		//boss 1
-		/*for (int x = -3; x < bossColumns + 1; x++) {
-			for (int y = 22; y < bossRows + 1; y++) {
-				if (x == 8 && y == 23) {
-					continue;
-				}
-				GameObject toInstantiateB = bossTiles;
-				GameObject instanceB =
-					Instantiate (toInstantiateB, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
-				if (x == -10 || x == innerColumns || y == 0 || y == innerRows) {
-					GameObject toInstantiateWB = innerWalls;
-					GameObject instanceWB =
-						Instantiate (toInstantiateWB, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
-					instanceWB.transform.SetParent (boardHolder);
-				}
-			}
-		}*/
 		for (int x = -10; x < bossColumns + 1; x++) {
 			for (int y = 0; y < bossRows + 1; y++) {
 				if (x == 15 && y == 1) { continue; }
-				GameObject toInstantiate = bossTiles [Random.Range (0, bossTiles.Length)];
+				GameObject toInstantiate = bossTiles; 
 				if (x == -10 || x == bossColumns || y == 0 || y == bossRows)
-					toInstantiate = bossWalls [Random.Range (0, bossWalls.Length)];
+					toInstantiate = bossWalls;
 				GameObject instance =
 					Instantiate (toInstantiate, new Vector3 (x - 7, y + 22, 0f), Quaternion.identity) as GameObject;
 				instance.transform.SetParent (boardHolder);

@@ -77,7 +77,6 @@
      <Compile Include="Assets\Scripts\TimePickUp.cs" />
      <Compile Include="Assets\Scripts\TwinBoyDialog.cs" />
      <Compile Include="Assets\Scripts\TwinGirlDialog.cs" />
-     <Compile Include="Assets\Scripts\Wall.cs" />
      <Compile Include="Assets\Scripts\Win\BackToMenu.cs" />
      <Compile Include="Assets\Scripts\Win\OwlDialogue.cs" />
      <Compile Include="Assets\Scripts\Win\WinBoardManager.cs" />

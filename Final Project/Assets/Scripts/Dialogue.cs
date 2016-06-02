@@ -8,6 +8,7 @@ public class Dialogue : MonoBehaviour {
 	public string[] dialogueStrings;
 	public float secondsBetweenCharacters = 0.1f; 
 
+	IEnumerator currentDialog;
 
 	void Start () {
 		dialogue = GetComponent<Text>();
@@ -15,9 +16,15 @@ public class Dialogue : MonoBehaviour {
 	}
 	
 	public float StartText(string openingText) {
-		StartCoroutine (DisplayString (openingText));
-		return openingText.Length * secondsBetweenCharacters + 1;
+		currentDialog = DisplayString (openingText);
+		StartCoroutine (currentDialog);
+
+		return openingText.Length * secondsBetweenCharacters + .5f;
 		//above line returns how long full text takes to display
+	}
+
+	public void StopText() {
+		StopCoroutine (currentDialog);
 	}
 
 	private IEnumerator DisplayString(string stringToDisplay)
@@ -41,6 +48,5 @@ public class Dialogue : MonoBehaviour {
 				break;
 			}
 		}
-		//dialogue.text = "";
 	}
 }

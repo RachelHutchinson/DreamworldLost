@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Player : MovingObject {
 
-	public int wallDamage = 1;
 	private Animator animator;
 	GameObject player;
 	public static Player instance = null;
@@ -46,7 +45,7 @@ public class Player : MovingObject {
 		}
 
 		if (horizontal != 0 || vertical != 0) {
-			AttemptMove <Wall> (horizontal, vertical);
+			AttemptMove (horizontal, vertical);
 			currentCoolDownTime = coolDownTime;
 		}
 		if (vertical == 1) {
@@ -75,16 +74,10 @@ public class Player : MovingObject {
 	}
 		
 
-	protected override void AttemptMove <T> (int xDir, int yDir)
+	protected override void AttemptMove (int xDir, int yDir)
 	{
-		base.AttemptMove <T> (xDir, yDir);
+		base.AttemptMove (xDir, yDir);
 		RaycastHit2D hit;
-	}
-
-	protected override void OnCantMove <T> (T component)
-	{
-		Wall hitWall = component as Wall;
-		hitWall.DamageWall (wallDamage);
 	}
 
 	private void Restart ()
