@@ -86,6 +86,22 @@ public class BoardManager : MonoBehaviour {
 			}
 		}
 		//boss 1
+		/*for (int x = -3; x < bossColumns + 1; x++) {
+			for (int y = 22; y < bossRows + 1; y++) {
+				if (x == 8 && y == 23) {
+					continue;
+				}
+				GameObject toInstantiateB = bossTiles;
+				GameObject instanceB =
+					Instantiate (toInstantiateB, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
+				if (x == -10 || x == innerColumns || y == 0 || y == innerRows) {
+					GameObject toInstantiateWB = innerWalls;
+					GameObject instanceWB =
+						Instantiate (toInstantiateWB, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
+					instanceWB.transform.SetParent (boardHolder);
+				}
+			}
+		}*/
 		for (int x = -10; x < bossColumns + 1; x++) {
 			for (int y = 0; y < bossRows + 1; y++) {
 				if (x == 15 && y == 1) { continue; }
