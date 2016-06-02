@@ -39,7 +39,12 @@ public class TwinGirlDialog : MonoBehaviour {
 
 	}
 	void OnTriggerStay2D (Collider2D other) {
-		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space) && dialogueCoolDown <= 0) {
+		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space)) {
+			if (dialogueCoolDown > 0)
+			{
+				GirlTrigger.FinishText();
+				return;
+			}
 			if (wasGirlSpeak == false) {
 				if (numberOfDialogLines == 0) {
 					dialogueCoolDown = GirlTrigger.StartText ("Who are you?");

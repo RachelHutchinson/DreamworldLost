@@ -34,7 +34,12 @@ public class TwinBoyDialog : MonoBehaviour {
 
 	}
 	void OnTriggerStay2D (Collider2D other) {
-		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space) && dialogueCoolDown <= 0) {
+		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space)) {
+			if (dialogueCoolDown > 0)
+			{
+				BoyTrigger.FinishText();
+				return;
+			}
 			if (wasBoySpeak == false) {
 				if (numberOfDialogLines == 0) {
 					dialogueCoolDown = BoyTrigger.StartText ("...");

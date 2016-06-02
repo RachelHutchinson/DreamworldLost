@@ -25,8 +25,13 @@ public class DialogTrigger : MonoBehaviour {
 
 	void OnTriggerStay2D (Collider2D other) {
 		//if space key is down
-		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space)&& dialogueCoolDown <= 0) 
+		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space)) 
 		{
+			if (dialogueCoolDown > 0)
+			{
+				NurseTrigger.FinishText();
+				return;
+			}
 			if (isNurseQuestComplete == false) {
 				if (numberOfDialogLines == 0)
 				{

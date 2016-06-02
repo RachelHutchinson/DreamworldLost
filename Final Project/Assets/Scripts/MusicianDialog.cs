@@ -26,7 +26,12 @@ public class MusicianDialog : MonoBehaviour {
 			dialogueCoolDown -= Time.deltaTime;
 	}
 		void OnTriggerStay2D (Collider2D other) {
-		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space) && dialogueCoolDown <= 0) {
+		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space)) {
+			if (dialogueCoolDown > 0)
+			{
+				MusicianTrigger.FinishText();
+				return;
+			}
 			if (isDialogOneDone == false) {
 				if (numberOfDialogLines == 0) 
 				{

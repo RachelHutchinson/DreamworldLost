@@ -25,8 +25,13 @@ public class LibrarianDialog : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D (Collider2D other) {
-		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space) && dialogueCoolDown <= 0) 
+		if (other.CompareTag ("Player") && Input.GetKeyDown (KeyCode.Space)) 
 		{
+			if (dialogueCoolDown > 0)
+			{
+				LibrarianTrigger.FinishText();
+				return;
+			}
 			if (silenceInTheLibrary == true)
 			{
 				if (numberOfDialogLines == 0) 
@@ -76,6 +81,7 @@ public class LibrarianDialog : MonoBehaviour {
 
 	void OnTriggerExit2D (Collider2D other) 
 	{
+		LibrarianTrigger.StopText ();
 		LibrarianTrigger.StartText ("");
 		numberOfDialogLines = 0;
 	}

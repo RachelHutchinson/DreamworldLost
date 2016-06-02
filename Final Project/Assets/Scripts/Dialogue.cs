@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Dialogue : MonoBehaviour {
 
 	private Text dialogue;
-	public string[] dialogueStrings;
+	string dialogueString;
 	public float secondsBetweenCharacters = 0.1f; 
 
 	IEnumerator currentDialog;
@@ -16,11 +16,17 @@ public class Dialogue : MonoBehaviour {
 	}
 	
 	public float StartText(string openingText) {
+		dialogueString = openingText;
 		currentDialog = DisplayString (openingText);
 		StartCoroutine (currentDialog);
 
-		return openingText.Length * secondsBetweenCharacters + .5f;
+		return openingText.Length * secondsBetweenCharacters + .1f;
 		//above line returns how long full text takes to display
+	}
+
+	public void FinishText() {
+		StopCoroutine (currentDialog);
+		dialogue.text = dialogueString; 
 	}
 
 	public void StopText() {
