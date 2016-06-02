@@ -17,8 +17,8 @@ public class WinBoardManager : MonoBehaviour {
 	public GameObject chest;
 	public GameObject rug;
 	public GameObject backToMenu;
-	public GameObject [] innerTiles;
-	public GameObject [] innerWalls;
+	public GameObject innerTiles;
+	public GameObject innerWalls;
 
 	private Transform boardHolder2;
 	private List <Vector3> gridPositions = new List <Vector3> ();
@@ -29,13 +29,17 @@ public class WinBoardManager : MonoBehaviour {
 		//Room 1
 		for (int x = -1; x < innerColumns + 1; x++) {
 			for (int y = -1; y < innerRows + 1; y++) {
-				if (x == 8 && y == 3) { continue; }
-				GameObject toInstantiate = innerTiles[Random.Range (0, innerTiles.Length)];
-				if (x == -1 || x == innerColumns || y == -1 || y == innerRows)
-					toInstantiate = innerWalls[Random.Range (0, innerTiles.Length)];
+				if (x == 8 && y == 3) {
+					continue;
+				}
+				GameObject toInstantiate = innerTiles;
 				GameObject instance =
 					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
-				instance.transform.SetParent (boardHolder2);
+				if (x == -1 || x == innerColumns || y == -1 || y == innerRows) {
+					GameObject toInstantiateW = innerWalls;
+					GameObject instanceW =
+						Instantiate (toInstantiateW, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
+				}
 			}
 		}
 		Instantiate (backToMenu, new Vector3 (8, 3, 0f), Quaternion.identity);

@@ -41,9 +41,9 @@ public class BoardManager : MonoBehaviour {
 	public GameObject ctree1;
 	public GameObject TileL;
 	public GameObject ctree2;
-	public GameObject [] innerTiles;
+	public GameObject innerTiles;
 	public GameObject [] outerTiles;
-	public GameObject [] innerWalls;
+	public GameObject innerWalls;
 	public GameObject [] outerWalls;
 	public GameObject [] bossTiles;
 	public GameObject [] bossWalls;
@@ -60,12 +60,17 @@ public class BoardManager : MonoBehaviour {
 		//Room 1
 		for (int x = -1; x < innerColumns + 1; x++) {
 			for (int y = -1; y < innerRows + 1; y++) {
-				if (x == 8 && y == 3) { continue; }
-				GameObject toInstantiate = innerTiles [Random.Range (0, innerTiles.Length)];
-				if (x == -1 || x == innerColumns || y == -1 || y == innerRows)
-					toInstantiate = innerWalls [Random.Range (0, innerWalls.Length)];
+				if (x == 8 && y == 3) {
+					continue;
+				}
+				GameObject toInstantiate = innerTiles;
 				GameObject instance =
 					Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
+				if (x == -1 || x == innerColumns || y == -1 || y == innerRows) {
+					GameObject toInstantiateW = innerWalls;
+					GameObject instanceW =
+						Instantiate (toInstantiateW, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
+				}
 			}
 		}
 		//Room 2
